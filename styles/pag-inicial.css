@@ -41,3 +41,9 @@
             max-width: 600px;
             max-height: 500px;
         }
+
+        .sobre-img{
+            height: 500px;
+            background-color: aqua;
+            margin-top: -5;
+        }
