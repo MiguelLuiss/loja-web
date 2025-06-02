@@ -1,30 +1,67 @@
+@import url('/static/styles/global.css');
 /* navbar */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 10px 20px;
 
+  width: 99vw;
+  height: 95px;
 
-.logo-nav{
-    max-width: 100px;
+  background-color: var(--cor-marrom);
+
+  
 }
 
-.navbar navbar-expand-lg bg-body-tertiary{
-            max-width: 500px;
-            display:flex;
-            justify-content: space-between;
-            background-color: var(--cor-marrom);
-           
-        }
+main{
+  background-color: var(--cor-fundo-pag);
+}
 
-.menu-central {
+.img-logo-header{
+    max-width: 100px;
+    
+}
+
+.header__navbar li {
+
+  list-style: none; 
+  display: inline-block;
+  margin: 15px;
+
+  
+}
+
+.header__navbar li a {
+  text-decoration: none;
+  color: var(--branco);
+}
+
+
+.header__direita{
+  max-width: 100px;
+  max-height: 95px;
+}
+
+.header__direita img {
+  width: 45px;
+  height: 45px;
+  gap: 10px;
+}
+
+
+/* .menu-central {
   display: flex;
   justify-content: center;
   gap: 30px;
   /* flex: 1 faz o elemento crescer e ocupar todo o espaço disponível dentro de um contêiner flexível. */
-  flex: 1;
-}
+  /* flex: 1; */
+/* }
 
 .perfil-link {
   margin-left: auto;
-}
+} */ 
 
 /* ---------- */
 
@@ -32,19 +69,36 @@
 
 
 
-.container-section-img{
+.container-img{
     width: 98vw;
     display: flex;
     justify-content: center;
         
         }
 
-.c-sec-sobre{
+.sobre-nos{
     display: flex;
     padding: 40px;
 }
 
-.c-carrossel{
+.sobre-nos__txt{
+    max-width: 600px;
+    height: 512px;
+    border-radius: 10px;
+    margin-right: 20px;
+    background-color: var(--branco);
+}
+
+.sobre-nos__txt h2, article{
+    text-align: center;
+    padding: 20px;
+   
+}
+
+
+
+
+.produtos-destaque{
     max-width: 99.8vw;
     display: flex;
     justify-content: center;
@@ -53,18 +107,18 @@
     
 }
 
-.carrossel-produtos{
-    
+.produtos-destaque__c-cards{
+
     display: flex;
     max-width: 500px;
     flex-direction: column;
    
 }
 
-.t-produtos-destaque{
+/* .t-produtos-destaque{
     display: flex;
     justify-content: center;
-}
+} */
 
 
 

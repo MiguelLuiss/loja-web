@@ -19,10 +19,10 @@
 </head>
 
 <body>
-    <header class="container-header" id="container-header">
+    <header>
 
        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
             <div class="container-fluid">
 
@@ -32,12 +32,12 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
 
-              <!-- botoes -->
+          
 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                   <ul class="navbar-nav menu-central">
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
+                      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Moletons</a></li>
                         <li><a class="dropdown-item" href="#">Camisetas</a></li>
@@ -59,22 +59,43 @@
                   <div class="perfil-link ms-auto">
                     <a class="nav-link" href="#"> <img src="/static/imgs/c-header__login.png" alt=""></a>
                   </div>
-                </div>
+                </div> 
 
 
             </div>
-          </nav> 
+          </nav> -->
+
+          <figure>
+            <img src="/static/imgs/icon__logo(1).png" class="img-logo-header" alt="img-logo-header">
+          </figure>
+
+          <!-- nav de acordo com o figma -->
+          <nav class="header__navbar">
+            <ul>
+              <li><a href="#"> categorias</a></li>
+              <li><a href="#">Masculino</a></li>
+              <li><a href="#">Feminino</a></li>
+              <li><a href="#">Infantil</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__direita">
+
+            <a href=""><img src="/static/imgs/icon-carrinho.png" alt=""></a>
+
+            <a href=""><img src="/static/imgs/icon-login.png" alt=""></a>
+          </div>
 
     </header>
 
     <main class="container-main">
 
-      <section class="container-section-img">
+      
 
         <div class="container-img">
 
           <figure>
-            <img src="/static/imgs/m2a1_logo.png" class="img-logo" alt="img-logo">
+            <img src="/static/imgs/c-loja.png" class="img-logo" alt="img-logo">
           </figure>
         </div>
 
@@ -82,15 +103,16 @@
 
 
 
-      </section>
+      
 
-      <section class="c-carrossel">
+      <section class="produtos-destaque">
 
         <!-- carrossel -->
-       <section class="carrossel-produtos">
+       <section class="produtos-destaque__c-cards">
 
         <h1 class="t-produtos-destaque">Produtos em destaque</h1>
 
+        
          <div id="carouselExampleFade" class="carousel slide carousel-fade">
         <div class="carousel-inner">
 
@@ -129,7 +151,7 @@
 
       
 
-       <section class="container-section-img">
+       <section class="container-img">
 
         <div class="container-section-img__logo-split">
 
@@ -145,27 +167,22 @@
 
       </section>
 
-      <section class="c-sec-sobre">
+      <section class="sobre-nos">
 
-        <div class="c-sec-sobre__sobre-nos">
+        <div class="sobre-nos__txt">
 
           <h2>Sobre nós</h2>
 
           <article>
-            Somos uma marca de streetwear que se destaca por sua estética ousada e contemporânea. Nossas peças são projetadas para aqueles que buscam expressar sua individualidade e estilo único. Combinando conforto e originalidade, oferecemos uma variedade de roupas e acessórios que refletem a essência da cultura urbana.
-          </article>
-
-          <br>
-
-          <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque voluptatem laborum, autem, architecto iusto illo at eaque minima ad quo repellendus explicabo assumenda repudiandae. Placeat dolore illum necessitatibus corrupti sapiente.</span>
-          <br>
-          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repellendus nobis fugit odio harum? Soluta corporis ea ullam, in consequatur perferendis, nesciunt provident totam, numquam enim culpa debitis dignissimos at?</span>
-
+            Somos uma marca de streetwear que se destaca por sua estética ousada e contemporânea. Nossas peças são projetadas para aqueles que buscam expressar sua individualidade e estilo único. Combinando conforto e originalidade, oferecemos uma variedade de roupas e acessórios que refletem a essência da cultura urbana. Desde camisetas gráficas até moletons estilosos, cada item é cuidadosamente elaborado para proporcionar qualidade e autenticidade. Nossa missão é inspirar a autoexpressão e criar uma comunidade apaixonada por moda urbana. Junte-se a nós e descubra o poder do streetwear em sua forma mais autêntica.
+            Lorem ipsum dolorectetur adipisicing elit. Atque voluptatem laborum, autem, architecto iusto illo at eaque minima ad quo repellendus explicabo assumenda repudiandae. Placeat dolore illum necessitatibus corrupti sapiente.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repellendus nobis fugit odio harum? Soluta corporis ea ullam, in consequatur perferendis, nesciunt provident totam, numquam enim culpa debitis dignissimos at?
+            </article>
           
 
         </div>
 
-        <div class="c-sobre-sobre__img">
+        <div class="sobre-nos__img">
 
           <figure>
             <img src="/static/imgs/estampa-modelos.png" alt="sobre-img">
