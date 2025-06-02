@@ -1,0 +1,100 @@
+
+section{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+h1 {
+    
+    
+    text-align: center;
+    font-weight: normal;
+}
+
+/* Container principal */
+.c-info-login {
+    width: 400px;
+    max-width: 400px;
+    border-radius: 8px;
+    
+}
+
+/* Estilos dos campos do formulário */
+.c-info-login label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.c-info-login input {
+    width: 100%; /* preenche todo o espaço disponível */
+    height: 40px; 
+    margin-bottom: 20px;
+    border: 1px solid #c9c9c9;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+
+
+
+
+/* Botões */
+.c-btns {
+    display: flex;
+    gap: 20px;
+    
+    
+}
+
+.c-btns__logar, .c-btns__sair{
+    width: 100px;
+    height: 40px;
+
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.c-btns__logar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.c-btns__sair {
+    background-color: #f44336;
+    color: white;
+}
+
+.c-btns__logar:hover {
+    background-color: #45a049;
+}
+
+.c-btns__sair:hover {
+    background-color: #d32f2f;
+}
+
+
+/* .c-entrar {
+    text-align: center;
+    margin: 20px 0;
+    
+    font-size: 14px;
+}
+
+.c-entrar a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.c-entrar a:hover {
+    text-decoration: underline;
+} */
