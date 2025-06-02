@@ -4,3 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --cor-marrom: var(#8C5630);
+    --cor-fundo-pag: var(#FEFCED);
+    --cor-botao-validar:var(#9E6130);
+    --cor-botao-cancelar:var(#FF0000);
+
+}
