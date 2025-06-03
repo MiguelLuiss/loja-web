@@ -12,24 +12,21 @@ CREATE TABLE tb_categorias (
 CREATE TABLE tb_produtos (
   codProduto INT PRIMARY KEY AUTO_INCREMENT,
   nome_produto VARCHAR(50) NOT NULL,
-  descricao VARCHAR(80),
+  descricao VARCHAR(1000),
   preco VARCHAR(20),
   sexo VARCHAR(20),
   tipo VARCHAR(20),
-  codCategoria INT NOT NULL,
+  codCategoria INT,
   FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
 );
 
--- Tabela de Usuários (codCategoria relacionado a tb_categorias)
 CREATE TABLE tb_usuarios (
   codUsuario INT PRIMARY KEY AUTO_INCREMENT,
-  codCategoria INT NOT NULL,
   nome VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL,
   senha VARCHAR(100) NOT NULL,
-  telefone VARCHAR(14),
-  endereco VARCHAR(50),
-  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+  telefone VARCHAR(20),
+  endereco VARCHAR(50)
 );
 
 -- Tabela Carrinho (referência cruzada com usuários, produtos e categorias)
@@ -37,7 +34,7 @@ CREATE TABLE tb_carrinho (
   codCarrinho INT PRIMARY KEY AUTO_INCREMENT,
   codUsuario INT NOT NULL,
   codProduto INT NOT NULL,
-  codCategoria INT NOT NULL,
+  codCategoria INT,
   nome_produto VARCHAR(50),
   descricao VARCHAR(80),
   preco VARCHAR(20),
@@ -54,3 +51,27 @@ CREATE TABLE tb_fotos (
   url VARCHAR(255),
   FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto)
 );
+
+
+insert into tb_categorias(
+	categorias
+    )VALUES(
+    'Masculino');
+    
+select * from tb_usuarios;
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo
+)VALUES(
+	' Tênis Converse Classic High',
+    'Tênis branco de cano alto da Converse com detalhes vermelhos e pretos. Um clássico atemporal para quem busca estilo, versatilidade e autenticidade.',
+    'R$ 219,90',
+    'Feminino',
+    'sapato'
+);
+
+select * from tb_produtos;
