@@ -3,36 +3,20 @@ from hashlib import sha256
 from flask import session
 
 class Usuario:
-    def criarUsuario(nome,senha,email,telefone,endereco):
+    def criarUsuario(nome, senha, email, telefone, endereco):
         senha = sha256(senha.encode()).hexdigest()
-
-        #conexao banco de dados
+        codCategoria = 1
         conexao = Conexao.criarConexao()
-        #criando o cursor (é o responsavel por executar comandos no banco de dados)
         cursor = conexao.cursor()
-        #criando o comando SQL 
-        sql = """ INSERT INTO tb_usuarios (
-            nome,
-            email,
-            senha,
-            telefone,
-            endereco
-        )
-        VALUES(
-            %s,
-            %s,
-            %s,
-            %s,
-            %s
-        ) """
-        valores = [nome,email,senha,telefone,endereco]
-        #Executando ocomando SQL
-        cursor.execute(sql,valores)
-        #confirmo a alteração
+        sql = """INSERT INTO tb_usuarios (
+            nome, email, senha, telefone, endereco, codCategoria
+        ) VALUES (%s, %s, %s, %s, %s, %s)"""
+        valores = [nome, email, senha, telefone, endereco, codCategoria]
+        cursor.execute(sql, valores)
         conexao.commit()
-        #fechando a conexão
-        cursor.close() 
+        cursor.close()
         conexao.close()
+
 
     def verificarLogin(email,senha):
         senha = sha256(senha.encode()).hexdigest()
