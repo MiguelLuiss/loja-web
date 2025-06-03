@@ -1,0 +1,46 @@
+header{
+  background-color: var(--cor-botao-validar);
+  font-family: Kavoon;
+}
+
+.navbar-nav .nav-link {
+  color: var(--cor-branco);
+}
+
+.logo-nav{
+    max-width: 100px;
+}
+
+.navbar .navbar-expand-lg .bg-body-tertiary{
+  max-width: 500px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.menu-central {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  /* flex: 1 faz o elemento crescer e ocupar todo o espaço disponível dentro de um contêiner flexível. */
+  flex: 1;
+}
+
+.fa-cart-shopping{
+  color: var(--cor-branco);
+  width: 30px;
+  font-size: larger;
+}
+
+.fa-arrow-right-to-bracket{
+  color: var(--cor-branco);
+  width: 30px;
+  font-size: larger;
+}
+
+.perfil-link {
+  margin-left: auto;
+}
+
+body {
+  background-color: var(--cor-fundo-pag) !important;
+}
