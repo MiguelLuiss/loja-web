@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+
 /* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root{
+    --cor-marrom: #8C5630;
+    --cor-fundo-pag: #FEFCED;
+    --cor-botao-validar: #9E6130;
+    --cor-botao-cancelar: #FF0000;
+    --cor-branco: #FFFFFF;
+    --cor-preto: #080808;
 }
