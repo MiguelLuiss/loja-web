@@ -1,0 +1,56 @@
+-- Criação do banco de dados
+CREATE DATABASE db_Loja_M2A1;
+USE db_Loja_M2A1;
+
+-- Tabela de Categorias
+CREATE TABLE tb_categorias (
+  codCategoria INT PRIMARY KEY AUTO_INCREMENT,
+  categorias VARCHAR(30) NOT NULL
+);
+
+-- Tabela de Produtos (agora com codCategoria como chave estrangeira)
+CREATE TABLE tb_produtos (
+  codProduto INT PRIMARY KEY AUTO_INCREMENT,
+  nome_produto VARCHAR(50) NOT NULL,
+  descricao VARCHAR(80),
+  preco VARCHAR(20),
+  sexo VARCHAR(20),
+  tipo VARCHAR(20),
+  codCategoria INT NOT NULL,
+  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+);
+
+-- Tabela de Usuários (codCategoria relacionado a tb_categorias)
+CREATE TABLE tb_usuarios (
+  codUsuario INT PRIMARY KEY AUTO_INCREMENT,
+  codCategoria INT NOT NULL,
+  nome VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  senha VARCHAR(100) NOT NULL,
+  telefone VARCHAR(14),
+  endereco VARCHAR(50),
+  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+);
+
+-- Tabela Carrinho (referência cruzada com usuários, produtos e categorias)
+CREATE TABLE tb_carrinho (
+  codCarrinho INT PRIMARY KEY AUTO_INCREMENT,
+  codUsuario INT NOT NULL,
+  codProduto INT NOT NULL,
+  codCategoria INT NOT NULL,
+  nome_produto VARCHAR(50),
+  descricao VARCHAR(80),
+  preco VARCHAR(20),
+  sexo VARCHAR(20),
+  FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario),
+  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
+  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+);
+
+-- Tabela Fotos (cada foto pertence a um produto)
+CREATE TABLE tb_fotos (
+  codFoto INT PRIMARY KEY AUTO_INCREMENT,
+  codProduto INT NOT NULL,
+  url VARCHAR(255),
+  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto)
+);
