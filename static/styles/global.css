@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -11,4 +13,6 @@
     --cor-fundo-pag: #FEFCED;
     --cor-botao-validar: #9E6130;
     --cor-botao-cancelar: #FF0000;
+    --cor-branco: #FFFFFF;
+    --cor-preto: #080808;
 }
