@@ -11,31 +11,21 @@
 <body>
     <section>
          <h1>Página de Login</h1>
-
-        <!-- <div class="c-entrar">
-            <label for="">Não possui uma conta?</label><a href="/pag-cadastro/pag-cadastro.html">Cadastrar</a>
-        </div> -->
-    
-    <div class="c-info-login">
-
-       
-
-         <label for="email">e-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
-
-
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-
-
-    </div>
-
-  
+         <form action="/verificaLogin" method="post">
+            <div class="c-info-login">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
         
-    <div class="c-btns">
-            <button class="c-btns__logar">Login</button>
-            <button class="c-btns__sair">Sair</button>
-    </div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+            </div>
+        
+            <div class="c-btns">
+                <button type="submit" class="c-btns__logar">Login</button>
+                <a href="/"><button type="button" class="c-btns__sair">Sair</button></a>
+            </div>
+        </form>
+        
     </section>
 
    

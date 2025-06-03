@@ -1,7 +1,6 @@
 from data.conexao import Conexao
 
 class Produto: 
-        
     def mostrarprodutos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
@@ -58,7 +57,7 @@ class Produto:
     def mostrarCalcados():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo from tb_produtos where tipo = 'calcados'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo from tb_produtos where tipo = 'sapato'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
