@@ -25,6 +25,18 @@ header{
   flex: 1;
 }
 
+.fa-cart-shopping{
+  color: var(--cor-branco);
+  width: 30px;
+  font-size: larger;
+}
+
+.fa-arrow-right-to-bracket{
+  color: var(--cor-branco);
+  width: 30px;
+  font-size: larger;
+}
+
 .perfil-link {
   margin-left: auto;
 }
