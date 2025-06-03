@@ -1,3 +1,4 @@
+/* header */
 header{
   background-color: var(--cor-botao-validar);
   font-family: Kavoon;
@@ -43,4 +44,132 @@ header{
 
 body {
   background-color: var(--cor-fundo-pag) !important;
+}
+
+/* ------ Estilização dos produtos ------ */
+
+.container-title{
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+}
+
+
+.container-produtos{
+  width: 98vw;
+  height: 650px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  
+  
+  
+}
+
+.moletons__card__titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container-produtos__moletons{
+  width: 270px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  
+  background-color: rgb(79, 130, 175);
+
+  padding: 15px;
+
+  border-radius: 10px;
+}
+
+
+
+.camisetas__card__titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container-produtos__camisetas{
+  width: 270px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  
+  background-color: rgb(79, 130, 175);
+
+  padding: 15px;
+
+  border-radius: 10px;
+}
+
+
+
+.calcas__card__titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container-produtos__calcas{
+  width: 270px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  
+  background-color: rgb(79, 130, 175);
+
+  padding: 15px;
+
+  border-radius: 10px;
+}
+
+
+
+
+
+.calcados__card__titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container-produtos__calcados{
+  width: 270px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  
+  background-color: rgb(79, 130, 175);
+
+  padding: 15px;
+
+  border-radius: 10px;
 }
