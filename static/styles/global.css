@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -10,7 +13,7 @@
 
 :root{
     --cor-marrom: #8C5630;
-    --cor-fundo-pag: #FEFCED;
+    --cor-fundo-pag: #D9BF9E;
     --cor-botao-validar: #9E6130;
     --cor-botao-cancelar: #FF0000;
     --cor-branco: #FFFFFF;
