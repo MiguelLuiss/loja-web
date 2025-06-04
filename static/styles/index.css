@@ -1,89 +1,128 @@
-header{
+/* Estilização geral */
+body {
+  background-color: var(--cor-fundo-pag) !important;
+  padding: 5px;
+}
+
+/* Header */
+header {
   background-color: var(--cor-botao-validar);
   font-family: Kavoon;
+}
+
+.logo-nav {
+  max-width: 100px;
 }
 
 .navbar-nav .nav-link {
   color: var(--cor-branco);
 }
 
-.logo-nav{
-    max-width: 100px;
-}
-
-.navbar .navbar-expand-lg .bg-body-tertiary{
-  max-width: 500px;
-  display:flex;
-  justify-content: space-between;
-}
-
 .menu-central {
   display: flex;
   justify-content: center;
   gap: 30px;
-  /* flex: 1 faz o elemento crescer e ocupar todo o espaço disponível dentro de um contêiner flexível. */
   flex: 1;
 }
 
-.fa-cart-shopping{
+.fa-cart-shopping,
+.fa-arrow-right-to-bracket {
   color: var(--cor-branco);
-  width: 30px;
   font-size: larger;
-}
-
-.fa-arrow-right-to-bracket{
-  color: var(--cor-branco);
   width: 30px;
-  font-size: larger;
 }
 
 .perfil-link {
   margin-left: auto;
 }
 
-body {
-  background-color: var(--cor-fundo-pag) !important;
+/* Seção logo topo */
+.container-section-img {
+  width: 98vw;
+  display: flex;
+  justify-content: center;
 }
 
-.container-section-img{
-    width: 98vw;
-    display: flex;
-    justify-content: center;
+.img-logo {
+  width: 99.8vw;
 }
 
-.c-sec-sobre{
-    display: flex;
-    padding: 40px;
+/* Sobre nós */
+.c-sec-sobre {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: var(--cor-fundo-pag);
+  width: 100%;
 }
 
-.c-carrossel{
-    max-width: 99.8vw;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    margin-bottom: 10px;
-   
+.c-sec-sobre__container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
 }
 
-.carrossel-produtos{
-   
-    display: flex;
-    max-width: 500px;
-    flex-direction: column;
-   
+.c-sec-sobre__texto {
+  flex: 1 1 400px;
+  max-width: 600px;
 }
 
-.t-produtos-destaque{
-    display: flex;
-    justify-content: center;
-}
-     
-.img-logo-split{
-    max-width: 99.8vw;
+.c-sec-sobre__titulo {
+  font-family: 'Kavoon', cursive;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-/* FOOTER */
+.c-sec-sobre__box {
+  background-color: white;
+  border: 2px solid black;
+  padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
 
+.c-sec-sobre__imagem {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-sec-sobre__imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Carrossel */
+.c-carrossel {
+  max-width: 99.8vw;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.carrossel-produtos {
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+}
+
+.t-produtos-destaque {
+  font-family: 'Kavoon', cursive;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Rodapé */
 .footer {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
