@@ -1,79 +1,87 @@
 @import url('static/styles/global.css');
-section{
-    
+/* Atualização geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-pag);
+    margin: 0;
+    padding: 0;
+}
+
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    justify-content: center;
+    height: 100vh;
     background-color: var(--cor-fundo-pag);
 }
 
-
+/* Título */
 h1 {
-    
-    
-    text-align: center;
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 /* Container principal */
 .c-info-login {
     width: 400px;
-    max-width: 400px;
-    border-radius: 8px;
-    
+    padding: 0 30px;
 }
 
-/* Estilos dos campos do formulário */
+.login-form{
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  margin: 0 auto;
+  
+}
+
+
+/* Estilo dos campos */
 .c-info-login label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.c-info-login input {
-    width: 100%; /* preenche todo o espaço disponível */
-    height: 40px; 
-    margin-bottom: 20px;
-    border: 1px solid #c9c9c9;
-    border-radius: 8px;
+    margin-bottom: 5px;
     font-size: 16px;
 }
 
-
-
-
+.c-info-login input {
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+}
 
 /* Botões */
 .c-btns {
     display: flex;
+    justify-content: center;
     gap: 20px;
-    
-    
-}
-
-.c-btns__logar, .c-btns__sair{
-    width: 100px;
-    height: 40px;
-
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .c-btns__logar {
-    background-color: var(--cor-botao-validar);
-    /* background-color: #4CAF50; */
+    background-color: #a1673f; /* marrom */
     color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
 .c-btns__sair {
-    background-color: var(--cor-botao-cancelar);
+    background-color: red;
     color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
 }
-
 
 
 

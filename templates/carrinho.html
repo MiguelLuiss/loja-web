@@ -1,79 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - M2A1</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts e Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-   <link rel="stylesheet" href="../static/styles/global.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 
   <link rel="stylesheet" href="../static/styles/carrinho.css">
-
-  <title>Carrinho</title>
-  
 </head>
-<body>
 
-  <header class="header">
+<body>
+  <header class="container-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav menu-central">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorias</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Moletons</a></li>
+                <li><a class="dropdown-item" href="#">Camisetas</a></li>
+                <li><a class="dropdown-item" href="#">Calças</a></li>
+                <li><a class="dropdown-item" href="#">Calçados</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Todos</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Masculino</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Feminino</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Infantil</a></li>
+          </ul>
+          <div class="ms-auto d-flex">
+            <a class="nav-link" href="/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="nav-link" href="/cadastro"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <h1 class="titulo">Carrinho</h1>
+  <main class="container-main">
+    <h1 class="titulo-pagina">Carrinho</h1>
 
-    <section class="carrinho">
-      <div class="produto">
-        <img src="https://via.placeholder.com/120x160" alt="Produto">
+    <section class="container-carrinho">
+      <div class="produto-carrinho">
+        <img src="../static/imgs/c-loja.png" alt="produto">
         <div class="descricao">
           <h3>Descrição do produto</h3>
-          <p>Adicione estilo e significado ao seu look com o colar “Search for Art in Everything”. Feito em aço inoxidável com um design moderno e acabamento refinado.</p>
+          <p>Adicione aqui a explicação do seu item no carrinho, como nome, tamanho, cor etc.</p>
         </div>
       </div>
 
-      <div class="resumo">
-        <h3>Resumo da compra</h3>
-        <p><strong>Preço:</strong></p>
+      <div class="resumo-carrinho">
+        <h4>Resumo da compra</h4>
+        <p><strong>Preço</strong></p>
         <p class="preco">R$ 100,00</p>
-    </div>
+      </div>
+
+      <div class="botoes">
+        <button class="btn btn-marrom">Comprar</button>
+        <button class="btn btn-danger">Excluir</button>
+      </div>
     </section>
 
-    
-
-    <div class="botoes">
-      <button class="comprar">Comprar</button>
-      <button class="excluir">Excluir</button>
-    </div>
-
-    <h2 class="titulo">Compre Também</h2>
-
-    <section class="compre-tambem">
-      <div class="item">
-        <img src="https://via.placeholder.com/100x100" alt="Produto 1">
-        <p>Título</p>
-        <button>Veja Mais</button>
-      </div>
-      <div class="item">
-        <img src="https://via.placeholder.com/100x100" alt="Produto 2">
-        <p>Título</p>
-        <button>Veja Mais</button>
-      </div>
-      <div class="item">
-        <img src="https://via.placeholder.com/100x100" alt="Produto 3">
-        <p>Título</p>
-        <button>Veja Mais</button>
-      </div>
-      <div class="item">
-        <img src="https://via.placeholder.com/100x100" alt="Produto 4">
-        <p>Título</p>
-        <button>Veja Mais</button>
+    <section class="carrossel-section">
+      <h2>Compre Também</h2>
+      <div id="carouselRecomendados" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card-group">
+              <div class="card">
+                <img src="../static/imgs/produto-modelo1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Título</h5>
+                  <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="../static/imgs/produto-modelo2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Título</h5>
+                  <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="../static/imgs/produto-modelo3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Título</h5>
+                  <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Mais .carousel-item aqui se desejar -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendados" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselRecomendados" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
     </section>
   </main>
 
   <footer class="footer">
+    <div class="footer__address">
+      <strong>Rua das Ruas, 123 - Bairro Central</strong><br>
+      <span>São Paulo - SP, 01234-567 Brasil</span>
+    </div>
+    <div class="footer__contact">
+      <span><strong>WhatsApp:</strong> (11) 91234-5678<br><strong>E-mail:</strong> contato@m2a1.com.br</span>
+    </div>
+    <div class="footer__social">
+      <span><strong>Instagram:</strong> <a href="#">@m2a1.street</a><br><strong>Twitter/X:</strong> <a href="#">@m2a1crew</a></span>
+    </div>
+    <div class="footer__cnpj">
+      <span><strong>CNPJ:</strong> 12.345.678/0001-90</span>
+    </div>
+    <div class="footer__logo">
+      <img src="../static/imgs/logo-footer.png" alt="Logo M2A1">
+    </div>
   </footer>
-
 </body>
+
 </html>
