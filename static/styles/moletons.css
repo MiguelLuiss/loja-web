@@ -49,12 +49,7 @@ body {
 /* -------------------------------------------- */
 
 
-.icone-filtro{
-  background-color: var(--cor-preto);
-  color: var(--cor-branco);
-  padding: 10px;
-  margin-left: 50px;
-}
+
 
 
 
@@ -109,27 +104,7 @@ body {
 
 /* --------------------------- */
 
-/* container de imagens de propaganda */
 
-
-.imagem-produtos {
-  max-width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-.imagem-produtos img {
-  width: 30%;
-  margin-left: 10px;
-  height: auto;
-  
-}
-
-
-
-/* ----------------------------------------- */
 
 /* botões */
 button {

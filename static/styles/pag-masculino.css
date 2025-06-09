@@ -1,7 +1,14 @@
+
+/* header */
+
+
 header{
   background-color: var(--cor-botao-validar);
   font-family: Kavoon;
 }
+
+
+
 
 .navbar-nav .nav-link{
   color: var(--cor-branco);
@@ -17,7 +24,11 @@ header{
   justify-content: space-between;
 }
 
+
+
+
 .menu-central{
+
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -36,6 +47,125 @@ header{
   width: 30px;
   font-size: larger;
 }
+
+
+.perfil-link {
+  margin-left: auto;
+}
+
+body {
+  background-color: var(--cor-fundo-pag) !important;
+}
+
+/* -------------------------------------------- */
+
+/* links */
+
+.container-links {
+  width: 98vw;
+  display: flex;
+    justify-content: center;
+    padding: 30px;
+  
+}
+
+.container-links__link {
+
+  background-color: var(--cor-marrom);
+  color: var(--cor-branco);
+
+  padding: 10px;
+  
+  margin-left: 20px;
+
+  text-decoration: none;
+
+  border-radius: 5px;
+}
+
+.container-links__link:hover {
+  background-color: var(--cor-marrom);
+  color: var(--cor-preto);
+  transition: linear 0.3s;
+}
+
+
+
+
+/* ------ Estilização dos produtos ------ */
+
+.container-title{
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+}
+
+.container-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px;
+  justify-items: center;
+}
+
+
+.container-produtos__produto {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.container-produtos__produto img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+.produto__card__titulo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.produto__card__preco {
+  font-size: 0.95rem;
+  margin: 10px;
+}
+
+/* --------------------------- */
+
+
+
+/* botões */
+button {
+  margin: 10px;
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d1d1d1;
+}
+
+/* ------------------- */
+
+/* FOOTER */
+
+
 
 .perfil-link{
   margin-left: auto;
@@ -158,22 +288,32 @@ h1{
 }
 
 .footer{
+
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, auto);
   background-color: var(--cor-marrom);
+
+  color: white;
+
   color: var(--cor-branco);
+
   padding: 20px 10px;
   gap: 10px;
   align-items: center;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: 'Times New Roman', Times, serif;
 }
 
+
+
 .footer__address{
+   font-family: Arial, Helvetica, sans-serif;
   grid-column: 1 / 3;
   grid-row: 1;
 }
+
 
 .footer__contact{
   grid-column: 3 / 5;
@@ -181,16 +321,21 @@ h1{
 }
 
 .footer__social{
+
   grid-column: 1 / 3;
   grid-row: 2;
 }
 
+
 .footer__cnpj{
+
   grid-column: 3 / 5;
   grid-row: 2;
 }
 
+
 .footer__logo{
+
   grid-column: 5 / 8;
   grid-row: 1 / 3;
   display: flex;
@@ -198,6 +343,8 @@ h1{
   justify-content: center;
 }
 
+
 .footer__logo img{
   max-height: 100px;
 }
+
