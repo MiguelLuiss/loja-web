@@ -16,6 +16,7 @@ CREATE TABLE tb_produtos (
   preco VARCHAR(20),
   sexo VARCHAR(20),
   tipo VARCHAR(20),
+  url varchar(250),
   codCategoria INT,
   FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
 );
@@ -65,13 +66,195 @@ INSERT INTO tb_produtos(
 	descricao ,
 	preco,
 	sexo,
-	tipo
+	tipo,
+    url
 )VALUES(
 	' Tênis Converse Classic High',
     'Tênis branco de cano alto da Converse com detalhes vermelhos e pretos. Um clássico atemporal para quem busca estilo, versatilidade e autenticidade.',
     'R$ 219,90',
     'Feminino',
-    'sapato'
+    'sapato',
+    'https://images.pexels.com/photos/1537671/pexels-photo-1537671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' moletom',
+    'moletom teste',
+    'R$ 219,90',
+    'Feminino',
+    'moletom',
+    'https://images.pexels.com/photos/6502493/pexels-photo-6502493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' camiseta',
+    'camiseta teste',
+    'R$ 219,90',
+    'Feminino',
+    'camiseta',
+    'https://images.pexels.com/photos/2464090/pexels-photo-2464090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' calça',
+    'calca teste',
+    'R$ 219,90',
+    'Feminino',
+    'calca',
+    'https://images.pexels.com/photos/3914693/pexels-photo-3914693.jpeg?auto=compress&cs=tinysrgb&w=600'
+);
+
+
+
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' Tênis Converse Classic High',
+    'Tênis branco de cano alto da Converse com detalhes vermelhos e pretos. Um clássico atemporal para quem busca estilo, versatilidade e autenticidade.',
+    'R$ 219,90',
+    'Masculino',
+    'sapato',
+    'https://images.pexels.com/photos/1537671/pexels-photo-1537671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' moletom',
+    'moletom teste',
+    'R$ 219,90',
+    'Masculino',
+    'moletom',
+    'https://images.pexels.com/photos/6502493/pexels-photo-6502493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' camiseta',
+    'camiseta teste',
+    'R$ 219,90',
+    'Masculino',
+    'camiseta',
+    'https://images.pexels.com/photos/2464090/pexels-photo-2464090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' calça',
+    'calca teste',
+    'R$ 219,90',
+    'Masculino',
+    'calca',
+    'https://images.pexels.com/photos/3914693/pexels-photo-3914693.jpeg?auto=compress&cs=tinysrgb&w=600'
+);
+
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' Tênis Converse Classic High',
+    'Tênis branco de cano alto da Converse com detalhes vermelhos e pretos. Um clássico atemporal para quem busca estilo, versatilidade e autenticidade.',
+    'R$ 219,90',
+    'Infantil',
+    'sapato',
+    'https://images.pexels.com/photos/1537671/pexels-photo-1537671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' moletom',
+    'moletom teste',
+    'R$ 219,90',
+    'Infantil',
+    'moletom',
+    'https://images.pexels.com/photos/6502493/pexels-photo-6502493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' camiseta',
+    'camiseta teste',
+    'R$ 219,90',
+    'Infantil',
+    'camiseta',
+    'https://images.pexels.com/photos/2464090/pexels-photo-2464090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+);
+
+INSERT INTO tb_produtos(
+	nome_produto,
+	descricao ,
+	preco,
+	sexo,
+	tipo,
+    url
+)VALUES(
+	' calça',
+    'calca teste',
+    'R$ 219,90',
+    'Infantil',
+    'calca',
+    'https://images.pexels.com/photos/3914693/pexels-photo-3914693.jpeg?auto=compress&cs=tinysrgb&w=600'
 );
 
 select * from tb_produtos;
