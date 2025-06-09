@@ -23,7 +23,7 @@ def pagina_login():
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
 
-@app.route('/catalogo')  # Corrigido: estava /cataogo
+@app.route('/catalogo')
 def catalogo():
     return render_template('catalog.html')
 
@@ -89,7 +89,7 @@ def mostrarCalcas():
 
 @app.route('/mostrarCalcados')
 def mostrarCalcados():
-    calcados = Produto.mostrarCalcados()  # Corrigido: estava chamando Calcas
+    calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
 
 if __name__ == "__main__":
