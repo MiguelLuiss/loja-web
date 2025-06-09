@@ -23,9 +23,6 @@ def pagina_login():
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
 
-@app.route('/catalogo')
-def catalogo():
-    return render_template('catalog.html')
 
 @app.route('/pag-masculino')
 def pgMasculino():
@@ -67,15 +64,26 @@ def verificaLogin():
     else:
         return redirect("/login")
 
-@app.route('/mostrarProdutos')
-def mostrarProdutos():
-    produtos = Produto.mostrarprodutos()
-    return render_template("catalogo.html", produtos=produtos)
+@app.route('/catalogo')
+def catalogo():
+    moletom = Produto.mostrarMoletons()
+    camisetas = Produto.mostrarCamisetas()
+    calcas = Produto.mostrarCalcas()
+    calcados = Produto.mostrarCalcados()
+
+    return render_template(
+        'catalogo.html',
+        moletom=moletom,
+        camisetas=camisetas,
+        calcas=calcas,
+        calcados=calcados
+    )
+
 
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
-    moletons = Produto.mostrarMoletons()
-    return render_template("moletons.html", moletons=moletons)
+    moletom = Produto.mostrarMoletons()
+    return render_template("moletons.html", moletom=moletom)
 
 @app.route('/mostrarCamisetas')
 def mostrarCamisetas():

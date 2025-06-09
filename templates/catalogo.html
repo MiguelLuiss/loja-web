@@ -100,146 +100,23 @@
     
 <!-- moletons -->
     <section class="container-produtos">
+        {% for produto in moletom %}
+        <div class="container-produtos__produto">
+            <img src="{{ produto.url}}" alt="moletom">
 
- 
+            <span class="produto__card__titulo">
+            {{ produto.nome_produto }}
+            </span>
 
-    <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
+            <span class="produto__card__preco">
+            R$ {{ produto.preco }}
+            </span>
 
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs/moletom.png" alt="moletom">
-
-        <span class="produto__card__titulo">
-            Moletom
-        </span>
-
-        <span class="moletons__card__preco">
-            R$ 99,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-   
-    
+            <button>
+            Veja mais
+            </button>
+        </div>
+        {% endfor %}
     </section>
 
     <div class="imagem-produtos">
@@ -255,153 +132,25 @@
     </div>
 
     <section class="container-produtos">
+        {% for produto in camisetas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url}}" alt="moletom">
 
- 
+                <span class="produto__card__titulo">
+                {{ produto.nome_produto }}
+                </span>
 
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
+                <span class="produto__card__preco">
+                R$ {{ produto.preco }}
+                </span>
 
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-       <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-        <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-        <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-        <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-        <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-        <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-        <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-
-        <span class="produto__card__titulo">
-            Camiseta
-        </span>
-
-        <span class="camisetas__card__preco">
-            R$ 109,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-    
+                <button>
+                Veja mais
+                </button>
+            </div>
+        {% endfor %}
     
     </section>
-
-     <div class="imagem-produtos">
-        <img src="/static/imgs/img-card1.png" alt="imagem produtos">
-        <img src="/static/imgs/img-card2.png" alt="imagem produtos">
-        <img src="/static/imgs/img-card3.png" alt="imagem produtos">
-    </div>
 
 
     <div class="container-title">
@@ -409,146 +158,23 @@
     </div>
 
     <section class="container-produtos">
+        {% for produto in calcas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url}}" alt="moletom">
 
- 
+                <span class="produto__card__titulo">
+                {{ produto.nome_produto }}
+                </span>
 
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
+                <span class="produto__card__preco">
+                R$ {{ produto.preco }}
+                </span>
 
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-   
+                <button>
+                Veja mais
+                </button>
+            </div>
+        {% endfor %}
     
     </section>
 
@@ -566,153 +192,26 @@
 
 
     <section class="container-produtos">
+        {% for produto in calcados %}
+        <div class="container-produtos__produto">
+            <img src="{{ produto.url}}" alt="moletom">
 
- 
+            <span class="produto__card__titulo">
+            {{ produto.nome_produto }}
+            </span>
 
-    <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
+            <span class="produto__card__preco">
+            R$ {{ produto.preco }}
+            </span>
 
-        <span class="produto__card__titulo">
-            Calça
-        </span>
+            <button>
+            Veja mais
+            </button>
+        </div>
+        {% endfor %}
+    </section>    
 
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
-
-     <div class="container-produtos__produto">
-        <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-
-        <span class="produto__card__titulo">
-            Calça
-        </span>
-
-        <span class="produto__card__preco">
-            R$ 159,90
-        </span>
-
-    <button>
-        Veja mais
-    </button>
-
-    </div>
    
-    
-    </section>
-
-    <div class="imagem-produtos">
-        <img src="/static/imgs/img-card1.png" alt="imagem produtos">
-        <img src="/static/imgs/img-card2.png" alt="imagem produtos">
-        <img src="/static/imgs/img-card3.png" alt="imagem produtos">
-    </div>
 
 
   </main>
