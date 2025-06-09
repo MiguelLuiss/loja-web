@@ -100,5 +100,10 @@ def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
 
+@app.route('/mostrarMoletonsMasculinos')
+def mostrarMoletonsMasculinos():
+    MoletonsMasculinos = Produto.mostrarMoletonsMasculinos()
+    return render_template("pag-masculino.html", MoletonsMasculinos=MoletonsMasculinos)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
