@@ -53,7 +53,7 @@ header{
   margin-left: auto;
 }
 
-body {
+main {
   background-color: var(--cor-fundo-pag) !important;
 }
 
