@@ -7,7 +7,7 @@ from model.Usuario import Usuario
 from model.produtos import Produto
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = '12345678'
 
 ###################### Render Templates ########################
 
@@ -23,7 +23,7 @@ def pagina_login():
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
 
-@app.route('/catalogo')  # Corrigido: estava /cataogo
+@app.route('/catalogo')
 def catalogo():
     return render_template('catalog.html')
 
@@ -52,10 +52,9 @@ def cadastrarUsuario():
     senha = request.form.get("senha")
     telefone = request.form.get("telefone")
     endereco = request.form.get("endereco")
-    codCategoria = request.form.get("codCategoria")  # <-- deve estar presente no formulário
 
-    Usuario.criarUsuario(nome, senha, email, telefone, endereco, codCategoria)
-    return redirect('/cadastro')  # melhor que render_template após POST
+    Usuario.criarUsuario(nome, senha, email, telefone, endereco)
+    return redirect('/cadastro')
 
 @app.route("/verificaLogin", methods=["POST"])
 def verificaLogin():
@@ -64,7 +63,7 @@ def verificaLogin():
     usuario = Usuario.verificarLogin(email, senha)
 
     if usuario:
-        return redirect("/mostrarProdutos")
+        return redirect("/")
     else:
         return redirect("/login")
 
@@ -90,7 +89,7 @@ def mostrarCalcas():
 
 @app.route('/mostrarCalcados')
 def mostrarCalcados():
-    calcados = Produto.mostrarCalcados()  # Corrigido: estava chamando Calcas
+    calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
 
 if __name__ == "__main__":
