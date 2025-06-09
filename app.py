@@ -1,7 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, jsonify, url_for
-import datetime
-import mysql.connector
-
+from flask import Flask, render_template, request, redirect, session
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
@@ -9,8 +6,7 @@ from model.produtos import Produto
 app = Flask(__name__)
 app.secret_key = '12345678'
 
-###################### Render Templates ########################
-
+# Rotas principais
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -22,7 +18,6 @@ def pagina_login():
 @app.route('/cadastro')
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
-
 
 @app.route('/pag-masculino')
 def pgMasculino():
@@ -40,8 +35,7 @@ def pgInfantil():
 def carrinho():
     return render_template('carrinho.html')
 
-####################### Funções ###############################
-
+# Cadastro de usuário
 @app.route('/post/cadastrarUsuario', methods=['POST'])
 def cadastrarUsuario():
     nome = request.form.get("nome")
@@ -53,6 +47,7 @@ def cadastrarUsuario():
     Usuario.criarUsuario(nome, senha, email, telefone, endereco)
     return redirect('/cadastro')
 
+# Login
 @app.route("/verificaLogin", methods=["POST"])
 def verificaLogin():
     email = request.form.get("email")
@@ -64,46 +59,12 @@ def verificaLogin():
     else:
         return redirect("/login")
 
-@app.route('/catalogo')
-def catalogo():
-    moletom = Produto.mostrarMoletons()
-    camisetas = Produto.mostrarCamisetas()
-    calcas = Produto.mostrarCalcas()
-    calcados = Produto.mostrarCalcados()
-
-    return render_template(
-        'catalogo.html',
-        moletom=moletom,
-        camisetas=camisetas,
-        calcas=calcas,
-        calcados=calcados
-    )
-
-
+# Rota para a página de moletons
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
     return render_template("moletons.html", moletom=moletom)
 
-@app.route('/mostrarCamisetas')
-def mostrarCamisetas():
-    camisetas = Produto.mostrarCamisetas()
-    return render_template("camisetas.html", camisetas=camisetas)
-
-@app.route('/mostrarCalcas')
-def mostrarCalcas():
-    calcas = Produto.mostrarCalcas()
-    return render_template("calcas.html", calcas=calcas)
-
-@app.route('/mostrarCalcados')
-def mostrarCalcados():
-    calcados = Produto.mostrarCalcados()
-    return render_template("calcados.html", calcados=calcados)
-
-@app.route('/mostrarMoletonsMasculinos')
-def mostrarMoletonsMasculinos():
-    MoletonsMasculinos = Produto.mostrarMoletonsMasculinos()
-    return render_template("pag-masculino.html", MoletonsMasculinos=MoletonsMasculinos)
-
+# Iniciar o servidor
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

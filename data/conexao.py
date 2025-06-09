@@ -14,8 +14,8 @@ class Conexao:
      def criarConexao ():
         #conexao banco de dados
         conexao = mysql.connector.connect(host = "localhost", 
-                                        port = 3306,
+                                        port = 3307,
                                         user = "root",
                                         password = "root",
-                                        database = "db_Loja_M2A1")
+                                        database = "db_loja_m2a1")
         return conexao
