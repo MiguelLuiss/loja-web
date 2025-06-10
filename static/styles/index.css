@@ -103,7 +103,7 @@ header {
 
 
 /* Carrossel */
-.c-carrossel {
+.produto-destaque {
   max-width: 99.8vw;
   display: flex;
   justify-content: center;
@@ -111,17 +111,18 @@ header {
   margin-bottom: 10px;
 }
 
-.carrossel-produtos {
+.produto-destaque__carrossel {
   display: flex;
   max-width: 500px;
   flex-direction: column;
 }
 
-.t-produtos-destaque {
+.produtos-destaque__title {
   font-family: 'Kavoon', cursive;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  
 }
 
 /* Rodapé */
@@ -172,9 +173,7 @@ header {
 
 
 
-/* ============================================== */
-/* MEDIA QUERY PARA ATÉ 768px            */
-/* ============================================== */
+
 
 @media (max-width: 768px) {
 
