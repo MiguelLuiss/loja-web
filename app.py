@@ -127,5 +127,11 @@ def mostrar_produto(codigo):
         return "Produto não encontrado", 404
     
 
+@app.route("/sair")
+def sair():
+    Usuario.logOff()
+    return redirect("/")
+    
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
