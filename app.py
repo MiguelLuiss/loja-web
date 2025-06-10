@@ -1,13 +1,16 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, url_for
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
 from model.comentario import Comentario
+from model.carrinho import Carrinho
+
 
 app = Flask(__name__)
 app.secret_key = '12345678'
 
 # Rotas principais
+# Rotas para abrir as páginas
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -20,9 +23,17 @@ def pagina_login():
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
 
-@app.route('/carrinho')
-def carrinho():
-    return render_template('carrinho.html')
+@app.route('/pag-masculino')
+def pgMasculino():
+    return render_template('pag-masculino.html')
+
+@app.route('/pag-feminino')
+def pgFeminino():
+    return render_template('pag-feminino.html')
+
+@app.route('/pag-infantil')
+def pgInfantil():
+    return render_template('pag-infantil.html')
 
 # Cadastro de usuário
 @app.route('/post/cadastrarUsuario', methods=['POST'])
@@ -95,7 +106,7 @@ def pagInfantil():
     }
     return render_template('pag-infantil.html', produtos=produtos)
 
-# Rota para a página de moletons
+# Rota para a página dos produtos
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
@@ -115,23 +126,6 @@ def mostrarCalcas():
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
-
-
-@app.route("/amostraProduto/<codigo>")
-def mostrar_produto(codigo):
-    produto = Produto.amostraProduto(codigo)
-
-    if produto:
-        return render_template("amostraProduto.html", produto=produto)
-    else:
-        return "Produto não encontrado", 404
-    
-
-@app.route("/sair")
-def sair():
-    Usuario.logOff()
-    return redirect("/")
-    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
