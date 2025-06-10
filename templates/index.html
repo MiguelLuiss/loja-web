@@ -64,23 +64,36 @@
             <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
             <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
           </ul>
-          <div class="carrinho-link ms-auto">
-
-            <a class="nav-link" href="/carrinho"> <i class="fa-solid fa-cart-shopping"></i></a>
 
 
-          
+          <div class="d-flex align-items-center ms-auto">
+            {% if session['nome_usuario'] %}
+              <div class="saudacao me-3">
+                <span class="usuario-nome text-white">Bem-vindo, {{ session['nome_usuario'] }}!</span>
+              </div>
+            {% endif %}
 
+            <div class="carrinho-link me-3">
+              <a class="nav-link" href="/carrinho">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+
+            <div class="perfil-link">
+              {% if session['nome_usuario'] %}
+                <a class="nav-link" href="/sair">
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+              {% else %}
+                <a class="nav-link" href="/cadastro">
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+              {% endif %}
+            </div>
           </div>
-          <div class="perfil-link ms-auto">
-
-            <a class="nav-link" href="/cadastro"> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
 
 
-          
-
-
-          </div>
+        </div>
         </div>
       </div>
     </nav>

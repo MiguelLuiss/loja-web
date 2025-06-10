@@ -25,6 +25,10 @@ header {
   flex: 1;
 }
 
+.saudacao{
+  margin-right: 20px;
+}
+
 .fa-cart-shopping,
 .fa-arrow-right-to-bracket {
   color: var(--cor-branco);
