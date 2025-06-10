@@ -127,5 +127,14 @@ def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
 
+@app.route("/amostraProduto/<codigo>")
+def mostrar_produto(codigo):
+    produto = Produto.amostraProduto(codigo)
+
+    if produto:
+        return render_template("amostraProduto.html", produto=produto)
+    else:
+        return "Produto não encontrado", 404
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
