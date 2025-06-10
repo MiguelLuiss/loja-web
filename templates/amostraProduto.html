@@ -94,17 +94,18 @@
     <!-- Comentários -->
     <section class="mt-5">
       <h4 style="font-family: Kavoon;">Comentários</h4>
-      <form class="mb-3">
-        <textarea class="form-control mb-2" rows="4" placeholder="Digite seu comentário aqui"></textarea>
+      <form class="mb-3" action="/post/comentario" method="post">
+        <textarea class="form-control mb-2" rows="4" placeholder="Digite seu comentário aqui" name="cadastro-comentario__comentario"></textarea>
         <button class="btn btn-dark">Enviar</button>
       </form>
 
       <!-- Comentário exemplo -->
+       {% for comentario in comentarios%}
       <div class="border p-3 mb-2 rounded">
-        <strong>Miguel Chaves</strong>
-        <p>Excelente qualidade, tecido super confortável e a estampa é linda! Chegou antes do prazo. Super recomendo.</p>
+        <strong>{{comentario.Usuario}}</strong>
+        <p>{{comentario.Comentario}}</p>
       </div>
-      <!-- Adicione mais divs como essa para outros comentários -->
+      {% endfor %}
     </section>
 
   </main>

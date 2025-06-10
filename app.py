@@ -5,6 +5,7 @@ import mysql.connector
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
+from model.comentario import Comentario
 
 app = Flask(__name__)
 app.secret_key = '12345678'
@@ -39,6 +40,10 @@ def pgInfantil():
 @app.route('/carrinho')
 def carrinho():
     return render_template('carrinho.html')
+
+@app.route('/amostraProduto')
+def amostraProduto():
+    return render_template('amostraProduto.html')
 
 ####################### Funções ###############################
 
@@ -99,6 +104,30 @@ def mostrarCalcas():
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
+
+
+@app.route("/comentarios" , methods = ["GET"])
+def comentario():
+    if "usuario" in session:
+        comentarios = Comentario.mostrarComentarios()
+        return render_template ("amostraProduto.html", comentarios=comentarios)
+    else:
+        return redirect ("/comentarios")
+
+
+@app.route("/post/comentario", methods=["POST"])
+def cadastrarComentario():
+    if "usuario" in session:
+        nome = session["usuario"]
+        comentario = request.form.get("cadastro-comentario__comentario")
+        
+        Comentario.cadastrarcomentario(nome, comentario)
+        print(nome)
+        return redirect("/comentarios")
+    else:
+        return redirect('/')
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
