@@ -60,6 +60,22 @@ def verificaLogin():
     else:
         return redirect("/login")
     
+@app.route('/catalogo')
+def catalogo():
+    moletom = Produto.mostrarMoletons()
+    camisetas = Produto.mostrarCamisetas()
+    calcas = Produto.mostrarCalcas()
+    calcados = Produto.mostrarCalcados()
+
+    return render_template(
+        'catalogo.html',
+        moletom=moletom,
+        camisetas=camisetas,
+        calcas=calcas,
+        calcados=calcados
+    )
+
+    
 # Rotas de categorias por gênero
 @app.route('/pag-masculino')
 def pagMasculino():
