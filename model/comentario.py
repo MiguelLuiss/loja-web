@@ -2,6 +2,7 @@ import datetime
 from data.conexao import Conexao
 
 class Comentario: 
+    # apenas usuarios logados podem adicionar comentarios!
     def cadastrarcomentario(nome, comentario):
         data_hora = datetime.datetime.today()
 
