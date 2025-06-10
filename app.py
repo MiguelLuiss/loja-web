@@ -93,7 +93,6 @@ def pagInfantil():
         'calcas': Produto.mostrarCalcasInfantis(),
         'calcados': Produto.mostrarCalcadosInfantis()
     }
-    print(produtos['camisetas'])  # Depuração: verificar os produtos retornados
     return render_template('pag-infantil.html', produtos=produtos)
 
 # Rota para a página de moletons
