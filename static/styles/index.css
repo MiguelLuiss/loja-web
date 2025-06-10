@@ -37,18 +37,18 @@ header {
 }
 
 /* Seção logo topo */
-.container-section-img {
+.main__img {
   width: 98vw;
   display: flex;
   justify-content: center;
 }
 
 .img-logo {
-  width: 99.8vw;
+  width: 98.5vw;
 }
 
 /* Sobre nós */
-.c-sec-sobre {
+.sobre-nos {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
@@ -56,7 +56,7 @@ header {
   width: 100%;
 }
 
-.c-sec-sobre__container {
+.sobre-nos__container {
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
@@ -66,18 +66,18 @@ header {
   justify-content: center;
 }
 
-.c-sec-sobre__texto {
+.sobre-nos__texto {
   flex: 1 1 400px;
   max-width: 600px;
 }
 
-.c-sec-sobre__titulo {
+.sobre-nos__titulo {
   font-family: 'Kavoon', cursive;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.c-sec-sobre__box {
+.sobre-nos__box {
   background-color: white;
   border: 2px solid black;
   padding: 20px;
@@ -87,18 +87,20 @@ header {
   color: #000;
 }
 
-.c-sec-sobre__imagem {
+.sobre-nos__img {
   flex: 1 1 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.c-sec-sobre__imagem img {
+.sobre-nos__img img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
 }
+
+
 
 /* Carrossel */
 .c-carrossel {
