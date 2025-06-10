@@ -1,25 +1,53 @@
 @import url(./global.css);
 
-body {
-  font-family: 'Kavoon', cursive;
-  background-color: var(--cor-fundo-pag);
-  color: var(--cor-preto);
+/* header */
+header{
+  background-color: var(--cor-botao-validar);
+  font-family: Kavoon;
 }
 
-/* Header */
-.container-header {
-  background-color: var(--cor-marrom);
-  padding: 1rem 0;
-}
-
-.navbar .nav-link,
-.navbar .navbar-brand {
+.navbar-nav .nav-link {
   color: var(--cor-branco);
 }
 
-.navbar .nav-link:hover {
-  color: var(--cor-marrom);
+.logo-nav{
+    max-width: 100px;
 }
+
+.navbar .navbar-expand-lg .bg-body-tertiary{
+  max-width: 500px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.menu-central {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  /* flex: 1 faz o elemento crescer e ocupar todo o espaço disponível dentro de um contêiner flexível. */
+  flex: 1;
+}
+
+.fa-cart-shopping{
+  color: var(--cor-branco);
+  width: 30px;
+  font-size: larger;
+}
+
+.fa-arrow-right-to-bracket{
+  color: var(--cor-branco);
+  width: 30px;
+  font-size: larger;
+}
+
+.perfil-link {
+  margin-left: auto;
+}
+
+body {
+  background-color: var(--cor-fundo-pag) !important;
+}
+
 
 .logo-nav {
   height: 40px;
