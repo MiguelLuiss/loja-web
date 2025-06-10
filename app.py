@@ -20,18 +20,6 @@ def pagina_login():
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
 
-@app.route('/pag-masculino')
-def pgMasculino():
-    return render_template('pag-masculino.html')
-
-@app.route('/pag-feminino')
-def pgFeminino():
-    return render_template('pag-feminino.html')
-
-@app.route('/pag-infantil')
-def pgInfantil():
-    return render_template('pag-infantil.html')
-
 @app.route('/carrinho')
 def carrinho():
     return render_template('carrinho.html')
@@ -105,6 +93,7 @@ def pagInfantil():
         'calcas': Produto.mostrarCalcasInfantis(),
         'calcados': Produto.mostrarCalcadosInfantis()
     }
+    print(produtos['camisetas'])  # Depuração: verificar os produtos retornados
     return render_template('pag-infantil.html', produtos=produtos)
 
 # Rota para a página de moletons
@@ -129,8 +118,7 @@ def mostrarCalcados():
     return render_template("calcados.html", calcados=calcados)
 
 
-@app.route("/amostraP" \
-"roduto/<codigo>")
+@app.route("/amostraProduto/<codigo>")
 def mostrar_produto(codigo):
     produto = Produto.amostraProduto(codigo)
 

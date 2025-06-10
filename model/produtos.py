@@ -188,7 +188,7 @@ class Produto:
     def mostrarCamisetasInfantis():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'camisetas'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'camiseta'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
