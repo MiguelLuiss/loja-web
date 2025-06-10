@@ -33,7 +33,7 @@ class Comentario:
     def mostrarComentarios():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """SELECT Cod_comentario, Usuario, Data_comentario, Comentario FROM tb_comentarios"""
+        sql = """SELECT tb_comentarios.Cod_comentario, tb_comentarios.Comentario, tb_comentarios.Usuario, tb_comentarios.Data_comentario FROM tb_comentarios INNER JOIN tb_produtos ON tb_comentarios.codProduto = tb_produtos.codProduto;"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()

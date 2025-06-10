@@ -269,3 +269,18 @@ select * from tb_produtos;
 select * from tb_usuarios;
 
 select * from tb_comentarios
+
+
+
+
+
+
+ALTER TABLE tb_comentarios
+ADD COLUMN codProduto INT;
+
+ALTER TABLE tb_comentarios
+ADD CONSTRAINT FK_Comentarios_Produtos
+FOREIGN KEY (codProduto)
+REFERENCES tb_produtos (codProduto);
+
+
