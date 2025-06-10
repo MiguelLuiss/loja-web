@@ -58,12 +58,68 @@ def verificaLogin():
         return redirect("/")
     else:
         return redirect("/login")
+    
+# Rotas de categorias por gênero
+@app.route('/pag-masculino')
+def pagMasculino():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsMasculinos(),
+        'camisetas': Produto.mostrarCamisetasMasculinos(),
+        'calcas': Produto.mostrarCalcasMasculinos(),
+        'calcados': Produto.mostrarCalcadosMasculinos()
+    }
+    return render_template('pag-masculino.html', produtos=produtos)
+
+@app.route('/pag-feminino')
+def pagFeminino():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsFemininos(),
+        'camisetas': Produto.mostrarCamisetasFemininos(),
+        'calcas': Produto.mostrarCalcasFemininos(),
+        'calcados': Produto.mostrarCalcadosFemininos()
+    }
+    return render_template('pag-feminino.html', produtos=produtos)
+
+@app.route('/pag-infantil')
+def pagInfantil():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsInfantis(),
+        'camisetas': Produto.mostrarCamisetasInfantis(),
+        'calcas': Produto.mostrarCalcasInfantis(),
+        'calcados': Produto.mostrarCalcadosInfantis()
+    }
+    return render_template('pag-infantil.html', produtos=produtos)
 
 # Rota para a página de moletons
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
     return render_template("moletons.html", moletom=moletom)
+
+@app.route('/mostrarCamisetas')
+def mostrarCamisetas():
+    camisetas = Produto.mostrarCamisetas()
+    return render_template("camisetas.html", camisetas=camisetas)
+
+@app.route('/mostrarCalcas')
+def mostrarCalcas():
+    calcas = Produto.mostrarCalcas()
+    return render_template("calcas.html", calcas=calcas)
+
+@app.route('/mostrarCalcados')
+def mostrarCalcados():
+    calcados = Produto.mostrarCalcados()
+    return render_template("calcados.html", calcados=calcados)
+
+@app.route('/catalogo')
+def mostrarCatalogo():
+    catalogo = {
+        'moletons': Produto.mostrarMoletons(),
+        'camisetas': Produto.mostrarCamisetas(),
+        'calcas': Produto.mostrarCalcas(),
+        'calcados': Produto.mostrarCalcados()
+    }
+    return render_template("catalogo.html", catalogo=catalogo)
 
 # Iniciar o servidor
 if __name__ == "__main__":

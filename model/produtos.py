@@ -53,6 +53,21 @@ class Produto:
         
         return resultados
     
+    def mostrarCatalogo():
+        conexao = Conexao.criarConexao()
+        cursor = conexao.cursor(dictionary=True)
+        sql = """SELECT codProduto, nome_produto, descricao, preco, sexo, tipo, url 
+                FROM tb_produtos 
+                WHERE tipo IN ('moletom', 'camiseta', 'calca', 'sapato')"""
+        
+        cursor.execute(sql)
+        resultados = cursor.fetchall()
+        
+        cursor.close()
+        conexao.close()
+        
+        return resultados
+    
     def mostrarMoletonsMasculinos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
