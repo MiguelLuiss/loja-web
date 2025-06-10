@@ -143,9 +143,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #d1d1d1;
-}
 
 /* ------------------- */
 
@@ -197,5 +194,8 @@ button:hover {
 }
 
 
-
+.container-produtos a {
+  text-decoration: none;
+  background-color: #e0e0e0;
+}
 

@@ -1,3 +1,4 @@
+
 @import url(./global.css);
 
 /* header */
@@ -120,10 +121,133 @@ body {
 
 /* Botões */
 .container-carrinho__botoes {
+
+body {
+  font-family: 'Kavoon', cursive;
+  background-color: var(--cor-fundo-pag);
+  color: var(--cor-preto);
+}
+
+/* Header */
+.container-header {
+  background-color: var(--cor-marrom);
+  padding: 1rem 0;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: var(--cor-branco);
+}
+
+.navbar .nav-link:hover {
+  color: var(--cor-marrom);
+}
+
+.logo-nav {
+  height: 40px;
+}
+
+/* Título da página */
+.titulo-pagina {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+/* Container principal do carrinho */
+.container-carrinho {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+/* Produto no carrinho */
+.produto-carrinho {
+  background-color: var(--cor-branco);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  padding: 1rem;
+  flex: 2;
+  min-width: 300px;
+}
+
+.produto-carrinho img {
+  width: 120px;
+  height: auto;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+.descricao h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.descricao p {
+  font-size: 0.95rem;
+}
+
+/* Resumo do carrinho */
+.resumo-carrinho {
+  background-color: var(--cor-branco);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  height: fit-content;
+}
+
+.resumo-carrinho h4 {
+  margin-bottom: 1rem;
+}
+
+.resumo-carrinho .preco {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Botões */
+.botoes {
   display: flex;
   gap: 1rem;
   margin: 2rem auto;
   justify-content: center;
+}
+
+.btn-marrom {
+  background-color: var(--cor-botao-validar);
+  color: var(--cor-branco);
+}
+
+.btn-marrom:hover {
+  background-color: #7c4c24;
+}
+
+/* Carrossel */
+.carrossel-section {
+  margin: 3rem auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.carrossel-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.card-group {
+
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto;
+  justify-content: center;
+
 }
 
 .btn-marrom {
@@ -149,6 +273,36 @@ body {
   display: flex;
   max-width: 500px;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  border: none;
+  background-color: var(--cor-branco);
+  padding: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--cor-marrom);
+  color: var(--cor-branco);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer__logo img {
+  height: 40px;
+
 }
 
 .carrossel__produtos-destaque {

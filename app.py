@@ -1,16 +1,13 @@
-from flask import Flask, render_template, request, redirect, session, jsonify, url_for
-import datetime
-import mysql.connector
-
+from flask import Flask, render_template, request, redirect, session
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
+from model.comentario import Comentario
 
 app = Flask(__name__)
 app.secret_key = '12345678'
 
-###################### Render Templates ########################
-
+# Rotas principais
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -22,7 +19,6 @@ def pagina_login():
 @app.route('/cadastro')
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
-
 
 @app.route('/pag-masculino')
 def pgMasculino():
@@ -40,8 +36,7 @@ def pgInfantil():
 def carrinho():
     return render_template('carrinho.html')
 
-####################### Funções ###############################
-
+# Cadastro de usuário
 @app.route('/post/cadastrarUsuario', methods=['POST'])
 def cadastrarUsuario():
     nome = request.form.get("nome")
@@ -53,6 +48,7 @@ def cadastrarUsuario():
     Usuario.criarUsuario(nome, senha, email, telefone, endereco)
     return redirect('/cadastro')
 
+# Login
 @app.route("/verificaLogin", methods=["POST"])
 def verificaLogin():
     email = request.form.get("email")
@@ -63,7 +59,7 @@ def verificaLogin():
         return redirect("/")
     else:
         return redirect("/login")
-
+    
 @app.route('/catalogo')
 def catalogo():
     moletom = Produto.mostrarMoletons()
@@ -79,7 +75,39 @@ def catalogo():
         calcados=calcados
     )
 
+    
+# Rotas de categorias por gênero
+@app.route('/pag-masculino')
+def pagMasculino():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsMasculinos(),
+        'camisetas': Produto.mostrarCamisetasMasculinos(),
+        'calcas': Produto.mostrarCalcasMasculinos(),
+        'calcados': Produto.mostrarCalcadosMasculinos()
+    }
+    return render_template('pag-masculino.html', produtos=produtos)
 
+@app.route('/pag-feminino')
+def pagFeminino():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsFemininos(),
+        'camisetas': Produto.mostrarCamisetasFemininos(),
+        'calcas': Produto.mostrarCalcasFemininos(),
+        'calcados': Produto.mostrarCalcadosFemininos()
+    }
+    return render_template('pag-feminino.html', produtos=produtos)
+
+@app.route('/pag-infantil')
+def pagInfantil():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsInfantis(),
+        'camisetas': Produto.mostrarCamisetasInfantis(),
+        'calcas': Produto.mostrarCalcasInfantis(),
+        'calcados': Produto.mostrarCalcadosInfantis()
+    }
+    return render_template('pag-infantil.html', produtos=produtos)
+
+# Rota para a página de moletons
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
@@ -99,6 +127,18 @@ def mostrarCalcas():
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
+
+
+@app.route("/amostraP" \
+"roduto/<codigo>")
+def mostrar_produto(codigo):
+    produto = Produto.amostraProduto(codigo)
+
+    if produto:
+        return render_template("amostraProduto.html", produto=produto)
+    else:
+        return "Produto não encontrado", 404
+    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
