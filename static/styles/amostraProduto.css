@@ -1,9 +1,22 @@
 /* Estilo para o container principal da página de produto */
-main {
+.main-container {
   font-family: 'Kavoon', sans-serif;
-  color: #222;
+  width: 80%;
+  padding: 20px;
+
 
   
+}
+
+.container-produto{
+  max-width: 80%;
+  padding: 20px;
+  background-color: violet;
+}
+
+.container-produto__produto{
+ 
+
 }
 
 /* Estiliza a imagem principal do carrossel */
@@ -35,6 +48,15 @@ main .border.bg-light {
 .btn-dark:hover {
   background-color: #333;
 }
+
+
+
+
+
+
+
+
+
 
 /* Comentários */
 section h4 {

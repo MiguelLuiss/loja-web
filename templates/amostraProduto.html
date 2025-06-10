@@ -58,17 +58,19 @@
     </nav>
   </header>
 
-  <main class="container my-4">
+  <main class="container-main">
 
-    <div class="row g-4">
-      <!-- Imagem do produto -->
+
+    <!-- carrossel "errado" -->
+<!-- <div class="row g-4">
+      
       <div class="col-md-6 text-center">
         <div id="carouselProduto" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="{{produto.url}}" class="d-block w-100" alt="produto">
             </div>
-            <!-- Você pode adicionar mais <div class="carousel-item"> aqui -->
+            
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduto" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -78,18 +80,51 @@
           </button>
         </div>
         <p class="mt-2 fw-bold">{{produto.nome_produto}}</p>
-      </div>
+      </div> -->
 
-      <!-- Descrição do produto -->
-      <div class="col-md-6">
-        <div class="border p-3 rounded bg-light">
-          <h3 style="font-family: Kavoon;">Descrição</h3>
-          <p>{{produto.descricao}}</p>
-          <h4 class="mt-3" style="font-family: Kavoon;">{{produto.preco}}</h4>
-          <button class="btn btn-dark mt-2 w-100">Adicionar ao carrinho</button>
+
+       <!-- Carrossel -->
+    <section class="container-produto">
+
+
+
+      <section class="container-produto__carrossel">
+        <h1 class="container-produto__title">JINJA</h1>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{produto.url}}" class="d-block w-100" alt="produto">
+            </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
         </div>
-      </div>
-    </div>
+      </section>
+
+       <!-- Descrição do produto -->
+      <section class="container-produto__produto">
+
+        <h3 style="font-family: Kavoon;">Descrição</h3>
+          <p>{{produto.descricao}}</p>
+
+          <h4 class="mt-3" style="font-family: Kavoon;">{{produto.preco}}</h4>
+
+          <button class="btn btn-dark mt-2 w-100">Adicionar ao carrinho</button>
+          
+      </section>
+          
+    </section>
+
+     
+    
+          
+    
+    
 
     <!-- Comentários -->
     <section class="mt-5">
