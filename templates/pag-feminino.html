@@ -38,7 +38,7 @@
 
             <div class="container-fluid">
 
-                <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
+                <a class="navbar-brand" href="/"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
                         <li>
                         <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/mostrarProdutos">Todos</a></li>
+                        <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
                     </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
@@ -83,10 +83,10 @@
     <div class="container-title"><h1>Feminino</h1></div>
         <section class="container-links">
             <div class="container-links__links">
-                <a href="#" class="container-links__link">Moletons</a>
-                <a href="#" class="container-links__link">Camisetas</a>
-                <a href="#" class="container-links__link">Calças</a>
-                <a href="#" class="container-links__link">Calçados</a>
+                <a href="#moletons" class="container-links__link">Moletons</a>
+                <a href="#camisetas" class="container-links__link">Camisetas</a>
+                <a href="#calcas" class="container-links__link">Calças</a>
+                <a href="#calcados" class="container-links__link">Calçados</a>
             </div>
         </section>
 
@@ -95,30 +95,46 @@
         <h2>Moletons</h2>
     </div>
     
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="{{ produto.url}}" alt="moletom">
+        <section class="container-produtos" id="moletons">
+            {% for produto in produtos.moletons %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-            <span class="produto__card__titulo">{{ produto.nome_produto }}</span>
+                <span class="produto__card__titulo">
+                    {{ produto.nome_produto }}
+                </span>
 
-            <span class="moletons__card__preco">R$ {{ produto.preco }}</span>
+                <span class="produto__card__preco">
+                     {{ produto.preco }}
+                </span>
 
-            <button>Veja mais</button>
-        </div>
-    </section>
+           <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+            {% endfor %}
+        </section>
 
 <!-- Camisetas -->
     <div class="container-title">
       <h2>Camisetas</h2>
     </div>
 
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="/static/imgs//pexels-anchau-1663967297-32371306.png" alt="camiseta">
-            <span class="produto__card__titulo">Camiseta</span>
-            <span class="camisetas__card__preco">R$ 109,90</span>
-            <button>Veja mais</button>
-        </div>
+    <section class="container-produtos" id="camisetas">
+        {% for produto in produtos.camisetas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url}}" alt="{{ produto.nome_produto }}">
+
+                <span class="produto__card__titulo">
+                {{ produto.nome_produto }}
+                </span>
+
+                <span class="produto__card__preco">
+                R$ {{ produto.preco }}
+                </span>
+
+                <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+        {% endfor %}
+    
     </section>
     
 <!-- Calças -->
@@ -126,28 +142,46 @@
       <h2>Calças</h2>
     </div>
 
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="/static/imgs//pexels-soulful-pizza-2080276-3914693.png" alt="calca">
-            <span class="produto__card__titulo">Calça</span>
-            <span class="produto__card__preco">R$ 159,90</span>
-            <button>Veja mais</button>
-        </div>
-    </section>
+        <section class="container-produtos" id="calcas">
+            {% for produto in produtos.calcas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
+
+                <span class="produto__card__titulo">
+                    {{ produto.nome_produto }}
+                </span>
+
+                <span class="produto__card__preco">
+                    R$ {{ produto.preco }}
+                </span>
+
+                <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+            {% endfor %}
+        </section>
 
 <!-- Calçados -->
     <div class="container-title">
       <h2>Calçados</h2>
     </div>
 
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
-            <span class="produto__card__titulo">Calça</span>
-            <span class="produto__card__preco">R$ 159,90</span>
-            <button>Veja mais</button>
-        </div>
-    </section>
+        <section class="container-produtos" id="calcados">
+            {% for produto in produtos.calcados %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
+
+                <span class="produto__card__titulo">
+                    {{ produto.nome_produto }}
+                </span>
+
+                <span class="produto__card__preco">
+                    {{ produto.preco }}
+                </span>
+
+              <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+            {% endfor %}
+        </section>
   </main>
 
   <footer class="footer">

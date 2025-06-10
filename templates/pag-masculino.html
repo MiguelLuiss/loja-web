@@ -3,68 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masculino</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="../static/styles/global.css">
-    <link rel="stylesheet" href="../static/styles/catalogo.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="../static/styles/pag-feminino.css">
+
+   <!-- Link google fonts títulos -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+
+  <!-- Link do Font Awesome para os ícones -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+
+  <!-- bootstrap js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+
 </head>
 <body>
+
     <header class="container-header" id="container-header">
+
+        <!-- navbar -->
         <nav class="navbar navbar-expand-lg">
+
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
+
+                <a class="navbar-brand" href="/"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <!-- botoes -->
+
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav menu-central">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
-                                <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
-                                <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
-                                <li><a class="dropdown-item" href="/mostrarCalcados">Calçados</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="/mostrarProdutos">Todos</a></li>
-                            </ul>
+                <ul class="navbar-nav menu-central">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
+                        <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
+                        <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
+                        <li><a class="dropdown-item" href="/mostrarCalcados">Calçados</a></li>
+                        <li>
+                        <hr class="dropdown-divider">
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
+                        <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
                     </ul>
-                    <div class="carrinho-link ms-auto">
-                        <a class="nav-link" href="/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                    <div class="perfil-link ms-auto">
-                        <a class="nav-link" href="/cadastro"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                    </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
+                </ul>
+
+                <div class="carrinho-link ms-auto">
+                    <a class="nav-link" href="/carrinho"> <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+
+                <div class="perfil-link ms-auto">
+                    <a class="nav-link" href="/cadastro"> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                </div>
                 </div>
             </div>
         </nav>
     </header>
+  <main>
+    
+    <div class="container-title"><h1>Masculino</h1></div>
+        <section class="container-links">
+            <div class="container-links__links">
+                <a href="#moletons" class="container-links__link">Moletons</a>
+                <a href="#camisetas" class="container-links__link">Camisetas</a>
+                <a href="#calcas" class="container-links__link">Calças</a>
+                <a href="#calcados" class="container-links__link">Calçados</a>
+            </div>
+        </section>
 
-    <main>
-        <div class="container-title">
-            <h1>Masculino</h1>
-        </div>
-
-        <a href="#" class="icone-filtro"><i class="fa-solid fa-filter"></i></a>
-
-        <!-- Moletons Masculinos -->
-        <div class="container-title">
-            <h2>Moletons</h2>
-        </div>
-        
-        <section class="container-produtos">
-            {% for produto in produto.moletons %}
+<!-- Moletons -->
+    <div class="container-title">
+        <h2>Moletons</h2>
+    </div>
+    
+        <section class="container-produtos" id="moletons">
+            {% for produto in produtos.moletons %}
             <div class="container-produtos__produto">
                 <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
@@ -73,23 +105,45 @@
                 </span>
 
                 <span class="produto__card__preco">
-                    R$ {{ "%.2f"|format(produto.preco) }}
+                     {{ produto.preco }}
                 </span>
 
-                <button>
-                    Veja mais
-                </button>
+           <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
             </div>
             {% endfor %}
         </section>
 
-        <!-- Camisetas Masculinas -->
-        <div class="container-title">
-            <h2>Camisetas</h2>
-        </div>
+<!-- Camisetas -->
+    <div class="container-title">
+      <h2>Camisetas</h2>
+    </div>
 
-        <section class="container-produtos">
-            {% for produto in produto.camisetas %}
+    <section class="container-produtos" id="camisetas">
+        {% for produto in produtos.camisetas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url}}" alt="{{ produto.nome_produto }}">
+
+                <span class="produto__card__titulo">
+                {{ produto.nome_produto }}
+                </span>
+
+                <span class="produto__card__preco">
+                R$ {{ produto.preco }}
+                </span>
+
+                <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+        {% endfor %}
+    
+    </section>
+    
+<!-- Calças -->
+    <div class="container-title">
+      <h2>Calças</h2>
+    </div>
+
+        <section class="container-produtos" id="calcas">
+            {% for produto in produtos.calcas %}
             <div class="container-produtos__produto">
                 <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
@@ -98,48 +152,21 @@
                 </span>
 
                 <span class="produto__card__preco">
-                    R$ {{ "%.2f"|format(produto.preco) }}
+                    R$ {{ produto.preco }}
                 </span>
 
-                <button>
-                    Veja mais
-                </button>
+                <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
             </div>
             {% endfor %}
         </section>
 
-        <!-- Calças Masculinas -->
-        <div class="container-title">
-            <h2>Calças</h2>
-        </div>
+<!-- Calçados -->
+    <div class="container-title">
+      <h2>Calçados</h2>
+    </div>
 
-        <section class="container-produtos">
-            {% for produto in calcas %}
-            <div class="container-produtos__produto">
-                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
-
-                <span class="produto__card__titulo">
-                    {{ produto.nome_produto }}
-                </span>
-
-                <span class="produto__card__preco">
-                    R$ {{ produto.preco) }}
-                </span>
-
-                <button>
-                    Veja mais
-                </button>
-            </div>
-            {% endfor %}
-        </section>
-
-        <!-- Calçados Masculinos -->
-        <div class="container-title">
-            <h2>Calçados</h2>
-        </div>
-
-        <section class="container-produtos">
-            {% for produto in calcados %}
+        <section class="container-produtos" id="calcados">
+            {% for produto in produtos.calcados %}
             <div class="container-produtos__produto">
                 <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
@@ -151,37 +178,39 @@
                     {{ produto.preco }}
                 </span>
 
-                <button>
-                    Veja mais
-                </button>
+              <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
             </div>
             {% endfor %}
         </section>
-    </main>
+  </main>
 
-    <footer class="footer">
-        <div class="footer__address">
-            <strong>Rua das Ruas, 123 - Bairro Central</strong><br>
-            <span>São Paulo - SP, 01234-567 Brasil</span>
-        </div>
-        <div class="footer__contact">
-            <span>
-                <strong>WhatsApp:</strong> (11) 91234-5678<br>
-                <strong>E-mail:</strong> contato@m2a1.com.br
-            </span>
-        </div>
-        <div class="footer__social">
-            <span>
-                <strong>Instagram:</strong> <a href="#">@m2a1.street</a><br>
-                <strong>Twitter/X:</strong> <a href="#">@m2a1crew</a>
-            </span>
-        </div>
-        <div class="footer__cnpj">
-            <span><strong>CNPJ:</strong> 12.345.678/0001-90</span>
-        </div>
-        <div class="footer__logo">
-            <img src="../static/imgs/logo-footer.png" alt="Logo M2A1">
-        </div>
-    </footer>
+  <footer class="footer">
+    <div class="footer__address">
+      <strong>Rua das Ruas, 123 - Bairro Central</strong><br>
+      <span>São Paulo - SP, 01234-567 Brasil</span>
+    </div>
+
+    <div class="footer__contact">
+      <span>
+        <strong>WhatsApp:</strong> (11) 91234-5678<br>
+        <strong>E-mail:</strong> contato@m2a1.com.br
+      </span>
+    </div>
+
+    <div class="footer__social">
+      <span>
+        <strong>Instagram:</strong> <a href="#">@m2a1.street</a><br>
+        <strong>Twitter/X:</strong> <a href="#">@m2a1crew</a>
+      </span>
+    </div>
+
+    <div class="footer__cnpj">
+      <span> <strong>CNPJ:</strong> 12.345.678/0001-90 </span>
+    </div>
+
+    <div class="footer__logo">
+      <img src="../static/imgs/logo-footer.png" alt="Logo M2A1">
+    </div>
+  </footer>
 </body>
 </html>

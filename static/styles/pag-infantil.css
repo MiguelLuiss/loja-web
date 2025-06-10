@@ -48,8 +48,6 @@ body {
 
 /* -------------------------------------------- */
 
-/* links */
-
 .container-links {
   width: 98vw;
   display: flex;
@@ -77,6 +75,8 @@ body {
   color: var(--cor-preto);
   transition: linear 0.3s;
 }
+
+
 
 
 
