@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
+from model.comentario import Comentario
 
 app = Flask(__name__)
 app.secret_key = '12345678'
@@ -111,16 +112,5 @@ def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
 
-@app.route('/catalogo')
-def mostrarCatalogo():
-    catalogo = {
-        'moletons': Produto.mostrarMoletons(),
-        'camisetas': Produto.mostrarCamisetas(),
-        'calcas': Produto.mostrarCalcas(),
-        'calcados': Produto.mostrarCalcados()
-    }
-    return render_template("catalogo.html", catalogo=catalogo)
-
-# Iniciar o servidor
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
