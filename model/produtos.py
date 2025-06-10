@@ -54,4 +54,16 @@ class Produto:
         
         return resultados
     
+    def amostraProduto(codigo):
+        conexao = Conexao.criarConexao()
+        cursor = conexao.cursor(dictionary=True)
+
+        sql = "SELECT * FROM tb_produtos WHERE codProduto = %s"
+        cursor.execute(sql, (codigo,))
+        produto = cursor.fetchone()
+
+        cursor.close()
+        conexao.close()
+        return produto
+    
 

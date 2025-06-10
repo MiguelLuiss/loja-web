@@ -127,6 +127,15 @@ def cadastrarComentario():
     else:
         return redirect('/')
 
+@app.route("/amostraProduto/<codigo>")    
+def mostrar_produto(codigo):
+    produto = Produto.amostraProduto(codigo)
+
+    if produto:
+        return render_template("amostraProduto.html", produto=produto)
+    else:
+        return "Produto não encontrado", 404
+
 
 
 if __name__ == "__main__":
