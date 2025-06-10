@@ -1,51 +1,41 @@
-import mysql.connector
+from flask import session
 from data.conexao import Conexao
+import mysql
 
 class Carrinho:
-    @staticmethod
-    def obter_conexao():
-        return Conexao.criarConexao()
 
     @staticmethod
-    def adicionar_produto(usuario, produto_id, quantidade):
-        conexao = Carrinho.obter_conexao()
+    def adicionar_item(cod_usuario, produto):
+        conexao = mysql.connection
         cursor = conexao.cursor()
 
-        sql = """INSERT INTO tb_carrinho (Usuario, Produto_id, Quantidade)
-                 VALUES (%s, %s, %s)"""
-        valores = (usuario, produto_id, quantidade)
-
-        cursor.execute(sql, valores)
+        sql = """
+            INSERT INTO tb_carrinho (codUsuario, codProduto, codCategoria, nome_produto, descricao, preco, sexo)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+        cursor.execute(sql, (
+            cod_usuario,
+            produto['codProduto'],
+            produto['codCategoria'],
+            produto['nome_produto'],
+            produto['descricao'],
+            produto['preco'],
+            produto['sexo']
+        ))
         conexao.commit()
-
         cursor.close()
-        conexao.close()
 
     @staticmethod
-    def listar_carrinho(usuario):
-        conexao = Carrinho.obter_conexao()
-        cursor = conexao.cursor(dictionary=True)
-
-        sql = """SELECT p.nome, p.preco, c.Quantidade
-                 FROM tb_carrinho c
-                 JOIN tb_produtos p ON c.Produto_id = p.id
-                 WHERE c.Usuario = %s"""
-       
-        cursor.execute(sql, (usuario,))
-        produtos = cursor.fetchall()
-
+    def listar_itens(cod_usuario):
+        cursor = mysql.connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM tb_carrinho WHERE codUsuario = %s", (cod_usuario,))
+        itens = cursor.fetchall()
         cursor.close()
-        conexao.close()
-        return produtos
+        return itens
 
     @staticmethod
-    def remover_produto(usuario, produto_id):
-        conexao = Carrinho.obter_conexao()
-        cursor = conexao.cursor()
-
-        sql = "DELETE FROM tb_carrinho WHERE Usuario = %s AND Produto_id = %s"
-        cursor.execute(sql, (usuario, produto_id))
-        conexao.commit()
-
+    def remover_item(cod_usuario, cod_produto):
+        cursor = mysql.connection.cursor()
+        cursor.execute("DELETE FROM tb_carrinho WHERE codUsuario = %s AND codProduto = %s", (cod_usuario, cod_produto))
+        mysql.connection.commit()
         cursor.close()
-        conexao.close()

@@ -31,17 +31,17 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorias</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Moletons</a></li>
-                  <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                  <li><a class="dropdown-item" href="#">Calças</a></li>
-                  <li><a class="dropdown-item" href="#">Calçados</a></li>
+                  <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
+                  <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
+                  <li><a class="dropdown-item" href="/mostrarCalças">Calças</a></li>
+                  <li><a class="dropdown-item" href="/mostrarCalçados">Calçados</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Todos</a></li>
+                  <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#">Masculino</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Feminino</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Infantil</a></li>
+              <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
+              <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
+              <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
             </ul>
             <div class="ms-auto d-flex">
               <a class="nav-link" href="/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -53,61 +53,68 @@
     </header>
 
     <main class="container-main">
-      <h1 class="titulo-pagina">Carrinho</h1>
+      <h1 class="titulo-pagina text-center mb-4">Carrinho</h1>
 
       <section class="container-carrinho">
-         {% for produto in produtos %}
-            <div class="produto-carrinho">
-                <img src="{{ item.url }}" alt="{{ item.nome_produto }}">
-                <div class="descricao">
-                    <h3>{{ produto.nome }}</h3>
-                    <p>{{ carrinho.descricao }}</p>
-                    <p><strong>Quantidade:</strong> {{ produto.Quantidade }}</p>
-                </div>
-                <div class="resumo-carrinho">
-                    <h4>Preço</h4>
-                    <p class="preco"> {{ produto.preco }}</p>
-                </div>
-                <div class="botoes">
-                    <form action="/carrinho/remover/{{ produto.codProduto }}" method="POST">
-                        <a href="/remover_carrinho/{{ produto.id }}"><button class="btn btn-danger">Excluir</button></a>
-                    </form>
-                </div>
+        {% for item in itens %}
+            <div class="produto-carrinho d-flex flex-wrap align-items-center mb-4">
+              <img src="{{ item.url or '/static/imgs/padrao.png' }}" alt="{{ item.nome_produto }}" class="img-fluid me-3" style="max-width: 150px;">
+              <div class="descricao flex-grow-1">
+                <h3>{{ item.nome_produto }}</h3>
+                <p>{{ item.descricao }}</p>
+                <p><strong>Sexo:</strong> {{ item.sexo }}</p>
+              </div>
+              <div class="resumo-carrinho text-end me-3">
+                <h4>Preço</h4>
+                <p class="preco fs-5 fw-bold">{{ item.preco }}</p>
+              </div>
+              <div class="botoes">
+                <a href="{{ url_for('carrinho.remover_carrinho', cod_produto=item.codProduto) }}" class="btn btn-danger">Excluir</a>
+              </div>
             </div>
-            {% endfor %}
+        {% endfor %}
+
+          <div class="text-end mt-4">
+            <h4>Total: {{ total }}</h4>
+            <a href="/finalizar_compra" class="btn btn-success mt-2">Finalizar Compra</a>
+          </div>
+        {% else %}
+          <p class="text-center fs-5 mt-5">Seu carrinho está vazio.</p>
+        {% endif %}
       </section>
 
-      <section class="carrossel-section">
-        <h2>Compre Também</h2>
+      <section class="carrossel-section mt-5">
+        <h2 class="mb-3">Compre Também</h2>
         <div id="carouselRecomendados" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="card-group">
                 <div class="card">
                   <img src="../static/imgs/produto-modelo1.png" class="card-img-top" alt="...">
-                  <div class="card-body">
+                  <div class="card-body text-center">
                     <h5 class="card-title">Título</h5>
                     <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
                   </div>
                 </div>
                 <div class="card">
                   <img src="../static/imgs/produto-modelo2.png" class="card-img-top" alt="...">
-                  <div class="card-body">
+                  <div class="card-body text-center">
                     <h5 class="card-title">Título</h5>
                     <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
                   </div>
                 </div>
                 <div class="card">
                   <img src="../static/imgs/produto-modelo3.png" class="card-img-top" alt="...">
-                  <div class="card-body">
+                  <div class="card-body text-center">
                     <h5 class="card-title">Título</h5>
                     <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Mais .carousel-item aqui se desejar -->
+            <!-- Adicione mais .carousel-item se desejar -->
           </div>
+
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendados" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
@@ -116,7 +123,7 @@
           </button>
         </div>
       </section>
-    </main>
+</main>
 
     <footer class="footer">
       <div class="footer__address">

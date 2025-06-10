@@ -1,14 +1,16 @@
-from flask import Flask, render_template, request, redirect, session, jsonify
+from flask import Flask, render_template, request, redirect, session, url_for
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
 from model.comentario import Comentario
 from model.carrinho import Carrinho
 
+
 app = Flask(__name__)
 app.secret_key = '12345678'
 
 # Rotas principais
+# Rotas para abrir as páginas
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -32,10 +34,6 @@ def pgFeminino():
 @app.route('/pag-infantil')
 def pgInfantil():
     return render_template('pag-infantil.html')
-
-@app.route('/carrinho')
-def carrinho():
-    return render_template('carrinho.html')
 
 # Cadastro de usuário
 @app.route('/post/cadastrarUsuario', methods=['POST'])
@@ -92,7 +90,7 @@ def pagInfantil():
     }
     return render_template('pag-infantil.html', produtos=produtos)
 
-# Rota para a página de moletons
+# Rota para a página dos produtos
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
@@ -114,29 +112,40 @@ def mostrarCalcados():
     return render_template("calcados.html", calcados=calcados)
 
 #Carrinho
-@app.route("/carrinho")
-def mostrar_carrinho():
-    if "usuario" in session:
-        produtos = Carrinho.listar_carrinho(session["usuario"])
-        return render_template("carrinho.html", produtos=produtos)
-    else:
-        return redirect("/login")
+@app.route('/adicionar_carrinho/<int:cod_produto>', methods=['POST'])
+def adicionar_carrinho(cod_produto):
+    if 'usuario' not in session:
+        return redirect(url_for('cadastrarUsuario'))  # ou outra rota de login
 
-@app.route("/adicionar_carrinho/<int:produto_id>")
-def adicionar_ao_carrinho(produto_id):
-    if "usuario" in session:
-        Carrinho.adicionar_produto(session["usuario"], produto_id, 1)  # Adiciona 1 unidade por padrão
-        return redirect("/carrinho")
-    else:
-        return redirect("/login")
+    cod_usuario = session['usuario']['codUsuario']
+    produto = Produto.buscar_por_id(cod_produto)
 
-@app.route("/remover_carrinho/<int:produto_id>")
-def remover_do_carrinho(produto_id):
-    if "usuario" in session:
-        Carrinho.remover_produto(session["usuario"], produto_id)
-        return redirect("/carrinho")
-    else:
-        return redirect("/login")
+    if produto:
+        Carrinho.adicionar_item(cod_usuario, produto)
+
+    return redirect(url_for('carrinho.exibir_carrinho'))
+
+@app.route('/carrinho')
+def exibir_carrinho():
+    if 'usuario' not in session:
+        return redirect(url_for('login'))
+
+    cod_usuario = session['usuario']['codUsuario']
+    itens = Carrinho.listar_itens(cod_usuario)
+
+    total = sum(float(item['preco']) for item in itens)
+
+    return render_template('carrinho.html', itens=itens, total=f"R$ {total:.2f}")
+
+@app.route('/remover_carrinho/<int:cod_produto>')
+def remover_carrinho(cod_produto):
+    if 'usuario' not in session:
+        return redirect(url_for('login'))
+
+    cod_usuario = session['usuario']['codUsuario']
+    Carrinho.remover_item(cod_usuario, cod_produto)
+
+    return redirect(url_for('carrinho.exibir_carrinho'))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
