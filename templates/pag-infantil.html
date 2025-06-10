@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../static/styles/global.css">
 
-  <link rel="stylesheet" href="../static/styles/pag-infantil.css">
+  <link rel="stylesheet" href="../static/styles/pag-feminino.css">
 
    <!-- Link google fonts títulos -->
 
@@ -31,162 +31,157 @@
 </head>
 <body>
 
-     <header class="container-header" id="container-header">
+    <header class="container-header" id="container-header">
 
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
 
-      <div class="container-fluid">
+            <div class="container-fluid">
 
-        <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
+                <a class="navbar-brand" href="/"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <!-- botoes -->
+                <!-- botoes -->
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul class="navbar-nav menu-central">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
-                <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
-                <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
-                <li><a class="dropdown-item" href="/mostrarCalcados">Calçados</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="/mostrarProdutos">Todos</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
-            <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
-            <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
-          </ul>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav menu-central">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
+                        <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
+                        <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
+                        <li><a class="dropdown-item" href="/mostrarCalcados">Calçados</a></li>
+                        <li>
+                        <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
+                </ul>
 
-          <div class="carrinho-link ms-auto">
-            <a class="nav-link" href="/carrinho"> <i class="fa-solid fa-cart-shopping"></i></a>
-          </div>
+                <div class="carrinho-link ms-auto">
+                    <a class="nav-link" href="/carrinho"> <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
 
-          <div class="perfil-link ms-auto">
-            <a class="nav-link" href="/cadastro"> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-          </div>
-        </div>
-
-
-      </div>
-    </nav>
-
-  </header>
-
+                <div class="perfil-link ms-auto">
+                    <a class="nav-link" href="/cadastro"> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
   <main>
     
-    <div class="container-title">
-        <h1>Infantil</h1>
-    </div>
-
+    <div class="container-title"><h1>Infantil</h1></div>
         <section class="container-links">
             <div class="container-links__links">
-                <a href="#" class="container-links__link">Moletons</a>
-                <a href="#" class="container-links__link">Camisetas</a>
-                <a href="#" class="container-links__link">Calças</a>
-                <a href="#" class="container-links__link">Calçados</a>
+                <a href="#moletons" class="container-links__link">Moletons</a>
+                <a href="#camisetas" class="container-links__link">Camisetas</a>
+                <a href="#calcas" class="container-links__link">Calças</a>
+                <a href="#calcados" class="container-links__link">Calçados</a>
             </div>
         </section>
 
-<!-- moletons -->
+<!-- Moletons -->
     <div class="container-title">
-      <h2>Moletons</h2>
+        <h2>Moletons</h2>
     </div>
     
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="/static/imgs/moletom.png" alt="moletom">
+        <section class="container-produtos" id="moletons">
+            {% for produto in produtos.moletons %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-            <span class="produto__card__titulo">
-                Moletom
-            </span>
+                <span class="produto__card__titulo">
+                    {{ produto.nome_produto }}
+                </span>
 
-            <span class="moletons__card__preco">
-                R$ 99,90
-            </span>
+                <span class="produto__card__preco">
+                     {{ produto.preco }}
+                </span>
 
-            <button>Veja mais</button>
-        </div>
-    </section>
+           <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+            {% endfor %}
+        </section>
 
-<!-- camisetas -->
+<!-- Camisetas -->
     <div class="container-title">
       <h2>Camisetas</h2>
     </div>
 
-    <section class="container-produtos">
-        {% for produto in calcados %}
-        <div class="container-produtos__produto">
-            <img src="{{ produto.url }}" alt="camiseta">
+    <section class="container-produtos" id="camisetas">
+        {% for produto in produtos.camisetas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url}}" alt="{{ produto.nome_produto }}">
 
-            <span class="produto__card__titulo">
+                <span class="produto__card__titulo">
                 {{ produto.nome_produto }}
-            </span>
+                </span>
 
-            <span class="camisetas__card__preco">
-                {{ produto.preco }}
-            </span>
+                <span class="produto__card__preco">
+                R$ {{ produto.preco }}
+                </span>
 
-            <button>Veja mais</button>
-        </div>
+                <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
         {% endfor %}
+    
     </section>
-
-<!-- calças -->
+    
+<!-- Calças -->
     <div class="container-title">
       <h2>Calças</h2>
     </div>
 
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calça">
+        <section class="container-produtos" id="calcas">
+            {% for produto in produtos.calcas %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-            <span class="produto__card__titulo">
-                Calça
-            </span>
+                <span class="produto__card__titulo">
+                    {{ produto.nome_produto }}
+                </span>
 
-            <span class="produto__card__preco">
-                R$ 159,90
-            </span>
+                <span class="produto__card__preco">
+                    R$ {{ produto.preco }}
+                </span>
 
-            <button>
-                Veja mais
-            </button>
-        </div>
-    </section>
+                <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+            {% endfor %}
+        </section>
 
-<!-- calçados -->
+<!-- Calçados -->
     <div class="container-title">
       <h2>Calçados</h2>
     </div>
 
-    <section class="container-produtos">
-        <div class="container-produtos__produto">
-            <img src="/static/imgs//pexels-rafael-quaty-37077235-13236695.png" alt="calcados">
+        <section class="container-produtos" id="calcados">
+            {% for produto in produtos.calcados %}
+            <div class="container-produtos__produto">
+                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-            <span class="produto__card__titulo">
-                Calçados
-            </span>
+                <span class="produto__card__titulo">
+                    {{ produto.nome_produto }}
+                </span>
 
-            <span class="produto__card__preco">
-                R$ 159,90
-            </span>
+                <span class="produto__card__preco">
+                    {{ produto.preco }}
+                </span>
 
-            <button>
-                Veja mais
-            </button>
-        </div>
-    </section>
-
+              <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
+            </div>
+            {% endfor %}
+        </section>
   </main>
 
   <footer class="footer">
@@ -217,6 +212,5 @@
       <img src="../static/imgs/logo-footer.png" alt="Logo M2A1">
     </div>
   </footer>
-    
 </body>
 </html>
