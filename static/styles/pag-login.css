@@ -30,7 +30,7 @@ h1 {
 }
 
 .login-form{
-  background-color: white;
+  background-color: var(--cor-branco);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -53,7 +53,7 @@ h1 {
     padding: 5px 10px;
     margin-bottom: 20px;
     font-size: 16px;
-    border: 1px solid #c9c9c9;
+    border: 1px solid var(--cor-border);
     border-radius: 5px;
 }
 
@@ -65,8 +65,8 @@ h1 {
 }
 
 .c-btns__logar {
-    background-color: #a1673f; /* marrom */
-    color: white;
+    background-color: var(--cor-marrom); /* marrom */
+    color: var(--cor-branco);
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -75,8 +75,8 @@ h1 {
 }
 
 .c-btns__sair {
-    background-color: red;
-    color: white;
+    background-color: var(--cor-botao-cancelar);
+    color: var(--cor-branco);
     padding: 10px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -84,4 +84,31 @@ h1 {
 }
 
 
+/* ======================================================= */
+/* MEDIA QUERY PARA CORREÇÃO ABAIXO DE 500px               */
+/* ======================================================= */
 
+@media (max-width: 500px) {
+
+  /* O formulário agora ocupa 90% da largura da tela, evitando quebras. */
+  .login-form {
+    width: 90%;
+  }
+
+  .c-info-login{
+    width: 100%;
+  }
+
+  /* Para melhorar a usabilidade, os botões são empilhados verticalmente. */
+  .c-btns {
+    flex-direction: column; /* Coloca os botões um embaixo do outro */
+    gap: 15px; /* Cria um espaço entre eles */
+  }
+
+  /* Faz com que os botões ocupem toda a largura disponível no container. */
+  .c-btns__logar,
+  .c-btns__sair {
+    width: 100%;
+  }
+
+}
