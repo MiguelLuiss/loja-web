@@ -55,65 +55,57 @@
     <h1 class="titulo-pagina">Carrinho</h1>
 
     <section class="container-carrinho">
-      <div class="produto-carrinho">
+      <div class="container-carrinho__produto">
         <img src="../static/imgs/c-loja.png" alt="produto">
-        <div class="descricao">
+        <div class="container-carrinho__descricao">
           <h3>Descrição do produto</h3>
           <p>Adicione aqui a explicação do seu item no carrinho, como nome, tamanho, cor etc.</p>
         </div>
       </div>
 
-      <div class="resumo-carrinho">
+      <div class="container-carrinho__resumo">
         <h4>Resumo da compra</h4>
         <p><strong>Preço</strong></p>
         <p class="preco">R$ 100,00</p>
       </div>
 
-      <div class="botoes">
+      <div class="container-carrinho__botoes">
         <button class="btn btn-marrom">Comprar</button>
         <button class="btn btn-danger">Excluir</button>
       </div>
     </section>
 
-    <section class="carrossel-section">
-      <h2>Compre Também</h2>
-      <div id="carouselRecomendados" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="card-group">
-              <div class="card">
-                <img src="../static/imgs/produto-modelo1.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Título</h5>
-                  <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../static/imgs/produto-modelo2.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Título</h5>
-                  <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../static/imgs/produto-modelo3.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Título</h5>
-                  <a href="#" class="btn btn-outline-dark btn-sm">Ver mais</a>
-                </div>
-              </div>
+    <!-- Carrossel -->
+    <section class="carrossel">
+      <section class="carrossel__produtos">
+        <h1 class="carrossel__produtos-destaque">Produtos em destaque</h1>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../static/imgs/produto-calçados.png" class="d-block w-100" alt="imagem-01">
+            </div>
+            <div class="carousel-item">
+              <img src="../static/imgs/produto-calças.png" class="d-block w-100" alt="imagem-02">
+            </div>
+            <div class="carousel-item">
+              <img src="../static/imgs/produto-casaco.png" class="d-block w-100" alt="imagem-03">
+            </div>
+            <div class="carousel-item">
+              <img src="../static/imgs/produto-moletons.png" class="d-block w-100" alt="imagem-04">
             </div>
           </div>
-          <!-- Mais .carousel-item aqui se desejar -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecomendados" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselRecomendados" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
+      </section>
     </section>
+
   </main>
 
   <footer class="footer">
