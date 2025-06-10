@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, jsonify
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
 from model.comentario import Comentario
+from model.carrinho import Carrinho
 
 app = Flask(__name__)
 app.secret_key = '12345678'
@@ -111,6 +112,31 @@ def mostrarCalcas():
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
+
+#Carrinho
+@app.route("/carrinho")
+def mostrar_carrinho():
+    if "usuario" in session:
+        produtos = Carrinho.listar_carrinho(session["usuario"])
+        return render_template("carrinho.html", produtos=produtos)
+    else:
+        return redirect("/login")
+
+@app.route("/adicionar_carrinho/<int:produto_id>")
+def adicionar_ao_carrinho(produto_id):
+    if "usuario" in session:
+        Carrinho.adicionar_produto(session["usuario"], produto_id, 1)  # Adiciona 1 unidade por padrão
+        return redirect("/carrinho")
+    else:
+        return redirect("/login")
+
+@app.route("/remover_carrinho/<int:produto_id>")
+def remover_do_carrinho(produto_id):
+    if "usuario" in session:
+        Carrinho.remover_produto(session["usuario"], produto_id)
+        return redirect("/carrinho")
+    else:
+        return redirect("/login")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
