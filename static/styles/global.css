@@ -18,4 +18,6 @@
     --cor-botao-cancelar: #FF0000;
     --cor-branco: #FFFFFF;
     --cor-preto: #080808;
+    --cor-border: ##c9c9c9;
+    --cor-sombra: rgba(1, 0, 0, 0.7)
 }
