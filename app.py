@@ -23,18 +23,6 @@ def pagina_login():
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
 
-@app.route('/pag-masculino')
-def pgMasculino():
-    return render_template('pag-masculino.html')
-
-@app.route('/pag-feminino')
-def pgFeminino():
-    return render_template('pag-feminino.html')
-
-@app.route('/pag-infantil')
-def pgInfantil():
-    return render_template('pag-infantil.html')
-
 # Cadastro de usuário
 @app.route('/post/cadastrarUsuario', methods=['POST'])
 def cadastrarUsuario():
