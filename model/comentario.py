@@ -10,7 +10,7 @@ class Comentario:
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor()
 
-        # Comando SQL corrigido (3 colunas, 3 valores)
+        
         sql = """
             INSERT INTO tb_comentarios (
                 Comentario,
@@ -31,12 +31,12 @@ class Comentario:
         cursor.close()
         conexao.close()
         
-    def mostrarComentarios():
+    def mostrarComentarios(codProduto):
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """SELECT tb_comentarios.Cod_comentario, tb_comentarios.Comentario, tb_comentarios.Usuario, tb_comentarios.Data_comentario FROM tb_comentarios INNER JOIN tb_produtos ON tb_comentarios.codProduto = tb_produtos.codProduto;"""
+        sql = """SELECT tb_comentarios.Cod_comentario, tb_comentarios.Comentario, tb_comentarios.Usuario, tb_comentarios.Data_comentario FROM tb_comentarios WHERE codProduto = $s;"""
         
-        cursor.execute(sql)
+        cursor.execute(sql,(codProduto))
         resultados = cursor.fetchall()
         
         cursor.close()

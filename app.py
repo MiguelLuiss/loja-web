@@ -102,15 +102,21 @@ def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
     return render_template("moletons.html", moletom=moletom)
 
+
+
 @app.route('/mostrarCamisetas')
 def mostrarCamisetas():
     camisetas = Produto.mostrarCamisetas()
     return render_template("camisetas.html", camisetas=camisetas)
 
+
+
 @app.route('/mostrarCalcas')
 def mostrarCalcas():
     calcas = Produto.mostrarCalcas()
     return render_template("calcas.html", calcas=calcas)
+
+
 
 @app.route('/mostrarCalcados')
 def mostrarCalcados():
@@ -118,15 +124,21 @@ def mostrarCalcados():
     return render_template("calcados.html", calcados=calcados)
 
 
+
+
 @app.route("/amostraProduto/<codigo>")
 def mostrar_produto(codigo):
     produto = Produto.amostraProduto(codigo)
+    mostrarComentario = Comentario.mostrarComentarios(codigo)
+    
 
     if produto:
-        return render_template("amostraProduto.html", produto=produto)
+        return render_template("amostraProduto.html", produto=produto,
+                                mostrarComentario = mostrarComentario
+                               )
     else:
         return "Produto não encontrado", 404
-    
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
