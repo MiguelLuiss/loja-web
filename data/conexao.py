@@ -17,5 +17,5 @@ class Conexao:
                                         port = 3306,
                                         user = "root",
                                         password = "root",
-                                        database = "db_Loja_M2A1")
+                                        database = "db_loja_m2a1")
         return conexao

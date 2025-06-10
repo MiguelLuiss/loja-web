@@ -8,6 +8,13 @@ CREATE TABLE tb_categorias (
   categorias VARCHAR(30) NOT NULL
 );
 
+create table tb_comentarios (
+	Cod_comentario INT auto_increment primary key,
+	Comentario varchar(100) NOT NULL,
+    Usuario varchar(80) NOT NULL,
+    Data_comentario datetime NOT NULL
+);
+
 -- Tabela de Produtos (agora com codCategoria como chave estrangeira)
 CREATE TABLE tb_produtos (
   codProduto INT PRIMARY KEY AUTO_INCREMENT,
@@ -258,3 +265,7 @@ INSERT INTO tb_produtos(
 );
 
 select * from tb_produtos;
+
+select * from tb_usuarios;
+
+select * from tb_comentarios

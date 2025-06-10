@@ -66,7 +66,7 @@
         <div id="carouselProduto" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../static/imgs/produto-moletons.png" class="d-block w-100" alt="produto">
+              <img src="{{produto.url}}" class="d-block w-100" alt="produto">
             </div>
             <!-- Você pode adicionar mais <div class="carousel-item"> aqui -->
           </div>
@@ -77,15 +77,15 @@
             <span class="carousel-control-next-icon"></span>
           </button>
         </div>
-        <p class="mt-2 fw-bold">Moletom Casual “Search for Art in Everything” — Unissex</p>
+        <p class="mt-2 fw-bold">{{produto.nome_produto}}</p>
       </div>
 
       <!-- Descrição do produto -->
       <div class="col-md-6">
         <div class="border p-3 rounded bg-light">
           <h3 style="font-family: Kavoon;">Descrição</h3>
-          <p>Adicione estilo e significado ao seu look com o moletom “Search for Art in Everything”. Com estampa conceitual e um caimento confortável, é ideal para quem busca se expressar através da moda urbana. Feito com algodão premium para maior conforto e durabilidade. Ideal para passeios, encontros casuais, eventos culturais e afins.</p>
-          <h4 class="mt-3" style="font-family: Kavoon;">R$ 100,00</h4>
+          <p>{{produto.descricao}}</p>
+          <h4 class="mt-3" style="font-family: Kavoon;">{{produto.preco}}</h4>
           <button class="btn btn-dark mt-2 w-100">Adicionar ao carrinho</button>
         </div>
       </div>
@@ -94,17 +94,18 @@
     <!-- Comentários -->
     <section class="mt-5">
       <h4 style="font-family: Kavoon;">Comentários</h4>
-      <form class="mb-3">
-        <textarea class="form-control mb-2" rows="4" placeholder="Digite seu comentário aqui"></textarea>
+      <form class="mb-3" action="/post/comentario" method="post">
+        <textarea class="form-control mb-2" rows="4" placeholder="Digite seu comentário aqui" name="cadastro-comentario__comentario"></textarea>
         <button class="btn btn-dark">Enviar</button>
       </form>
 
       <!-- Comentário exemplo -->
+       {% for comentario in comentarios%}
       <div class="border p-3 mb-2 rounded">
-        <strong>Miguel Chaves</strong>
-        <p>Excelente qualidade, tecido super confortável e a estampa é linda! Chegou antes do prazo. Super recomendo.</p>
+        <strong>{{comentario.Usuario}}</strong>
+        <p>{{comentario.Comentario}}</p>
       </div>
-      <!-- Adicione mais divs como essa para outros comentários -->
+      {% endfor %}
     </section>
 
   </main>
