@@ -90,3 +90,31 @@ body {
 .btn-cancelar {
   background-color: var(--cor-botao-cancelar);
 }
+
+
+
+
+@media (max-width: 468px) {
+
+  /* O formulário agora ocupa 90% da largura da tela, evitando quebras. */
+  .login-form {
+    width: 90%;
+  }
+
+  .c-info-login{
+    width: 100%;
+  }
+
+  /* Para melhorar a usabilidade, os botões são empilhados verticalmente. */
+  .c-btns {
+    flex-direction: column; /* Coloca os botões um embaixo do outro */
+    gap: 15px; /* Cria um espaço entre eles */
+  }
+
+  /* Faz com que os botões ocupem toda a largura disponível no container. */
+  .c-btns__logar,
+  .c-btns__sair {
+    width: 100%;
+  }
+
+}
