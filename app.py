@@ -129,7 +129,8 @@ def mostrarCalcados():
     return render_template("calcados.html", calcados=calcados)
 
 
-@app.route("/amostraProduto/<codigo>")
+@app.route("/amostraP" \
+"roduto/<codigo>")
 def mostrar_produto(codigo):
     produto = Produto.amostraProduto(codigo)
 
