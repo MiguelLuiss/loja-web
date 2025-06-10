@@ -1,0 +1,5 @@
+Melhorias Opcionais: Ações de Integridade Referencial
+Você pode especificar o que acontece com os comentários se um produto for excluído ou seu codProduto for atualizado. As opções mais comuns são ON DELETE CASCADE e ON UPDATE CASCADE.
+
+ON DELETE CASCADE: Se um produto for excluído, todos os comentários relacionados a ele na tb_comentarios também serão automaticamente excluídos.
+ON UPDATE CASCADE: Se o codProduto de um produto for atualizado na tb_produtos, o codProduto correspondente em todos os comentários relacionados na tb_comentarios também será automaticamente atualizado.
