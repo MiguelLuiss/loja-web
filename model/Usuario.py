@@ -37,3 +37,7 @@ class Usuario:
             return True
         else:
             return False
+
+
+    def logOff():
+        session.clear()

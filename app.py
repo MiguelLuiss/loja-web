@@ -59,6 +59,22 @@ def verificaLogin():
     else:
         return redirect("/login")
     
+@app.route('/catalogo')
+def catalogo():
+    moletom = Produto.mostrarMoletons()
+    camisetas = Produto.mostrarCamisetas()
+    calcas = Produto.mostrarCalcas()
+    calcados = Produto.mostrarCalcados()
+
+    return render_template(
+        'catalogo.html',
+        moletom=moletom,
+        camisetas=camisetas,
+        calcas=calcas,
+        calcados=calcados
+    )
+
+    
 # Rotas de categorias por gênero
 @app.route('/pag-masculino')
 def pagMasculino():
@@ -110,42 +126,6 @@ def mostrarCalcas():
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
-
-#Carrinho
-@app.route('/adicionar_carrinho/<int:cod_produto>', methods=['POST'])
-def adicionar_carrinho(cod_produto):
-    if 'usuario' not in session:
-        return redirect(url_for('cadastrarUsuario'))  # ou outra rota de login
-
-    cod_usuario = session['usuario']['codUsuario']
-    produto = Produto.buscar_por_id(cod_produto)
-
-    if produto:
-        Carrinho.adicionar_item(cod_usuario, produto)
-
-    return redirect(url_for('carrinho.exibir_carrinho'))
-
-@app.route('/carrinho')
-def exibir_carrinho():
-    if 'usuario' not in session:
-        return redirect(url_for('login'))
-
-    cod_usuario = session['usuario']['codUsuario']
-    itens = Carrinho.listar_itens(cod_usuario)
-
-    total = sum(float(item['preco']) for item in itens)
-
-    return render_template('carrinho.html', itens=itens, total=f"R$ {total:.2f}")
-
-@app.route('/remover_carrinho/<int:cod_produto>')
-def remover_carrinho(cod_produto):
-    if 'usuario' not in session:
-        return redirect(url_for('login'))
-
-    cod_usuario = session['usuario']['codUsuario']
-    Carrinho.remover_item(cod_usuario, cod_produto)
-
-    return redirect(url_for('carrinho.exibir_carrinho'))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

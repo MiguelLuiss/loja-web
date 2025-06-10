@@ -38,7 +38,7 @@
 
       <div class="container-fluid">
 
-        <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
+        <a class="navbar-brand" href="/"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="/mostrarProdutos">Todos</a></li>
+                <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
@@ -102,9 +102,7 @@
                 {{ produto.preco }}
                 </span>
 
-                <button>
-                Veja mais
-                </button>
+                <a a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
             </div>
         {% endfor %}
    
