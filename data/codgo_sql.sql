@@ -264,4 +264,10 @@ INSERT INTO tb_produtos(
     'https://images.pexels.com/photos/3914693/pexels-photo-3914693.jpeg?auto=compress&cs=tinysrgb&w=600'
 );
 
+--Caso precise criar um novo usuário
+-- CREATE USER 'usuario_lojam2a1'@'%' IDENTIFIED BY 'loja_m2a1';
+-- GRANT ALL PRIVILEGES ON db_loja_m2a1.* TO 'usuario_lojam2a1'@'%' WITH GRANT OPTION;
+
+-- FLUSH PRIVILEGES;
+
 select * from tb_produtos;

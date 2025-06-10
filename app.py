@@ -1,7 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, jsonify, url_for
-import datetime
-import mysql.connector
-
+from flask import Flask, render_template, request, redirect, session
 from data.conexao import Conexao
 from model.Usuario import Usuario
 from model.produtos import Produto
@@ -10,8 +7,7 @@ from model.comentario import Comentario
 app = Flask(__name__)
 app.secret_key = '12345678'
 
-###################### Render Templates ########################
-
+# Rotas principais
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -23,7 +19,6 @@ def pagina_login():
 @app.route('/cadastro')
 def pagina_cadastro():
     return render_template('pag-cadastro.html')
-
 
 @app.route('/pag-masculino')
 def pgMasculino():
@@ -41,12 +36,7 @@ def pgInfantil():
 def carrinho():
     return render_template('carrinho.html')
 
-@app.route('/amostraProduto')
-def amostraProduto():
-    return render_template('amostraProduto.html')
-
-####################### Funções ###############################
-
+# Cadastro de usuário
 @app.route('/post/cadastrarUsuario', methods=['POST'])
 def cadastrarUsuario():
     nome = request.form.get("nome")
@@ -58,6 +48,7 @@ def cadastrarUsuario():
     Usuario.criarUsuario(nome, senha, email, telefone, endereco)
     return redirect('/cadastro')
 
+# Login
 @app.route("/verificaLogin", methods=["POST"])
 def verificaLogin():
     email = request.form.get("email")
@@ -68,23 +59,39 @@ def verificaLogin():
         return redirect("/")
     else:
         return redirect("/login")
+    
+# Rotas de categorias por gênero
+@app.route('/pag-masculino')
+def pagMasculino():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsMasculinos(),
+        'camisetas': Produto.mostrarCamisetasMasculinos(),
+        'calcas': Produto.mostrarCalcasMasculinos(),
+        'calcados': Produto.mostrarCalcadosMasculinos()
+    }
+    return render_template('pag-masculino.html', produtos=produtos)
 
-@app.route('/catalogo')
-def catalogo():
-    moletom = Produto.mostrarMoletons()
-    camisetas = Produto.mostrarCamisetas()
-    calcas = Produto.mostrarCalcas()
-    calcados = Produto.mostrarCalcados()
+@app.route('/pag-feminino')
+def pagFeminino():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsFemininos(),
+        'camisetas': Produto.mostrarCamisetasFemininos(),
+        'calcas': Produto.mostrarCalcasFemininos(),
+        'calcados': Produto.mostrarCalcadosFemininos()
+    }
+    return render_template('pag-feminino.html', produtos=produtos)
 
-    return render_template(
-        'catalogo.html',
-        moletom=moletom,
-        camisetas=camisetas,
-        calcas=calcas,
-        calcados=calcados
-    )
+@app.route('/pag-infantil')
+def pagInfantil():
+    produtos = {
+        'moletons': Produto.mostrarMoletonsInfantis(),
+        'camisetas': Produto.mostrarCamisetasInfantis(),
+        'calcas': Produto.mostrarCalcasInfantis(),
+        'calcados': Produto.mostrarCalcadosInfantis()
+    }
+    return render_template('pag-infantil.html', produtos=produtos)
 
-
+# Rota para a página de moletons
 @app.route('/mostrarMoletons')
 def mostrarMoletons():
     moletom = Produto.mostrarMoletons()
@@ -104,39 +111,6 @@ def mostrarCalcas():
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
-
-
-@app.route("/comentarios" , methods = ["GET"])
-def comentario():
-    if "usuario" in session:
-        comentarios = Comentario.mostrarComentarios()
-        return render_template ("amostraProduto.html", comentarios=comentarios)
-    else:
-        return redirect ("/comentarios")
-
-
-@app.route("/post/comentario", methods=["POST"])
-def cadastrarComentario():
-    if "usuario" in session:
-        nome = session["usuario"]
-        comentario = request.form.get("cadastro-comentario__comentario")
-        
-        Comentario.cadastrarcomentario(nome, comentario)
-        print(nome)
-        return redirect("/comentarios")
-    else:
-        return redirect('/')
-
-@app.route("/amostraProduto/<codigo>")    
-def mostrar_produto(codigo):
-    produto = Produto.amostraProduto(codigo)
-
-    if produto:
-        return render_template("amostraProduto.html", produto=produto)
-    else:
-        return "Produto não encontrado", 404
-
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
