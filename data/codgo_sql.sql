@@ -37,7 +37,6 @@ CREATE TABLE tb_usuarios (
   endereco VARCHAR(50)
 );
 
--- Tabela Carrinho (referência cruzada com usuários, produtos e categorias)
 CREATE TABLE tb_carrinho (
   codCarrinho INT PRIMARY KEY AUTO_INCREMENT,
   codUsuario INT NOT NULL,
@@ -47,17 +46,11 @@ CREATE TABLE tb_carrinho (
   descricao VARCHAR(80),
   preco VARCHAR(20),
   sexo VARCHAR(20),
+  url varchar(200),
+  quantidade int,
   FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario),
   FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
   FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
-);
-
--- Tabela Fotos (cada foto pertence a um produto)
-CREATE TABLE tb_fotos (
-  codFoto INT PRIMARY KEY AUTO_INCREMENT,
-  codProduto INT NOT NULL,
-  url VARCHAR(255),
-  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto)
 );
 
 
@@ -268,4 +261,6 @@ select * from tb_produtos;
 
 select * from tb_usuarios;
 
-select * from tb_comentarios
+select * from tb_comentarios;
+
+select * from tb_carrinho
