@@ -1,41 +1,59 @@
 from flask import session
 from data.conexao import Conexao
-import mysql
 
 class Carrinho:
-
-    @staticmethod
     def adicionar_item(cod_usuario, produto):
-        conexao = mysql.connection
+        conexao = Conexao.criarConexao()
         cursor = conexao.cursor()
 
         sql = """
-            INSERT INTO tb_carrinho (codUsuario, codProduto, codCategoria, nome_produto, descricao, preco, sexo)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO tb_carrinho (
+                codUsuario,
+                codProduto,
+                codCategoria,
+                nome_produto,
+                descricao,
+                preco,
+                sexo,
+                url,
+                quantidade
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
+        quantidade = produto.get('quantidade', 1)  # se não tiver, usa 1 como padrão
+
         cursor.execute(sql, (
             cod_usuario,
             produto['codProduto'],
-            produto['codCategoria'],
+            produto.get('codCategoria'),
             produto['nome_produto'],
             produto['descricao'],
             produto['preco'],
-            produto['sexo']
+            produto['sexo'],
+            produto['url'],
+            quantidade
         ))
         conexao.commit()
         cursor.close()
 
-    @staticmethod
-    def listar_itens(cod_usuario):
-        cursor = mysql.connection.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM tb_carrinho WHERE codUsuario = %s", (cod_usuario,))
-        itens = cursor.fetchall()
-        cursor.close()
-        return itens
+    def mostrarCarrinho(codigo):
+        conexao = Conexao.criarConexao()
+        cursor = conexao.cursor(dictionary=True)
 
-    @staticmethod
-    def remover_item(cod_usuario, cod_produto):
-        cursor = mysql.connection.cursor()
-        cursor.execute("DELETE FROM tb_carrinho WHERE codUsuario = %s AND codProduto = %s", (cod_usuario, cod_produto))
-        mysql.connection.commit()
+        sql = "SELECT * FROM tb_carrinho WHERE codUsuario = %s"
+        cursor.execute(sql, (codigo,)) 
+        produto = cursor.fetchall()
+
         cursor.close()
+        conexao.close()
+        return produto
+    
+    def excluirItemCarrinho(codCarrinho):
+        conexao = Conexao.criarConexao()
+        cursor = conexao.cursor()
+        
+        sql = "DELETE FROM tb_carrinho WHERE codCarrinho = %s"
+        cursor.execute(sql, (codCarrinho,))
+        conexao.commit()
+
+        cursor.close()
+        conexao.close()

@@ -55,25 +55,28 @@
     <main class="container-main">
       <h1 class="titulo-pagina text-center mb-4">Carrinho</h1>
 
+      {%for produto in produtos%}
     <section class="container-carrinho">
       <div class="produto-carrinho">
-        <img src="../static/imgs/c-loja.png" alt="produto">
+        <img src="{{produto.url}}" alt="produto">
+        <span>{{produto.nome_produto}}</span>
         <div class="descricao">
           <h3>Descrição do produto</h3>
-          <p>Adicione aqui a explicação do seu item no carrinho, como nome, tamanho, cor etc.</p>
+          <p>{{produto.descricao}}</p>
         </div>
       </div>
 
       <div class="resumo-carrinho">
         <h4>Resumo da compra</h4>
         <p><strong>Preço</strong></p>
-        <p class="preco">R$ 100,00</p>
+        <p class="preco">{{produto.preco}}</p>
       </div>
 
       <div class="botoes">
-        <button class="btn btn-marrom">Comprar</button>
-        <button class="btn btn-danger">Excluir</button>
+        <a href="#"><button class="btn btn-marrom">Comprar</button></a>
+        <a href="/excluir_carrinho/{{ produto.codCarrinho }}" class="btn btn-danger">Excluir</a>
       </div>
+      {% endfor %}
     </section>
 
     <section class="carrossel-section">

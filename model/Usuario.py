@@ -24,7 +24,7 @@ class Usuario:
         senha = sha256(senha.encode()).hexdigest()
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary=True)
-        sql = "SELECT email,nome FROM tb_usuarios WHERE email = %s AND senha = %s"
+        sql = "SELECT email,nome,codUsuario FROM tb_usuarios WHERE email = %s AND senha = %s"
         valores = [email, senha]
         cursor.execute(sql, valores)
         usuario = cursor.fetchone()
@@ -34,6 +34,7 @@ class Usuario:
         if usuario:
             session['usuario'] = usuario['email']
             session['nome_usuario'] = usuario['nome']
+            session['cod_usuario'] = usuario['codUsuario']
             return True
         else:
             return False

@@ -82,7 +82,7 @@
 
       <!-- Descrição do produto -->
       <div class="col-md-6">
-        <form action="{{ url_for('carrinho.adicionar_carrinho', cod_produto=produto.codProduto) }}" method="post">
+        <form action="/adicionar-carrinho/{{  produto.codProduto }}" method="post">
           <div class="border p-3 rounded bg-light">
             <h3 style="font-family: Kavoon;">Descrição</h3>
             <p>{{ produto.descricao }}</p>
