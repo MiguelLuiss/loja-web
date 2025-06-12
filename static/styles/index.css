@@ -106,6 +106,23 @@ header {
 
 
 
+.container-img-split{
+  width: 98vw;
+}
+
+.img-logo-split{
+  width: 100%;
+  
+}
+
+figure {
+  width: 100%;
+}
+
+
+
+
+
 /* Carrossel */
 .c-carrossel {
   max-width: 99.8vw;
