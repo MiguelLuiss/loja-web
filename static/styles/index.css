@@ -30,7 +30,7 @@ header {
 }
 
 .fa-cart-shopping,
-.fa-arrow-right-to-bracket {
+.fa-arrow-right-to-bracket, .fa-user{
   color: var(--cor-branco);
   font-size: larger;
   width: 30px;

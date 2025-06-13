@@ -43,6 +43,7 @@ def verificaLogin():
     usuario = Usuario.verificarLogin(email, senha)
 
     if usuario:
+        session['foto'] = "navbar-toggler-icon"
         return redirect("/")
     else:
         return redirect("/login")
