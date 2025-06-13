@@ -2,40 +2,22 @@ import datetime
 from data.conexao import Conexao
 
 class Comentario: 
-    def cadastrarcomentario(nome, comentario):
-        data_hora = datetime.datetime.today()
-
-        # Conexão com o banco de dados
+    def adicionarComentario(codProduto, codUsuario, texto):
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor()
-
-        # Comando SQL corrigido (3 colunas, 3 valores)
-        sql = """
-            INSERT INTO tb_comentarios (
-                Comentario,
-                Usuario,
-                Data_comentario
-            ) VALUES (
-                %s, %s, %s
-            )
-        """
-
-        valores = [comentario,nome,data_hora]
-
-        # Executar e confirmar
-        cursor.execute(sql, valores)
+        sql = "INSERT INTO tb_comentarios (codProduto, codUsuario, comentario) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (codProduto, codUsuario, texto))
         conexao.commit()
-
-        # Fechar conexão
         cursor.close()
         conexao.close()
         
-    def mostrarComentarios():
+    def mostrarComentarios(codProduto):
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """SELECT Cod_comentario, Usuario, Data_comentario, Comentario FROM tb_comentarios"""
-        
-        cursor.execute(sql)
+        sql = """SELECT * FROM tb_comentarios where codProduto = %s"""
+
+        valores = [codProduto]
+        cursor.execute(sql,valores)
         resultados = cursor.fetchall()
         
         cursor.close()
