@@ -259,6 +259,8 @@ INSERT INTO tb_produtos(
     'https://images.pexels.com/photos/3914693/pexels-photo-3914693.jpeg?auto=compress&cs=tinysrgb&w=600'
 );
 
+ALTER TABLE tb_carrinho MODIFY descricao VARCHAR(1000);
+
 select * from tb_produtos;
 
 select * from tb_usuarios;
@@ -267,4 +269,3 @@ select * from tb_comentarios;
 
 select * from tb_carrinho;
 
-ALTER TABLE tb_carrinho MODIFY descricao VARCHAR(1000);
