@@ -35,6 +35,7 @@ class Usuario:
             session['usuario'] = usuario['email']
             session['nome_usuario'] = usuario['nome']
             session['cod_usuario'] = usuario['codUsuario']
+            session['foto'] = "navbar-toggler-icon"
             return True
         else:
             return False
