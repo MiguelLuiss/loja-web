@@ -8,14 +8,6 @@ CREATE TABLE tb_categorias (
   categorias VARCHAR(30) NOT NULL
 );
 
-create table tb_comentarios (
-	Cod_comentario INT auto_increment primary key,
-	Comentario varchar(100) NOT NULL,
-    Usuario varchar(80) NOT NULL,
-    Data_comentario datetime NOT NULL
-);
-
--- Tabela de Produtos (agora com codCategoria como chave estrangeira)
 CREATE TABLE tb_produtos (
   codProduto INT PRIMARY KEY AUTO_INCREMENT,
   nome_produto VARCHAR(50) NOT NULL,
@@ -51,6 +43,16 @@ CREATE TABLE tb_carrinho (
   FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario),
   FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
   FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+);
+
+CREATE TABLE tb_comentarios (
+    codComentario INT AUTO_INCREMENT PRIMARY KEY,
+    codProduto INT NOT NULL,
+    codUsuario INT NOT NULL,
+    comentario TEXT NOT NULL,
+    data_comentario DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
+    FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario)
 );
 
 
@@ -263,4 +265,6 @@ select * from tb_usuarios;
 
 select * from tb_comentarios;
 
-select * from tb_carrinho
+select * from tb_carrinho;
+
+ALTER TABLE tb_carrinho MODIFY descricao VARCHAR(1000);
