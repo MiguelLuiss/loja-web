@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cadastro</title>
+  <title>Pagina de Cadastro</title>
   <link rel="stylesheet" href="/static/styles/global.css"/>
   <link rel="stylesheet" href="/static/styles/pag-cadastro.css"/>
 </head>
 <body>
 <main>
-        <div class="cadastro-container">
+        <!-- <div class="cadastro-container">
 
             <div class="cadastro-topo">
               <span>Já possui conta?</span> <a href="/login">Entrar</a>
@@ -40,8 +40,43 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div> -->
   
+          <section>
+
+             <div class="cadastro-topo">
+              <span>Já possui conta?</span> <a href="/login">Entrar</a>
+            </div>
+        
+            <div class="cadastro-box">
+              
+              <h1>Crie sua conta</h1>
+         
+         <form action="/post/cadastrarUsuario" method="post" class="cadastro-form">
+
+            <div class="info-cadastro">
+
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required/>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00)00000-0000"/>
+        
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+            </div>
+        
+            <div class="c-btns">
+                <button type="submit" class="c-btns__logar">Logar</button>
+                <a href="" class="c-btns__sair">Sair</a>
+            </div>
+        </form>
+        
+    </section>
+
   </main>
 
 </body>
