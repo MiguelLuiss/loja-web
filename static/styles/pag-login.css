@@ -1,13 +1,13 @@
 @import url('static/styles/global.css');
 /* Atualização geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter;
     background-color: var(--cor-fundo-pag);
     margin: 0;
     padding: 0;
 }
 
-section {
+section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,14 +17,14 @@ section {
 }
 
 /* Título */
-h1 {
+h1{
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 30px;
 }
 
 /* Container principal */
-.c-info-login {
+.c-info-login{
     width: 400px;
     padding: 0 30px;
 }
@@ -33,21 +33,19 @@ h1 {
   background-color: var(--cor-branco);
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px var(--cor-sombra);
   width: 500px;
   margin: 0 auto;
-  
 }
 
-
 /* Estilo dos campos */
-.c-info-login label {
+.c-info-login label{
     display: block;
     margin-bottom: 5px;
     font-size: 16px;
 }
 
-.c-info-login input {
+.c-info-login input{
     width: 100%;
     height: 40px;
     padding: 5px 10px;
@@ -58,13 +56,13 @@ h1 {
 }
 
 /* Botões */
-.c-btns {
+.c-btns{
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.c-btns__logar {
+.c-btns__logar{
     background-color: var(--cor-marrom); /* marrom */
     color: var(--cor-branco);
     padding: 10px 20px;
@@ -74,7 +72,7 @@ h1 {
     cursor: pointer;
 }
 
-.c-btns__sair {
+.c-btns__sair{
     background-color: var(--cor-botao-cancelar);
     color: var(--cor-branco);
     padding: 10px 20px;
@@ -83,7 +81,6 @@ h1 {
     font-size: 16px;
 }
 
-
 /* ======================================================= */
 /* MEDIA QUERY PARA CORREÇÃO ABAIXO DE 500px               */
 /* ======================================================= */
@@ -91,7 +88,7 @@ h1 {
 @media (max-width: 468px) {
 
   /* O formulário agora ocupa 90% da largura da tela, evitando quebras. */
-  .login-form {
+  .login-form{
     width: 90%;
   }
 
@@ -100,15 +97,14 @@ h1 {
   }
 
   /* Para melhorar a usabilidade, os botões são empilhados verticalmente. */
-  .c-btns {
+  .c-btns{
     flex-direction: column; /* Coloca os botões um embaixo do outro */
     gap: 15px; /* Cria um espaço entre eles */
   }
 
   /* Faz com que os botões ocupem toda a largura disponível no container. */
   .c-btns__logar,
-  .c-btns__sair {
+  .c-btns__sair{
     width: 100%;
   }
-
 }

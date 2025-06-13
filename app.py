@@ -119,9 +119,10 @@ def mostrarCalcados():
 @app.route("/amostraProduto/<codigo>")
 def mostrar_produto(codigo):
     produto = Produto.amostraProduto(codigo)
+    comentarios = Comentario.mostrarComentarios(codigo)
 
     if produto:
-        return render_template("amostraProduto.html", produto=produto)
+        return render_template("amostraProduto.html", produto=produto, comentarios = comentarios)
     else:
         return "Produto não encontrado", 404
     
@@ -148,7 +149,9 @@ def adicionar_ao_carrinho(codigo):
             'sexo': produto['sexo'],
             'url': produto['url']
         }
-        
+
+
+        print(f"Produto retornado: {produto}")
         Carrinho.adicionar_item(cod_usuario, produto_dict)
         return redirect('/')
     
@@ -172,6 +175,20 @@ def excluir_carrinho(codCarrinho):
 
     Carrinho.excluirItemCarrinho(codCarrinho)
     return redirect("/carrinho")
+
+@app.route("/comentario/adicionar/<codProduto>", methods=["POST"])
+def adicionar_comentario(codProduto):
+    if "usuario" not in session:
+        return redirect("/login")
+    
+    comentario = request.form.get("cadastro-comentario__comentario")
+    codUsuario = session["cod_usuario"]
+
+    if comentario:
+        Comentario.adicionarComentario(codProduto, codUsuario, comentario)
+
+    return redirect(f"/amostraProduto/{codProduto}")
+
 
 @app.route("/sair")
 def sair():
