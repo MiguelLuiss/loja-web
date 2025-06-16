@@ -140,35 +140,30 @@
     
 
     <!-- Carrossel -->
-    <section class="container-carrossel">
-      <section class="container-carrossel__produtos">
-        <h1 class="produtos-destaque">Produtos em destaque</h1>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../static/imgs/produto-calçados.png" class="d-block w-100" alt="imagem-01">
-            </div>
-            <div class="carousel-item">
-              <img src="../static/imgs/produto-calças.png" class="d-block w-100" alt="imagem-02">
-            </div>
-            <div class="carousel-item">
-              <img src="../static/imgs/produto-casaco.png" class="d-block w-100" alt="imagem-03">
-            </div>
-            <div class="carousel-item">
-              <img src="../static/imgs/produto-moletons.png" class="d-block w-100" alt="imagem-04">
-            </div>
+<section class="container-carrossel">
+  <section class="container-carrossel__produtos">
+    <h1 class="produtos-destaque">Produtos em destaque</h1>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for produto in produtos_destaque %}
+          <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
+            <img src="{{ produto.url}}" class="d-block w-100" alt="{{ produto.nome_produto }}">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-            <span class="visually-hidden">Próximo</span>
-          </button>
-        </div>
-      </section>
-    </section>
+        {% endfor %}
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </section>
+</section>
+
   </main>
 
   <!-- Rodapé -->
