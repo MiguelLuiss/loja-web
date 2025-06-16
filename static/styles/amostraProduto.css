@@ -35,16 +35,16 @@
 }
 
 /* Comentários */
-section h4{
+.comentarios h4{
   margin-bottom: 1rem;
   font-family: Kavoon;
 }
 
-section textarea{
+.comentarios textarea{
   resize: none;
 }
 
-section .border{
+.comentarios .border{
   background-color: var(--cor-branco);
   box-shadow: 0 0 6px var(--cor-sombra);
 }

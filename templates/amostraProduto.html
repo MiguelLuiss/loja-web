@@ -132,12 +132,22 @@ r
     </div>
 
     <!-- Comentários -->
-    <section>
+    <!-- <section class="comentarios">
       <h4>Comentários</h4>
       <form  action="/comentario/adicionar/{{ produto.codProduto }}" method="post">
         <textarea class="form-control mb-2" rows="4" placeholder="Digite seu comentário aqui" name="cadastro-comentario__comentario"></textarea>
         <button class="btn btn-dark">Enviar</button>
-      </form>
+      </form> -->
+
+      <!-- Comentários -->
+      <!-- com bootstrap -->
+      <section class="comentarios">
+        <h4 class="comentarios__titulo">Comentários</h4>
+        <form class="comentarios__form" action="/comentario/adicionar/{{ produto.codProduto }}">
+          <textarea class="comentarios__input form-control mb-2" rows="4" placeholder="Digite seu comentário aqui"></textarea>
+          <button class="comentarios__btn btn btn-dark">Enviar</button>
+        </form>
+      </section>
 
       <!-- Comentário exemplo -->
        {% for comentario in comentarios%}
