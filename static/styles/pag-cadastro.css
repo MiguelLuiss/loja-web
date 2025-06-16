@@ -83,11 +83,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.btn-cadastrar{
+.cadastro-form__cadastrar{
   background-color: var(--cor-botao-validar);
 }
 
-.btn-cancelar{
+.cadastro-form__cancelar{
   background-color: var(--cor-botao-cancelar);
 }
 
