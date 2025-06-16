@@ -1,6 +1,7 @@
 @import url('static/styles/global.css');
+
 /* Atualização geral */
-body {
+body{
     font-family: Inter;
     background-color: var(--cor-fundo-pag);
     margin: 0;
@@ -81,12 +82,7 @@ h1{
     font-size: 16px;
 }
 
-/* ======================================================= */
-/* MEDIA QUERY PARA CORREÇÃO ABAIXO DE 500px               */
-/* ======================================================= */
-
-@media (max-width: 468px) {
-
+@media (max-width: 468px){
   /* O formulário agora ocupa 90% da largura da tela, evitando quebras. */
   .login-form{
     width: 90%;

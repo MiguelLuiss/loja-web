@@ -36,7 +36,7 @@ body {
   font-size: 14px;
 }
 
-.cadastro-box {
+.cadastro-box{
   background-color: var(--cor-branco);
   padding: 40px;
   border-radius: 12px;
@@ -91,23 +91,40 @@ body {
   background-color: var(--cor-botao-cancelar);
 }
 
-@media (max-width: 468px){
-  /* O formulário agora ocupa 90% da largura da tela, evitando quebras. */
-  .login-form{
+@media (max-width: 768px){
+  .cadastro-form{
     width: 90%;
   }
 
-  .c-info-login{
+  .info-cadastro{
     width: 100%;
   }
 
-  /* Para melhorar a usabilidade, os botões são empilhados verticalmente. */
   .c-btns{
-    flex-direction: column; /* Coloca os botões um embaixo do outro */
-    gap: 15px; /* Cria um espaço entre eles */
+    flex-direction: column; 
+    gap: 15px; 
   }
 
-  /* Faz com que os botões ocupem toda a largura disponível no container. */
+  .c-btns__logar,
+  .c-btns__sair{
+    width: 100%;
+  }
+}
+
+@media (max-width: 468px){
+  .cadastro-form{
+    width: 90%;
+  }
+
+  .info-cadastro{
+    width: 100%;
+  }
+
+  .c-btns{
+    flex-direction: column; 
+    gap: 15px; 
+  }
+
   .c-btns__logar,
   .c-btns__sair{
     width: 100%;

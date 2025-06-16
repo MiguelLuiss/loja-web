@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M2A1 - Feminino</title>
 
-    <link rel="stylesheet" href="../static/styles/global.css">
-
+  <link rel="stylesheet" href="../static/styles/global.css">
   <link rel="stylesheet" href="../static/styles/pag-feminino.css">
 
-   <!-- Link google fonts títulos -->
-
+  <!-- Google Fonts Kavoon -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
 
-    <!-- Font Inter -->>
+  <!-- Google Fonts Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
   <!-- Link do Font Awesome para os ícones -->
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <!-- bootstrap css -->
@@ -35,54 +32,71 @@
 
 </head>
 <body>
+    <header class="container-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt="Logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav menu-central">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categorias</a>
+              <ul class="dropdown-menu">
 
-    <header class="container-header" id="container-header">
 
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg">
+                
 
-            <div class="container-fluid">
+                <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
+                <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
+                <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
+                <li><a class="dropdown-item" href="/mostrarSapatos">Calçados</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
 
-                <a class="navbar-brand" href="/"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt=""></a>
+                <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
+          </ul>
 
-                <!-- botoes -->
 
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav menu-central">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Categorias</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
-                        <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
-                        <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
-                        <li><a class="dropdown-item" href="/mostrarCalcados">Calçados</a></li>
-                        <li>
-                        <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
-                    </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
-                </ul>
+          <div class="d-flex align-items-center ms-auto">
+            {% if session['nome_usuario'] %}
+              <div class="saudacao me-3">
+                <span class="usuario-nome text-white">Bem-vindo, {{ session['nome_usuario'] }}!</span>
+              </div>
+            {% endif %}
 
-                <div class="carrinho-link ms-auto">
-                    <a class="nav-link" href="/carrinho"> <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-
-                <div class="perfil-link ms-auto">
-                    <a class="nav-link" href="/cadastro"> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                </div>
-                </div>
+            <div class="carrinho-link me-3">
+              <a class="nav-link" href="/carrinho">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
-        </nav>
-    </header>
+
+            <div class="perfil-link">
+              {% if session['nome_usuario'] %}
+                <a class="nav-link" href="/sair">
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+              {% else %}
+                <a class="nav-link" href="/cadastro">
+                  <i class="fa-solid fa-user"></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+
+
+        </div>
+        </div>
+      </div>
+    </nav>
+  </header>
   <main>
     
     <div class="container-title"><h1>Feminino</h1></div>
@@ -95,7 +109,7 @@
             </div>
         </section>
 
-<!-- Moletons -->
+    <!-- Moletons -->
     <div class="container-title">
         <h2>Moletons</h2>
     </div>
@@ -118,7 +132,7 @@
             {% endfor %}
         </section>
 
-<!-- Camisetas -->
+    <!-- Camisetas -->
     <div class="container-title">
       <h2>Camisetas</h2>
     </div>
@@ -133,7 +147,7 @@
                 </span>
 
                 <span class="produto__card__preco">
-                R$ {{ produto.preco }}
+                {{ produto.preco }}
                 </span>
 
                 <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
@@ -142,7 +156,7 @@
     
     </section>
     
-<!-- Calças -->
+    <!-- Calças -->
     <div class="container-title">
       <h2>Calças</h2>
     </div>
@@ -157,7 +171,7 @@
                 </span>
 
                 <span class="produto__card__preco">
-                    R$ {{ produto.preco }}
+                    {{ produto.preco }}
                 </span>
 
                 <a href="/amostraProduto/{{ produto.codProduto }}" class="btn btn-primary"><button>Veja Mais</button></a>
@@ -165,7 +179,7 @@
             {% endfor %}
         </section>
 
-<!-- Calçados -->
+    <!-- Calçados -->
     <div class="container-title">
       <h2>Calçados</h2>
     </div>

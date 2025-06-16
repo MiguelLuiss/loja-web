@@ -1,65 +1,111 @@
-  <!DOCTYPE html>
-  <html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - M2A1</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M2A1 - Carrinho</title>
 
-    <!-- Google Fonts e Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Kavoon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../static/styles/carrinho.css">
-    <link rel="stylesheet" href="../static/styles/global.css">
-  </head>
+  <!-- Link do Font Awesome para os ícones -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="../static/styles/carrinho.css">
+  <link rel="stylesheet" href="../static/styles/global.css">
+</head>
 
 <body>
   <header class="container-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt="Logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <a class="navbar-brand" href="#"><img class="logo-nav" src="../static/imgs/logo-footer.png" alt="Logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul class="navbar-nav menu-central">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorias</a>
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categorias</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Moletons</a></li>
-                <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                <li><a class="dropdown-item" href="#">Calças</a></li>
-                <li><a class="dropdown-item" href="#">Calçados</a></li>
+
+
+                
+
+                <li><a class="dropdown-item" href="/mostrarMoletons">Moletons</a></li>
+                <li><a class="dropdown-item" href="/mostrarCamisetas">Camisetas</a></li>
+                <li><a class="dropdown-item" href="/mostrarCalcas">Calças</a></li>
+                <li><a class="dropdown-item" href="/mostrarSapatos">Calçados</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Todos</a></li>
+                <li>
+
+                <li><a class="dropdown-item" href="/catalogo">Todos</a></li>
+
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Masculino</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Feminino</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Infantil</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pag-masculino">Masculino</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pag-feminino">Feminino</a></li>
+            <li class="nav-item"><a class="nav-link" href="/pag-infantil">Infantil</a></li>
           </ul>
-          <div class="ms-auto d-flex">
-            <a class="nav-link" href="/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="nav-link" href="/cadastro"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+
+
+          <div class="d-flex align-items-center ms-auto">
+            {% if session['nome_usuario'] %}
+              <div class="saudacao me-3">
+                <span class="usuario-nome text-white">Bem-vindo, {{ session['nome_usuario'] }}!</span>
+              </div>
+            {% endif %}
+
+            <div class="carrinho-link me-3">
+              <a class="nav-link" href="/carrinho">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+
+            <div class="perfil-link">
+              {% if session['nome_usuario'] %}
+                <a class="nav-link" href="/sair">
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+              {% else %}
+                <a class="nav-link" href="/cadastro">
+                  <i class="fa-solid fa-user"></i>
+                </a>
+              {% endif %}
+            </div>
           </div>
+
+
+        </div>
         </div>
       </div>
     </nav>
   </header>
 
-    <main class="container-main">
-      <h1 class="titulo-pagina text-center mb-4">Carrinho</h1>
+  <main class="container-main">
+
+    <h1 class="titulo-pagina text-center mb-4">Carrinho</h1>
 
       {%for produto in produtos%}
     <section class="container-carrinho">
       <div class="produto-carrinho">
-        <img src="{{produto.url}}" alt="produto">
-        <span>{{produto.nome_produto}}</span>
+        <div class="container-produto">
+          <img src="{{produto.url}}" alt="produto">
+          <span class="container-nome">{{produto.nome_produto}}</span>
+        </div>
         <div class="descricao">
           <h3>Descrição do produto</h3>
           <p>{{produto.descricao}}</p>
