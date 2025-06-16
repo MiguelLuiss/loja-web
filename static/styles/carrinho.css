@@ -187,7 +187,7 @@ body{
   display: flex;
   padding: 1rem;
   flex: 2;
-  min-width: 300px;
+  min-width: 500px;
 }
 
 .produto-carrinho img{
@@ -245,16 +245,34 @@ body{
   display: flex;
   gap: 1rem;
   margin: 2rem auto;
+  align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .btn-marrom{
   background-color: var(--cor-botao-validar);
-  color: var(--cor-branco);
 }
 
 .btn-marrom:hover{
-  background-color: var(--cor-marrom);
+  background-color: var(--cor-hover-validar);
+}
+
+a > .btn-marrom:hover{
+  background-color: var(--cor-hover-validar);
+  text-decoration: none;
+  color: var(--cor-branco);
+}
+
+.btn-danger{
+  background-color: var(--cor-botao-cancelar);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-danger:hover{
+  background-color: var(--cor-hover-cancelar);
 }
 
 /* Carrossel */

@@ -51,13 +51,16 @@ body{
   width: 98vw;
   display: flex;
   justify-content: center;
+  margin: 20px;
+  font-family: Kavoon;
+  margin-left: 80px;
 }
 
 .container-produtos{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 40px;
+  padding: 20px;
   justify-items: center;
 }
 
@@ -66,7 +69,7 @@ body{
   background-color: var(--cor-branco);
   border: 1px solid var(--cor-border);
   border-radius: 10px;
-  width: 200px;
+  width: 280px;
   text-align: center;
   box-shadow: 0 2px 5px var(--cor-sombra);
   display: flex;
@@ -85,11 +88,13 @@ body{
   font-size: 1.1rem;
   font-weight: bold;
   margin: 10px 0;
+  font-family: Kavoon;
 }
 
 .container-produtos__preco{
   font-size: 0.95rem;
   margin: 10px;
+  font-family: Kavoon;
 }
 
 /* botões */
@@ -104,8 +109,25 @@ button{
   transition: background-color 0.3s ease;
 }
 
-button:hover{
-  background-color: var(--cor-border);
+a > button{
+  background-color: var(--cor-marrom);
+  color: var(--cor-branco);
+  width: 265px;
+  height: 40px;
+  font-family: Inter;
+}
+
+a.btn.btn-primary{
+  background-color: var(--cor-marrom);
+  border: 1px solid var(--cor-marrom);
+}
+
+a.btn.btn-primary:hover{
+  background-color: var(--cor-botao-validar);
+}
+
+a > button:hover{
+  background-color: var(--cor-botao-validar);
 }
 
 /* FOOTER */
