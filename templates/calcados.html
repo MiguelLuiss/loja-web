@@ -108,14 +108,14 @@
     <!-- calças -->
     <section class="container-produtos">     
         {% for produto in calcados %}
-        <div class="container-produtos__produto">
+        <div class="container-produtos__card">
             <img src="{{ produto.url}}" alt="moletom">
 
-            <span class="produto__card__titulo">
+            <span class="card__titulo">
             {{ produto.nome_produto }}
             </span>
 
-            <span class="produto__card__preco">
+            <span class="card__preco">
             {{ produto.preco }}
             </span>
 
