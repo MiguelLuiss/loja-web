@@ -84,7 +84,7 @@ body {
   justify-items: center;
 }
 
-.container-produtos__produto{
+.container-produtos__card{
   background-color: var(--cor-branco);
   border: 1px solid var(--cor-border);
   border-radius: 10px;
@@ -96,20 +96,20 @@ body {
   justify-content: space-between;
 }
 
-.container-produtos__produto img{
+.container-produtos__card img{
   width: 100%;
   height: auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.produto__card__titulo{
+.container-produtos__titulo{
   font-size: 1.1rem;
   font-weight: bold;
   margin: 10px 0;
 }
 
-.produto__card__preco{
+.container-produtos__preco{
   font-size: 0.95rem;
   margin: 10px;
 }
