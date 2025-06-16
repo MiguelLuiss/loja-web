@@ -125,6 +125,10 @@ figure{
   margin-bottom: 10px;
 }
 
+.container-carrossel img {
+  max-width: 480px;
+}
+
 .container-carrossel__produtos{
   display: flex;
   max-width: 500px;
