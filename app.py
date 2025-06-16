@@ -177,7 +177,7 @@ def excluir_carrinho(codCarrinho):
     Carrinho.excluirItemCarrinho(codCarrinho)
     return redirect("/carrinho")
 
-@app.route("/comentario/adicionar/<codProduto>", methods=["POST"])
+@app.route("/comentario/adicionar/<int:codProduto>", methods=["POST"])
 def adicionar_comentario(codProduto):
     if "usuario" not in session:
         return redirect("/login")
