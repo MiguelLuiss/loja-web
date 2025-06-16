@@ -66,13 +66,13 @@ body {
   font-size: 16px;
 }
 
-.form-buttons{
+.cadastro-form__buttons{
   display: flex;
   justify-content: space-between;
   gap: 12px;
 }
 
-.btn-cadastrar, .btn-cancelar{
+.cadastro-form__cadastrar, .cadastro-form__cancelar{
   flex: 1;
   padding: 12px;
   font-size: 16px;

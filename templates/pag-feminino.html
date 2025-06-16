@@ -116,14 +116,14 @@
     
         <section class="container-produtos" id="moletons">
             {% for produto in produtos.moletons %}
-            <div class="container-produtos__produto">
+            <div class="container-produtos__card">
                 <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-                <span class="produto__card__titulo">
+                <span class="container-produtos__titulo">
                     {{ produto.nome_produto }}
                 </span>
 
-                <span class="produto__card__preco">
+                <span class="container-produtos__preco">
                      {{ produto.preco }}
                 </span>
 
@@ -139,14 +139,14 @@
 
     <section class="container-produtos" id="camisetas">
         {% for produto in produtos.camisetas %}
-            <div class="container-produtos__produto">
+            <div class="container-produtos__card">
                 <img src="{{ produto.url}}" alt="{{ produto.nome_produto }}">
 
-                <span class="produto__card__titulo">
+                <span class="container-produtos__titulo">
                 {{ produto.nome_produto }}
                 </span>
 
-                <span class="produto__card__preco">
+                <span class="container-produtos__preco">
                 {{ produto.preco }}
                 </span>
 
@@ -163,14 +163,14 @@
 
         <section class="container-produtos" id="calcas">
             {% for produto in produtos.calcas %}
-            <div class="container-produtos__produto">
+            <div class="container-produtos__card">
                 <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-                <span class="produto__card__titulo">
+                <span class="container-produtos__titulo">
                     {{ produto.nome_produto }}
                 </span>
 
-                <span class="produto__card__preco">
+                <span class="container-produtos__preco">
                     {{ produto.preco }}
                 </span>
 
@@ -186,14 +186,14 @@
 
         <section class="container-produtos" id="calcados">
             {% for produto in produtos.calcados %}
-            <div class="container-produtos__produto">
+            <div class="container-produtos__card">
                 <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
-                <span class="produto__card__titulo">
+                <span class="container-produtos__titulo">
                     {{ produto.nome_produto }}
                 </span>
 
-                <span class="produto__card__preco">
+                <span class="container-produtos__preco">
                     {{ produto.preco }}
                 </span>
 

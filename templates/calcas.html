@@ -110,14 +110,14 @@
   <!-- calças -->
     <section class="container-produtos">
         {% for produto in calcas %}
-            <div class="container-produtos__produto">
-                <img src="{{ produto.url}}" alt="moletom">
+            <div class="container-produtos__card">
+                <img src="{{ produto.url}}" alt="calcas">
 
-                <span class="produto__card__titulo">
+                <span class="container-produtos__titulo">
                 {{ produto.nome_produto }}
                 </span>
 
-                <span class="produto__card__preco">
+                <span class="container-produtos__preco">
                 {{ produto.preco }}
                 </span>
 

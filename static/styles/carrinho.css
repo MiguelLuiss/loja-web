@@ -118,7 +118,7 @@ body{
 }
 
 /* Botões */
-.botoes{
+.container-carrinho__botoes{
   background-color: var(--cor-marrom); /* marrom */
   color: var(--cor-branco);
   width: 240px;

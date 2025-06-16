@@ -25,7 +25,7 @@ h1{
 }
 
 /* Container principal */
-.c-info-login{
+.login-form__container{
     width: 400px;
     padding: 0 30px;
 }
@@ -40,13 +40,13 @@ h1{
 }
 
 /* Estilo dos campos */
-.c-info-login label{
+.login-form__container label{
     display: block;
     margin-bottom: 5px;
     font-size: 16px;
 }
 
-.c-info-login input{
+.login-form__container input{
     width: 100%;
     height: 40px;
     padding: 5px 10px;
@@ -57,13 +57,13 @@ h1{
 }
 
 /* Botões */
-.c-btns{
+.login-form__buttons{
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.c-btns__logar{
+.login-form__btn-logar{
     background-color: var(--cor-marrom); /* marrom */
     color: var(--cor-branco);
     padding: 10px 20px;
@@ -73,7 +73,7 @@ h1{
     cursor: pointer;
 }
 
-.c-btns__sair{
+.login-form__btn-sair{
     background-color: var(--cor-botao-cancelar);
     color: var(--cor-branco);
     padding: 10px 20px;
@@ -88,19 +88,19 @@ h1{
     width: 90%;
   }
 
-  .c-info-login{
+  .login-form__container{
     width: 100%;
   }
 
   /* Para melhorar a usabilidade, os botões são empilhados verticalmente. */
-  .c-btns{
+  .login-form__buttons{
     flex-direction: column; /* Coloca os botões um embaixo do outro */
     gap: 15px; /* Cria um espaço entre eles */
   }
 
   /* Faz com que os botões ocupem toda a largura disponível no container. */
-  .c-btns__logar,
-  .c-btns__sair{
+  .login-form__btn-cadastrar,
+  .login-form__btn-sair{
     width: 100%;
   }
 }
