@@ -1,56 +1,46 @@
-@import url(../styles/global.css);
+/* Estilização geral */
+body{
+  background-color: var(--cor-fundo-pag) !important;
+  padding: 5px;
+}
 
-/* header */
+/* Header */
 header{
   background-color: var(--cor-botao-validar);
   font-family: Kavoon;
+}
+
+.logo-nav{
+  max-width: 100px;
+  height: 40px;
 }
 
 .navbar-nav .nav-link{
   color: var(--cor-branco);
 }
 
-.logo-nav{
-  max-width: 100px;
-}
-
-.navbar .navbar-expand-lg .bg-body-tertiary{
-  max-width: 500px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .menu-central{
   display: flex;
   justify-content: center;
   gap: 30px;
-  /* flex: 1 faz o elemento crescer e ocupar todo o espaço disponível dentro de um contêiner flexível. */
   flex: 1;
 }
 
-.fa-cart-shopping{
-  color: var(--cor-branco);
-  width: 30px;
-  font-size: larger;
+.saudacao{
+  margin-right: 20px;
 }
 
-.fa-arrow-right-to-bracket{
+.fa-cart-shopping,
+.fa-arrow-right-to-bracket, .fa-user{
   color: var(--cor-branco);
-  width: 30px;
   font-size: larger;
+  width: 30px;
 }
 
 .perfil-link{
   margin-left: auto;
 }
 
-body{
-  background-color: var(--cor-fundo-pag) !important;
-}
-
-.logo-nav{
-  height: 40px;
-}
 
 /* Título da página */
 .titulo-pagina{
@@ -125,6 +115,7 @@ body{
   height: 100px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   border-radius: 4px;
   text-decoration: none;
@@ -135,31 +126,6 @@ body{
 .btn{
   width: 100px;
   height: 50px;
-}
-
-body{
-  font-family: 'Kavoon', cursive;
-  background-color: var(--cor-fundo-pag);
-  color: var(--cor-preto);
-}
-
-/* Header */
-.container-header{
-  background-color: var(--cor-marrom);
-  padding: 1rem 0;
-}
-
-.navbar .nav-link,
-.navbar .navbar-brand{
-  color: var(--cor-branco);
-}
-
-.navbar .nav-link:hover{
-  color: var(--cor-marrom);
-}
-
-.logo-nav{
-  height: 40px;
 }
 
 /* Título da página */
