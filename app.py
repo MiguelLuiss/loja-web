@@ -12,7 +12,8 @@ app.secret_key = '12345678'
 # Rotas para abrir as páginas
 @app.route('/')
 def index():
-    return render_template('index.html')
+    produtos_destaque = Produto.buscarDestaques(4)
+    return render_template('index.html', produtos_destaque=produtos_destaque)
 
 @app.route('/login')
 def pagina_login():
@@ -166,7 +167,8 @@ def carrinho():
         return redirect("/login")
 
     produtos = Carrinho.mostrarCarrinho(session['cod_usuario'])
-    return render_template("carrinho.html", produtos=produtos)
+    produtos_destaque = Produto.buscarDestaques(4)
+    return render_template("carrinho.html", produtos=produtos, produtos_destaque=produtos_destaque)
 
 
 @app.route("/excluir_carrinho/<codCarrinho>")
