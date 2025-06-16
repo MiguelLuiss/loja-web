@@ -153,6 +153,7 @@ def adicionar_ao_carrinho(codigo):
 
         print(f"Produto retornado: {produto}")
         Carrinho.adicionar_item(cod_usuario, produto_dict)
+
         return redirect('/')
     
     except Exception as e:
@@ -183,9 +184,10 @@ def adicionar_comentario(codProduto):
     
     comentario = request.form.get("cadastro-comentario__comentario")
     codUsuario = session["cod_usuario"]
+    usuario = session["nome_usuario"]
 
     if comentario:
-        Comentario.adicionarComentario(codProduto, codUsuario, comentario)
+        Comentario.adicionarComentario(codProduto, codUsuario,usuario, comentario)
 
     return redirect(f"/amostraProduto/{codProduto}")
 
