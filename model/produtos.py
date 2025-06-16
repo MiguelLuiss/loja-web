@@ -4,7 +4,7 @@ class Produto:
     def mostrarMoletons():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'moletom'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'Moletom'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -17,7 +17,7 @@ class Produto:
     def mostrarCamisetas():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'camiseta'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'Camiseta'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -30,7 +30,7 @@ class Produto:
     def mostrarCalcas():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'calca'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'Calça'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -43,7 +43,7 @@ class Produto:
     def mostrarCalcados():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'sapato'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where tipo = 'Calçado'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -71,7 +71,7 @@ class Produto:
     def mostrarMoletonsMasculinos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='moletom'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='Moletom'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -84,7 +84,7 @@ class Produto:
     def mostrarCamisetasMasculinos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='camiseta'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='Camiseta'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -97,7 +97,7 @@ class Produto:
     def mostrarCalcasMasculinos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='calca'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='Calça'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -110,7 +110,7 @@ class Produto:
     def mostrarCalcadosMasculinos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='sapato'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Masculino' and tipo ='Calçado'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -123,7 +123,7 @@ class Produto:
     def mostrarMoletonsFemininos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'moletom'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'Moletom'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -136,7 +136,7 @@ class Produto:
     def mostrarCamisetasFemininos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'camiseta'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'Camiseta'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -149,7 +149,7 @@ class Produto:
     def mostrarCalcasFemininos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'calca'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'Calça'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -162,7 +162,7 @@ class Produto:
     def mostrarCalcadosFemininos():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'sapato'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Feminino' and tipo = 'Calçado'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -175,7 +175,7 @@ class Produto:
     def mostrarMoletonsInfantis():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'moletom'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'Moletom'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -188,7 +188,7 @@ class Produto:
     def mostrarCamisetasInfantis():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'camiseta'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'Camiseta'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -201,7 +201,7 @@ class Produto:
     def mostrarCalcasInfantis():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'calca'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'Calça'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
@@ -214,7 +214,7 @@ class Produto:
     def mostrarCalcadosInfantis():
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary = True)
-        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'sapato'"""
+        sql = """select codProduto,nome_produto,descricao,preco,sexo,tipo,url from tb_produtos where sexo = 'Infantil' and tipo = 'Calçado'"""
         
         cursor.execute(sql)
         resultados = cursor.fetchall()
