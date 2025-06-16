@@ -48,10 +48,9 @@ body{
 
 /* links */
 .container-links{
-  width: 98vw;
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 10px;
 }
 
 .container-links__link{
@@ -69,11 +68,13 @@ body{
   transition: linear 0.3s;
 }
 
-/* ------ Estilização dos produtos ------ */
-.container-title{
-  width: 98vw;
-  display: flex;
-  justify-content: center;
+
+
+.container-title {
+    display: flex;
+    margin: 20px;
+    font-family: Kavoon;
+    justify-content: center;
 }
 
 .container-produtos{
@@ -184,7 +185,6 @@ button:hover{
 
   /* links */
   .container-links{
-    width: 98vw;
     display: flex;
     justify-content: center;
     padding: 15px;
@@ -294,7 +294,6 @@ button:hover{
 
   /* links */
   .container-links{
-    width: 98vw;
     display: flex;
     justify-content: center;
     padding: 15px;
