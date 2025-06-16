@@ -81,13 +81,13 @@ body{
   border-top-right-radius: 10px;
 }
 
-.card__titulo{
+.container-produtos__titulo{
   font-size: 1.1rem;
   font-weight: bold;
   margin: 10px 0;
 }
 
-.card__preco{
+.container-produtos__preco{
   font-size: 0.95rem;
   margin: 10px;
 }
