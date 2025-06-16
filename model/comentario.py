@@ -2,11 +2,11 @@ import datetime
 from data.conexao import Conexao
 
 class Comentario: 
-    def adicionarComentario(codProduto, codUsuario, texto):
+    def adicionarComentario(codProduto, codUsuario,usuario, texto):
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor()
-        sql = "INSERT INTO tb_comentarios (codProduto, codUsuario, comentario) VALUES (%s, %s, %s)"
-        cursor.execute(sql, (codProduto, codUsuario, texto))
+        sql = "INSERT INTO tb_comentarios (codProduto, codUsuario,usuario, comentario) VALUES (%s, %s,%s, %s)"
+        cursor.execute(sql, (codProduto, codUsuario,usuario, texto))
         conexao.commit()
         cursor.close()
         conexao.close()

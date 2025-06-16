@@ -141,7 +141,7 @@
       <!-- Comentário exemplo -->
        {% for comentario in comentarios%}
       <div class="border p-3 mb-2 rounded">
-        <strong>{{ session['nome_usuario'] }}</strong>
+        <strong>{{ comentario.usuario }}</strong>
         <p>{{comentario.comentario}}</p>
       </div>
       {% endfor %}
