@@ -101,24 +101,26 @@
 
       {%for produto in produtos%}
     <section class="container-carrinho">
-      <div class="produto-carrinho">
+
+      <div class="container-carrinho__produto">
         <div class="container-produto">
           <img src="{{produto.url}}" alt="produto">
           <span class="container-nome">{{produto.nome_produto}}</span>
         </div>
-        <div class="descricao">
+
+        <div class="container-carrinho__descricao">
           <h3>Descrição do produto</h3>
           <p>{{produto.descricao}}</p>
         </div>
       </div>
 
-      <div class="resumo-carrinho">
+      <div class="container-carrinho__resumo">
         <h4>Resumo da compra</h4>
         <p><strong>Preço</strong></p>
         <p class="preco">{{produto.preco}}</p>
       </div>
 
-      <div class="botoes">
+      <div class="container-carrinho__botoes">
         <a href="#"><button class="btn btn-marrom">Comprar</button></a>
         <a href="/excluir_carrinho/{{ produto.codCarrinho }}" class="btn btn-danger">Excluir</a>
       </div>
