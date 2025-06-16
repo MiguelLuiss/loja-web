@@ -111,7 +111,7 @@ def mostrarCalcas():
     calcas = Produto.mostrarCalcas()
     return render_template("calcas.html", calcas=calcas)
 
-@app.route('/mostrarCalcados')
+@app.route('/mostrarSapatos')
 def mostrarCalcados():
     calcados = Produto.mostrarCalcados()
     return render_template("calcados.html", calcados=calcados)
