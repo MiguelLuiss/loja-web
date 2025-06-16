@@ -2,6 +2,7 @@
 .container-main{
   font-family: Kavoon;
   color: var(--cor-preto);
+  padding: 20px;
 }
 
 /* Estiliza a imagem principal do carrossel */
@@ -9,6 +10,7 @@
   border-radius: 10px;
   max-height: 500px;
   object-fit: cover;
+  
 }
 
 /* Botões do carrossel */
@@ -35,6 +37,7 @@
 }
 
 /* Comentários */
+
 .comentarios h4{
   margin-bottom: 1rem;
   font-family: Kavoon;
@@ -44,9 +47,11 @@
   resize: none;
 }
 
-.comentarios .border{
+.border{
   background-color: var(--cor-branco);
   box-shadow: 0 0 6px var(--cor-sombra);
+
+  margin-top: 15px;
 }
 
 .footer{
