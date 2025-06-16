@@ -45,6 +45,7 @@
 
 .comentarios textarea{
   resize: none;
+  width: 850px;
 }
 
 .border{
@@ -52,6 +53,7 @@
   box-shadow: 0 0 6px var(--cor-sombra);
 
   margin-top: 15px;
+  width: 750px;
 }
 
 .footer{
