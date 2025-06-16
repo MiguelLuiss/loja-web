@@ -15,7 +15,7 @@ CREATE TABLE tb_produtos (
   preco VARCHAR(20),
   sexo VARCHAR(20),
   tipo VARCHAR(20),
-  url varchar(250),
+  url varchar(1000),
   codCategoria INT,
   FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
 );
@@ -38,7 +38,7 @@ CREATE TABLE tb_carrinho (
   descricao VARCHAR(80),
   preco VARCHAR(20),
   sexo VARCHAR(20),
-  url varchar(200),
+  url varchar(1000),
   quantidade int,
   FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario),
   FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
@@ -145,8 +145,8 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Calça Mom Jeans Azul Claro', 'Tecido resistente com lavagem clara.', 'R$ 189,90', 'Feminino', 'Calça', 'https://torratorra.vtexassets.com/arquivos/ids/2374616/1312100187704446.jpg?v=638756450645270000'),
 ('Calça Jogger Feminina Preta', 'Cintura alta, perfeita para o estilo casual.', 'R$ 169,90', 'Feminino', 'Calça', 'https://ph-cdn3.ecosweb.com.br/imagens01/foto/mkp142/moda-feminina/calcas/calca-jogger-cordao-feminina-preto_2271867_600_1.jpg'),
 
-('Tênis Branco Plataforma', 'Tênis cano baixo com solado alto e confortável.', 'R$ 389,90', 'Feminino', 'Calçado', 'https://images.pexels.com/photos/2529146/pexels-photo-2529146.jpeg?auto=compress&cs=tinysrgb&w=800'),
-('Tênis Casual Feminino Rosa Claro', 'Ideal para o dia a dia com estilo leve.', 'R$ 359,90', 'Feminino', 'Calçado', 'https://images.pexels.com/photos/10019134/pexels-photo-10019134.jpeg?auto=compress&cs=tinysrgb&w=800');
+('Tênis Branco Plataforma', 'Tênis cano baixo com solado alto e confortável.', 'R$ 389,90', 'Feminino', 'Calçado', 'https://meiasola.vtexassets.com/arquivos/ids/1635246/tenis-plataforma-couro-branco-s21547-schutz-1.jpg?v=638481885687400000'),
+('Tênis Casual Feminino Rosa Claro', 'Ideal para o dia a dia com estilo leve.', 'R$ 359,90', 'Feminino', 'Calçado', 'https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/zoccolet/catalog/api/zoccolet_blingirr/6425bbd1d78d9.jpg');
 
 -- INFANTIL
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
@@ -209,7 +209,7 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 -- Calçado
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Tênis Street Rider Cinza', 'Design robusto, ideal para skate.', 'R$ 449,90', 'Masculino', 'Calçado', 'https://cdn.bnws3.com.br/b2online.com.br/image/cache/data/produtos/puma/masculino/tenis-puma-rider-fv-retro-rewind-masculino-cinza---amarelo-11985-24-08-02-01-1200x1200.jpg'),
-('Tênis Casual Cano Alto Branco', 'Tênis de cano alto com visual clássico.', 'R$ 419,90', 'Masculino', 'Calçado', 'hhttps://static.ecosweb.com.br/public/produtos/calcados/skate/tenis-cano-alto-masculino-branco_224666_600_1.webp'),
+('Tênis Casual Cano Alto Branco', 'Tênis de cano alto com visual clássico.', 'R$ 419,90', 'Masculino', 'Calçado', 'https://static.ecosweb.com.br/public/produtos/calcados/skate/tenis-cano-alto-masculino-branco_224666_600_1.webp'),
 ('Tênis Preto Urban Vibe', 'Estilo urbano com sola antiderrapante.', 'R$ 389,90', 'Masculino', 'Calçado', 'https://images.tcdn.com.br/img/img_prod/799045/tenis_vibe_orbital_2_preto_e_vermelho_36929_2_17653b97f09158aac05f82d1f55c99ec.jpg');
 
 
@@ -261,3 +261,6 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Tênis Infantil Color Run', 'Tênis leve e colorido para o dia a dia.', 'R$ 139,90', 'Infantil', 'Calçado', 'https://static.netshoes.com.br/produtos/tenis-infantil-no-stress-run-color-feminino/34/Q55-0504-234/Q55-0504-234_zoom1.jpg?ts=1695007970&ims=544x'),
 ('Tênis Azul Infantil Velcro', 'Com fecho em velcro para praticidade.', 'R$ 129,90', 'Infantil', 'Calçado', 'https://secure-static.vans.com.br/medias/sys_master/vans/vans/hee/hae/h00/h00/12094080090142/1001200210002U-02-BASEIMAGE-Midres.jpg'),
 ('Tênis Branco Infantil Clássico', 'Básico, confortável e durável.', 'R$ 149,90', 'Infantil', 'Calçado', 'https://www.amilcalcados.com.br/lojas/00046219/prod/068373-1.jpg');
+
+
+select * from tb_usuarios;
