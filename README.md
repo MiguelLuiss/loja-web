@@ -1,10 +1,7 @@
-  M2A1
-![image](https://github.com/user-attachments/assets/29e46342-52bd-46fb-ba57-536618f7f9d9)
+![ChatGPT Image 27 de mai  de 2025, 10_33_42](https://github.com/user-attachments/assets/d1a90958-0686-4130-87ef-31951a8d0533)
 
 
 2MA1 é mais do que uma marca — é um movimento urbano. Nascida no coração das ruas, a 2MA1 surgiu da fusão entre estilo, atitude e a vontade de criar algo real. Nosso nome carrega código, história e identidade — para quem vive fora dos padrões e expressa quem é através da roupa que veste.
-
-
 
 
 
