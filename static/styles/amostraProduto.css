@@ -8,8 +8,10 @@
 /* Estiliza a imagem principal do carrossel */
 .carousel-inner img{
   border-radius: 10px;
-  max-height: 500px;
-  object-fit: cover;
+  object-fit: contain;
+  width: 100vw;
+  height: 80vh;
+  margin: 0 auto;
   
 }
 
