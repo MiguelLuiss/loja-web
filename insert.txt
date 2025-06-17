@@ -1,0 +1,2 @@
+INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
+('Moletom Teste', 'teste teste teste teste', 'R$ 000,00', 'Masculino', 'Moletom', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsETC0DuF_uJs37YWRGyizizaMTwo5v400sw&s');
