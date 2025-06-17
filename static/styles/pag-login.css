@@ -83,6 +83,7 @@ h1{
     text-decoration: none;
     font-size: 16px;
     font-family: Inter;
+    text-align: center;
 }
 
 @media (max-width: 468px){
@@ -107,14 +108,5 @@ h1{
     width: 100%;
   }
 
-  .login-form__btn-sair{
-    background-color: var(--cor-botao-cancelar);
-    color: var(--cor-branco);
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: Inter;
-    text-align: center;
-}
+
 }
