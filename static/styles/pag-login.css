@@ -83,6 +83,7 @@ h1{
     text-decoration: none;
     font-size: 16px;
     font-family: Inter;
+    text-align: center;
 }
 
 @media (max-width: 468px){
@@ -106,4 +107,6 @@ h1{
   .login-form__btn-sair{
     width: 100%;
   }
+
+
 }
