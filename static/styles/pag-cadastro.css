@@ -111,22 +111,19 @@ body {
   }
 }
 
-@media (max-width: 468px){
-  .cadastro-form{
-    width: 90%;
+@media (max-width: 469px){
+  .cadastro-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
   }
 
-  .info-cadastro{
-    width: 100%;
+  .cadastro-topo{
+    left: 44px;
+    top: 6px;
   }
 
-  .c-btns{
-    flex-direction: column; 
-    gap: 15px; 
-  }
 
-  .c-btns__logar,
-  .c-btns__sair{
-    width: 100%;
-  }
 }
