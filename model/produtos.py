@@ -237,7 +237,7 @@ class Produto:
         conexao.close()
         return produto
     
-    def buscarDestaques(limite=4):
+    def buscarDestaques(limite=30):
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor(dictionary=True)
 
