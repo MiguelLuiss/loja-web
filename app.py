@@ -155,7 +155,7 @@ def adicionar_ao_carrinho(codigo):
         print(f"Produto retornado: {produto}")
         Carrinho.adicionar_item(cod_usuario, produto_dict)
 
-        return redirect('/')
+        return redirect('/carrinho')
     
     except Exception as e:
         print(f"Erro ao adicionar produto ao carrinho: {e}")
