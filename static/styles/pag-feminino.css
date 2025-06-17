@@ -204,7 +204,7 @@ a > button:hover{
   max-height: 100px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 769px){
   body{
   background-color: var(--cor-fundo-pag) !important;
   padding: 5px;

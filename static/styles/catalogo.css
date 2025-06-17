@@ -233,7 +233,7 @@ a > button:hover{
 
 
 /* o tamanho do card mudara e sera distribuido em 2 colunas */
-@media (max-width: 768px){
+@media (max-width: 769px){
   body{
   background-color: var(--cor-fundo-pag) !important;
   padding: 5px;

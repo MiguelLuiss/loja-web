@@ -369,7 +369,7 @@ a > .btn-marrom:hover{
 
 
 /* Responsividade */
-@media (max-width: 768px){
+@media (max-width: 769px){
   body{
   background-color: var(--cor-fundo-pag) !important;
   padding: 5px;
