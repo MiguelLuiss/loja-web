@@ -2,11 +2,6 @@
 CREATE DATABASE db_Loja_M2A1;
 USE db_Loja_M2A1;
 
--- Tabela de Categorias
-CREATE TABLE tb_categorias (
-  codCategoria INT PRIMARY KEY AUTO_INCREMENT,
-  categorias VARCHAR(30) NOT NULL
-);
 
 CREATE TABLE tb_produtos (
   codProduto INT PRIMARY KEY AUTO_INCREMENT,
@@ -15,15 +10,13 @@ CREATE TABLE tb_produtos (
   preco VARCHAR(20),
   sexo VARCHAR(20),
   tipo VARCHAR(20),
-  url varchar(1000),
-  codCategoria INT,
-  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+  url varchar(1000)
 );
 
 CREATE TABLE tb_usuarios (
   codUsuario INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL,
-  email VARCHAR(50) NOT NULL UNIQUE,
+  email VARCHAR(50) NOT NULL unique,
   senha VARCHAR(100) NOT NULL,
   telefone VARCHAR(20),
   endereco VARCHAR(50)
@@ -33,7 +26,6 @@ CREATE TABLE tb_carrinho (
   codCarrinho INT PRIMARY KEY AUTO_INCREMENT,
   codUsuario INT NOT NULL,
   codProduto INT NOT NULL,
-  codCategoria INT,
   nome_produto VARCHAR(50),
   descricao VARCHAR(80),
   preco VARCHAR(20),
@@ -41,8 +33,7 @@ CREATE TABLE tb_carrinho (
   url varchar(1000),
   quantidade int,
   FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario),
-  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
-  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto)
 );
 
 CREATE TABLE tb_comentarios (
@@ -55,21 +46,6 @@ CREATE TABLE tb_comentarios (
     FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
     FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario)
 );
-
-
-
-    
-select * from tb_usuarios;
-
-ALTER TABLE tb_carrinho MODIFY descricao VARCHAR(1000);
-
-select * from tb_produtos;
-
-select * from tb_usuarios;
-
-select * from tb_comentarios;
-
-select * from tb_carrinho;
 
 INSERT INTO tb_produtos (
 	nome_produto,
@@ -261,6 +237,3 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Tênis Infantil Color Run', 'Tênis leve e colorido para o dia a dia.', 'R$ 139,90', 'Infantil', 'Calçado', 'https://static.netshoes.com.br/produtos/tenis-infantil-no-stress-run-color-feminino/34/Q55-0504-234/Q55-0504-234_zoom1.jpg?ts=1695007970&ims=544x'),
 ('Tênis Azul Infantil Velcro', 'Com fecho em velcro para praticidade.', 'R$ 129,90', 'Infantil', 'Calçado', 'https://secure-static.vans.com.br/medias/sys_master/vans/vans/hee/hae/h00/h00/12094080090142/1001200210002U-02-BASEIMAGE-Midres.jpg'),
 ('Tênis Branco Infantil Clássico', 'Básico, confortável e durável.', 'R$ 149,90', 'Infantil', 'Calçado', 'https://www.amilcalcados.com.br/lojas/00046219/prod/068373-1.jpg');
-
-
-select * from tb_usuarios;
