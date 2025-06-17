@@ -12,6 +12,13 @@ header{
     max-width: 100px;
 }
 
+.fa-cart-shopping,
+.fa-arrow-right-to-bracket, .fa-user{
+  color: var(--cor-branco);
+  font-size: larger;
+  width: 30px;
+}
+
 .navbar .navbar-expand-lg .bg-body-tertiary{
   max-width: 500px;
   display: flex;
@@ -44,6 +51,7 @@ header{
 
 body{
   background-color: var(--cor-fundo-pag) !important;
+  padding: 5px;
 }
 
 /* ------ Estilização dos produtos ------ */

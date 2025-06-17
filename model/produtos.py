@@ -236,3 +236,16 @@ class Produto:
         cursor.close()
         conexao.close()
         return produto
+    
+    def buscarDestaques(limite=30):
+        conexao = Conexao.criarConexao()
+        cursor = conexao.cursor(dictionary=True)
+
+        query = "SELECT codProduto, nome_produto, url FROM tb_produtos LIMIT %s"
+        cursor.execute(query, (limite,))
+
+        produtos = cursor.fetchall()
+        cursor.close()
+        conexao.close()
+
+        return produtos

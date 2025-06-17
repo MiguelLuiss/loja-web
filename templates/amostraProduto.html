@@ -108,14 +108,9 @@
             </div>
             <!-- Você pode adicionar mais <div class="carousel-item"> aqui -->
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduto" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselProduto" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
         </div>
         <p class="mt-2 fw-bold">{{produto.nome_produto}}</p>
+        <p  class="mt-2 fw-bold">{{produto.sexo}}</p>
       </div>
 
       <!-- Descrição do produto -->
@@ -131,33 +126,18 @@
       </div>
     </div>
 
-    <!-- Comentários -->
-    <!-- <section class="comentarios">
-      <h4>Comentários</h4>
-      <form  action="/comentario/adicionar/{{ produto.codProduto }}" method="post">
-        <textarea class="form-control mb-2" rows="4" placeholder="Digite seu comentário aqui" name="cadastro-comentario__comentario"></textarea>
-        <button class="btn btn-dark">Enviar</button>
-      </form> -->
-
-      <!-- Comentários -->
-      <!-- com bootstrap -->
       <section class="comentarios">
         <h4 class="comentarios__titulo">Comentários</h4>
-        <form class="comentarios__form" action="/comentario/adicionar/{{ produto.codProduto }}"  method="post">
-          <textarea class="comentarios__input form-control mb-2" rows="4" placeholder="Digite seu comentário aqui"></textarea>
+        <form action="/comentario/adicionar/{{ produto.codProduto }}" method="post" class="comentarios__form">
+          <textarea class="comentarios__input form-control mb-2" rows="4" placeholder="Digite seu comentário aqui" name="cadastro-comentario__comentario"></textarea>
           <button class="comentarios__btn btn btn-dark">Enviar</button>
         </form>
       </section>
 
       <!-- Comentário exemplo -->
        {% for comentario in comentarios%}
-
-      <div>
-        <strong>{{ session['nome_usuario'] }}</strong>
-
       <div class="border p-3 mb-2 rounded">
         <strong>{{ comentario.usuario }}</strong>
-
         <p>{{comentario.comentario}}</p>
       </div>
       {% endfor %}

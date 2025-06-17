@@ -12,7 +12,8 @@ app.secret_key = '12345678'
 # Rotas para abrir as páginas
 @app.route('/')
 def index():
-    return render_template('index.html')
+    produtos_destaque = Produto.buscarDestaques(30)
+    return render_template('index.html', produtos_destaque=produtos_destaque)
 
 @app.route('/login')
 def pagina_login():
@@ -31,6 +32,9 @@ def cadastrarUsuario():
     senha = request.form.get("senha")
     telefone = request.form.get("telefone")
     endereco = request.form.get("endereco")
+
+    if Usuario.verificar_email_existente(email):
+        return "Email já cadastrado. Escolha outro.", 400 
 
     Usuario.criarUsuario(nome, senha, email, telefone, endereco)
     return redirect('/cadastro')
@@ -154,7 +158,7 @@ def adicionar_ao_carrinho(codigo):
         print(f"Produto retornado: {produto}")
         Carrinho.adicionar_item(cod_usuario, produto_dict)
 
-        return redirect('/')
+        return redirect('/carrinho')
     
     except Exception as e:
         print(f"Erro ao adicionar produto ao carrinho: {e}")
@@ -166,7 +170,8 @@ def carrinho():
         return redirect("/login")
 
     produtos = Carrinho.mostrarCarrinho(session['cod_usuario'])
-    return render_template("carrinho.html", produtos=produtos)
+    produtos_destaque = Produto.buscarDestaques(30)
+    return render_template("carrinho.html", produtos=produtos, produtos_destaque=produtos_destaque)
 
 
 @app.route("/excluir_carrinho/<codCarrinho>")
@@ -177,7 +182,7 @@ def excluir_carrinho(codCarrinho):
     Carrinho.excluirItemCarrinho(codCarrinho)
     return redirect("/carrinho")
 
-@app.route("/comentario/adicionar/<codProduto>", methods=["POST"])
+@app.route("/comentario/adicionar/<int:codProduto>", methods=["POST"])
 def adicionar_comentario(codProduto):
     if "usuario" not in session:
         return redirect("/login")

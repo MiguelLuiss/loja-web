@@ -2,11 +2,6 @@
 CREATE DATABASE db_Loja_M2A1;
 USE db_Loja_M2A1;
 
--- Tabela de Categorias
-CREATE TABLE tb_categorias (
-  codCategoria INT PRIMARY KEY AUTO_INCREMENT,
-  categorias VARCHAR(30) NOT NULL
-);
 
 CREATE TABLE tb_produtos (
   codProduto INT PRIMARY KEY AUTO_INCREMENT,
@@ -15,15 +10,13 @@ CREATE TABLE tb_produtos (
   preco VARCHAR(20),
   sexo VARCHAR(20),
   tipo VARCHAR(20),
-  url varchar(250),
-  codCategoria INT,
-  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+  url varchar(1000)
 );
 
 CREATE TABLE tb_usuarios (
   codUsuario INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL,
-  email VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL unique,
   senha VARCHAR(100) NOT NULL,
   telefone VARCHAR(20),
   endereco VARCHAR(50)
@@ -33,16 +26,14 @@ CREATE TABLE tb_carrinho (
   codCarrinho INT PRIMARY KEY AUTO_INCREMENT,
   codUsuario INT NOT NULL,
   codProduto INT NOT NULL,
-  codCategoria INT,
   nome_produto VARCHAR(50),
   descricao VARCHAR(80),
   preco VARCHAR(20),
   sexo VARCHAR(20),
-  url varchar(200),
+  url varchar(1000),
   quantidade int,
   FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario),
-  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
-  FOREIGN KEY (codCategoria) REFERENCES tb_categorias(codCategoria)
+  FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto)
 );
 
 CREATE TABLE tb_comentarios (
@@ -55,21 +46,6 @@ CREATE TABLE tb_comentarios (
     FOREIGN KEY (codProduto) REFERENCES tb_produtos(codProduto),
     FOREIGN KEY (codUsuario) REFERENCES tb_usuarios(codUsuario)
 );
-
-
-
-    
-select * from tb_usuarios;
-
-ALTER TABLE tb_carrinho MODIFY descricao VARCHAR(1000);
-
-select * from tb_produtos;
-
-select * from tb_usuarios;
-
-select * from tb_comentarios;
-
-select * from tb_carrinho;
 
 INSERT INTO tb_produtos (
 	nome_produto,
@@ -145,8 +121,8 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Calça Mom Jeans Azul Claro', 'Tecido resistente com lavagem clara.', 'R$ 189,90', 'Feminino', 'Calça', 'https://torratorra.vtexassets.com/arquivos/ids/2374616/1312100187704446.jpg?v=638756450645270000'),
 ('Calça Jogger Feminina Preta', 'Cintura alta, perfeita para o estilo casual.', 'R$ 169,90', 'Feminino', 'Calça', 'https://ph-cdn3.ecosweb.com.br/imagens01/foto/mkp142/moda-feminina/calcas/calca-jogger-cordao-feminina-preto_2271867_600_1.jpg'),
 
-('Tênis Branco Plataforma', 'Tênis cano baixo com solado alto e confortável.', 'R$ 389,90', 'Feminino', 'Calçado', 'https://images.pexels.com/photos/2529146/pexels-photo-2529146.jpeg?auto=compress&cs=tinysrgb&w=800'),
-('Tênis Casual Feminino Rosa Claro', 'Ideal para o dia a dia com estilo leve.', 'R$ 359,90', 'Feminino', 'Calçado', 'https://images.pexels.com/photos/10019134/pexels-photo-10019134.jpeg?auto=compress&cs=tinysrgb&w=800');
+('Tênis Branco Plataforma', 'Tênis cano baixo com solado alto e confortável.', 'R$ 389,90', 'Feminino', 'Calçado', 'https://meiasola.vtexassets.com/arquivos/ids/1635246/tenis-plataforma-couro-branco-s21547-schutz-1.jpg?v=638481885687400000'),
+('Tênis Casual Feminino Rosa Claro', 'Ideal para o dia a dia com estilo leve.', 'R$ 359,90', 'Feminino', 'Calçado', 'https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/zoccolet/catalog/api/zoccolet_blingirr/6425bbd1d78d9.jpg');
 
 -- INFANTIL
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
@@ -209,7 +185,7 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 -- Calçado
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Tênis Street Rider Cinza', 'Design robusto, ideal para skate.', 'R$ 449,90', 'Masculino', 'Calçado', 'https://cdn.bnws3.com.br/b2online.com.br/image/cache/data/produtos/puma/masculino/tenis-puma-rider-fv-retro-rewind-masculino-cinza---amarelo-11985-24-08-02-01-1200x1200.jpg'),
-('Tênis Casual Cano Alto Branco', 'Tênis de cano alto com visual clássico.', 'R$ 419,90', 'Masculino', 'Calçado', 'hhttps://static.ecosweb.com.br/public/produtos/calcados/skate/tenis-cano-alto-masculino-branco_224666_600_1.webp'),
+('Tênis Casual Cano Alto Branco', 'Tênis de cano alto com visual clássico.', 'R$ 419,90', 'Masculino', 'Calçado', 'https://static.ecosweb.com.br/public/produtos/calcados/skate/tenis-cano-alto-masculino-branco_224666_600_1.webp'),
 ('Tênis Preto Urban Vibe', 'Estilo urbano com sola antiderrapante.', 'R$ 389,90', 'Masculino', 'Calçado', 'https://images.tcdn.com.br/img/img_prod/799045/tenis_vibe_orbital_2_preto_e_vermelho_36929_2_17653b97f09158aac05f82d1f55c99ec.jpg');
 
 
@@ -248,7 +224,7 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Camiseta Infantil Estampa Gamer', 'Para os pequenos apaixonados por games.', 'R$ 54,90', 'Infantil', 'Camiseta', 'https://torratorra.vtexassets.com/arquivos/ids/2188464/35121002384021.jpg?v=638749222040070000'),
 ('Camiseta Infantil Estrela Azul', 'Tecido leve com estampa divertida.', 'R$ 49,90', 'Infantil', 'Camiseta', 'https://static.dafiti.com.br/p/Malwee-Kids-Blusa-Malwee-Kids-Infantil-Estrela-Azul-Marinho-4228-1341137-1-zoom.jpg'),
-('Camiseta Infantil Super Hero', 'Com super-heróis favoritos estampados.', 'R$ 59,90', 'Infantil', 'Camiseta', 'https://dw0jruhdg6fis.cloudfront.net/producao/31050365/G/lisa_cinza.jpg');
+('Camiseta Infantil Super Hero', 'Com super-heróis favoritos estampados.', 'R$ 59,90', 'Infantil', 'Camiseta', 'https://img.elo7.com.br/product/zoom/1BF6D5C/camiseta-infantil-mascotes-super-herois-mascotes-super-herois.jpg');
 
 -- Calça
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
