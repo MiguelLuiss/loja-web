@@ -248,7 +248,7 @@ INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
 ('Camiseta Infantil Estampa Gamer', 'Para os pequenos apaixonados por games.', 'R$ 54,90', 'Infantil', 'Camiseta', 'https://torratorra.vtexassets.com/arquivos/ids/2188464/35121002384021.jpg?v=638749222040070000'),
 ('Camiseta Infantil Estrela Azul', 'Tecido leve com estampa divertida.', 'R$ 49,90', 'Infantil', 'Camiseta', 'https://static.dafiti.com.br/p/Malwee-Kids-Blusa-Malwee-Kids-Infantil-Estrela-Azul-Marinho-4228-1341137-1-zoom.jpg'),
-('Camiseta Infantil Super Hero', 'Com super-heróis favoritos estampados.', 'R$ 59,90', 'Infantil', 'Camiseta', 'https://dw0jruhdg6fis.cloudfront.net/producao/31050365/G/lisa_cinza.jpg');
+('Camiseta Infantil Super Hero', 'Com super-heróis favoritos estampados.', 'R$ 59,90', 'Infantil', 'Camiseta', 'https://img.elo7.com.br/product/zoom/1BF6D5C/camiseta-infantil-mascotes-super-herois-mascotes-super-herois.jpg');
 
 -- Calça
 INSERT INTO tb_produtos (nome_produto, descricao, preco, sexo, tipo, url) VALUES
