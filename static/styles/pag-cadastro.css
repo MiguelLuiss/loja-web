@@ -91,7 +91,7 @@ body {
   background-color: var(--cor-botao-cancelar);
 }
 
-@media (max-width: 768px){
+@media (max-width: 769px){
   .cadastro-form{
     width: 90%;
   }
