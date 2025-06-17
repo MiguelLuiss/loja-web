@@ -33,6 +33,9 @@ def cadastrarUsuario():
     telefone = request.form.get("telefone")
     endereco = request.form.get("endereco")
 
+    if Usuario.verificar_email_existente(email):
+        return "Email já cadastrado. Escolha outro.", 400 
+
     Usuario.criarUsuario(nome, senha, email, telefone, endereco)
     return redirect('/cadastro')
 
