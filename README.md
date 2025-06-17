@@ -7,7 +7,7 @@
 
 
 
- Funcionalidades
+ Funcionalidades do webSite
 
 
 - Cadastro de usuario
@@ -20,7 +20,7 @@
 - Excluir Produto do carrinho
       
 
-Tecnologias
+Tecnologias utilizadas
 
 - Linguagens: ![image](https://github.com/user-attachments/assets/9a84ace3-132b-41df-b262-a82c4b009200)
   
@@ -32,14 +32,18 @@ Tecnologias
 
 
 
- repositório
-git clone https://github.com/MiguelLuiss/loja-web
+Clone o repositório:
 
- Acesse a pasta do projeto
+git clone https://github.com/MiguelLuiss/loja-web
 cd loja-web
 
+Instale as dependências:
+pip install flask
+pip install mysql-connector-python
 
-comando de instalação (pip install mysql-connector-python, pip install flask)
+Configure o banco de dados:
+Crie um banco no MySQL.
+Importe os arquivos .sql localizados na pasta data no arquivo codgo_sql.sql.
+Execute o projeto:
 
-
-comando de execução (python app.py)
+python app.py
