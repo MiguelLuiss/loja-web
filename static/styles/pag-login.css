@@ -86,8 +86,17 @@ h1{
     text-align: center;
 }
 
-@media (max-width: 468px){
-  .login-form__btn-sair{
-    width: 100%;
-  }
+@media (max-width: 469px){
+    .login-form{
+        width: 90%;
+        align-items: center;
+    }
+
+    .login-form__container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: -30px;
+    }
+
 }
