@@ -23,7 +23,7 @@ CREATE TABLE tb_produtos (
 CREATE TABLE tb_usuarios (
   codUsuario INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(50) NOT NULL,
-  email VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL UNIQUE,
   senha VARCHAR(100) NOT NULL,
   telefone VARCHAR(20),
   endereco VARCHAR(50)

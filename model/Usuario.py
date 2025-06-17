@@ -8,7 +8,7 @@ class Usuario:
 
         conexao = Conexao.criarConexao()
         cursor = conexao.cursor()
-        
+
         sql = """INSERT INTO tb_usuarios (
             nome, email, senha, telefone, endereco
         ) VALUES (%s, %s, %s, %s, %s)"""
@@ -18,6 +18,17 @@ class Usuario:
         conexao.commit()
         cursor.close()
         conexao.close()
+
+    @staticmethod
+    def verificar_email_existente(email):
+        conexao = Conexao.criarConexao()
+        cursor = conexao.cursor()
+        query = "SELECT * FROM tb_usuarios WHERE email = %s"
+        cursor.execute(query, (email,))
+        resultado = cursor.fetchone()
+        cursor.close()
+        conexao.close()
+        return resultado is not None
 
 
     def verificarLogin(email, senha):
