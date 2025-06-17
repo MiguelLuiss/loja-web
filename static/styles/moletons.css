@@ -191,7 +191,7 @@ a > button:hover{
   /* ------ Estilização dos produtos ------ */
   .container-produtos{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 40px;
     justify-items: center;
