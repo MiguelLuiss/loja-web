@@ -127,3 +127,13 @@ body {
 
 
 }
+
+@media (max-width: 400px){
+  .cadastro-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 315px;
+}
+}

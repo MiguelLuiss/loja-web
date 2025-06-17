@@ -229,3 +229,19 @@
   }
 
 }
+
+
+@media (max-width: 400px){
+  .border{
+    background-color: var(--cor-branco);
+    box-shadow: 0 0 6px var(--cor-sombra);
+
+    margin-top: 30px;
+    width: 300px;
+  }
+
+  .comentarios textarea{
+      resize: none;
+      width: 300px;
+  }
+}

@@ -411,7 +411,7 @@ a > .btn-marrom:hover{
     padding: 1rem;
     text-align: center;
     flex: 1;
-    min-width: 80px;
+    min-width: 90px;
     height: auto;
   }
 
@@ -514,3 +514,5 @@ a > .btn-marrom:hover{
     max-height: 50px;
   }
 }
+
+

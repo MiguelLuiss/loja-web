@@ -623,24 +623,20 @@ button:hover{
     font-size: x-small;
   }
 
-  .container-produtos{
+ .container-produtos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     padding: 40px;
     justify-items: center;
   }
 
-  .container-produtos__card{
-    /* background-color: var(--cor-branco);
-    border: 1px solid var(--cor-border);
-    border-radius: 10px; */
-    width: 150px;
-    /* text-align: center;
-    box-shadow: 0 2px 5px var(--cor-sombra);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
+  .container-produtos__card {
+      width: 250px;
+  }
+
+  .btn{
+    background-color: var(--cor-marrom);
   }
 
    a > button {
@@ -715,3 +711,4 @@ button:hover{
     max-height: 50px;
   }
 }
+
