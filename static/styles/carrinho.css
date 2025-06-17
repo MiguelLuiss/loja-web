@@ -516,3 +516,16 @@ a > .btn-marrom:hover{
 }
 
 
+@media (max-width: 400px){
+  .container-carrinho__resumo{
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+    min-width: 90px;
+    height: auto;
+  }
+
+}
