@@ -32,7 +32,7 @@ class Carrinho:
                         sexo,
                         url,
                         quantidade
-                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """
                 cursor.execute(sql_insert, (
                     cod_usuario,
