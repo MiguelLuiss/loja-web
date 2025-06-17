@@ -165,7 +165,7 @@
         <section class="container-produtos" id="calcas">
             {% for produto in produtos.calcas %}
             <div class="container-produtos__card">
-                <img src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
+                <img class="container-produtos__img" src="{{ produto.url }}" alt="{{ produto.nome_produto }}">
 
                 <span class="container-produtos__titulo">
                     {{ produto.nome_produto }}

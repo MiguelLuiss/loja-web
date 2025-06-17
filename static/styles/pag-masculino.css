@@ -105,9 +105,11 @@ body{
   justify-content: space-between;
 }
 
+
+
 .container-produtos__card img{
   width: 100%;
-  height: auto;
+  height: 275px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -190,18 +192,16 @@ button:hover{
 
 
   /* ------ Estilização dos produtos ------ */
-  .container-produtos{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 40px;
-    justify-items: center;
-  }
+
 
   .container-produtos__card{
-   
-    width: 250px;
-   
+    .container-produtos{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* gap: 20px;
+      padding: 40px;
+      justify-items: center; */
+    }
   }
 
    a > button {
@@ -211,24 +211,6 @@ button:hover{
     height: 40px;
     font-family: Inter;
 }
-
-  .container-produtos__card img{
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .container-produtos__titulo{
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-
-  .container-produtos__preco{
-    font-size: 0.95rem;
-    margin: 10px;
-  }
 
   /* Rodapé */
   .footer{
@@ -280,13 +262,13 @@ button:hover{
 @media (max-width: 990px){
 
 
-  /* ------ Estilização dos produtos ------ */
+  
   .container-produtos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    /* gap: 20px;
     padding: 40px;
-    justify-items: center;
+    justify-items: center; */
   }
 
   .container-produtos__card{
@@ -304,25 +286,15 @@ button:hover{
 }
 
   .container-produtos__card img{
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* width: 100%; */
+    height: 250;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
   }
 
-  .container-produtos__titulo{
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-
-  .container-produtos__preco{
-    font-size: 0.95rem;
-    margin: 10px;
-  }
 
   /* Rodapé */
-  .footer{
+  /* .footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -366,22 +338,19 @@ button:hover{
   .footer__logo img{
     max-height: 50px;
   }
+} */
 }
-
-@media (max-width: 769px){
-  body {
-    background-color: var(--cor-fundo-pag) !important;
-    padding: 5px;
-  }
+@media (max-width: 768px){
+  
 
   /* links */
-  .container-links{
+  /* .container-links{
     display: flex;
     justify-content: center;
     padding: 15px;
-  }
+  } */
 
-  .container-links__link{
+  /* .container-links__link{
     background-color: var(--cor-marrom);
     color: var(--cor-branco);
     padding: 10px;
@@ -389,14 +358,14 @@ button:hover{
     margin-right: 10px;
     text-decoration: none;
     border-radius: 5px;
-  }
+  } */
 
   .container-produtos{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    /* gap: 20px;
     padding: 40px;
-    justify-items: center;
+    justify-items: center; */
   }
 
   .container-produtos__card{
@@ -420,25 +389,25 @@ button:hover{
 }
 
   .container-produtos__card img{
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* width: 100%; */
+    height: 250px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
   }
 
-  .container-produtos__titulo{
+  /* .container-produtos__titulo{
     font-size: 1.1rem;
     font-weight: bold;
     margin: 10px 0;
-  }
+  } */
 
-  .container-produtos__preco{
+  /* .container-produtos__preco{
     font-size: 0.95rem;
     margin: 10px;
-  }
+  } */
 
   /* Rodapé */
-  .footer{
+  /* .footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -481,38 +450,38 @@ button:hover{
 
   .footer__logo img{
     max-height: 50px;
-  }
+  } */
 }
 
 @media (max-width: 468px){
-  body{
+  /* body{
     background-color: var(--cor-fundo-pag) !important;
     padding: 5px;
-  }
+  } */
 
   /* links */
   .container-links{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     padding: 15px;
   }
 
   .container-links__link{
-    background-color: var(--cor-marrom);
+    /* background-color: var(--cor-marrom);
     color: var(--cor-branco);
-    padding: 10px;
+    padding: 10px; */
     margin-left: 0;
     margin-right: 10px;
-    text-decoration: none;
-    border-radius: 5px;
+    /* text-decoration: none;
+    border-radius: 5px; */
   }
 
   .container-produtos{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    /* gap: 20px;
     padding: 40px;
-    justify-items: center;
+    justify-items: center; */
   }
 
   .container-produtos__card{
@@ -536,25 +505,25 @@ button:hover{
 }
 
   .container-produtos__card img{
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* width: 100%; */
+    height: 180px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
   }
 
-  .container-produtos__titulo{
+  /* .container-produtos__titulo{
     font-size: 1.1rem;
     font-weight: bold;
     margin: 10px 0;
-  }
+  } */
 
-  .container-produtos__preco{
+  /* .container-produtos__preco{
     font-size: 0.95rem;
     margin: 10px;
-  }
+  } */
 
   /* Rodapé */
-  .footer{
+  /* .footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -597,41 +566,41 @@ button:hover{
 
   .footer__logo img{
     max-height: 50px;
-  }
+  } */
 }
 
 
 @media (max-width: 400px){
-  body{
+  /* body{
   background-color: var(--cor-fundo-pag) !important;
   padding: 5px;
-  }
+  } */
 
   /* links */
   .container-links{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     padding: 15px;
   }
 
   .container-links__link{
-    background-color: var(--cor-marrom);
+    /* background-color: var(--cor-marrom);
     color: var(--cor-branco);
     padding: 10px;
     width: 10px;
-    margin-left: 0;
+    margin-left: 0; */
     margin-right: 10px;
-    text-decoration: none;
-    border-radius: 5px;
+    /* text-decoration: none; */
+    /* border-radius: 5px; */
     font-size: x-small;
   }
 
   .container-produtos{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    /* gap: 20px;
     padding: 40px;
-    justify-items: center;
+    justify-items: center; */
   }
 
   .container-produtos__card{
@@ -655,13 +624,13 @@ button:hover{
 }
 
   .container-produtos__card img{
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* width: 100%; */
+    height: 180px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
   }
 
-  .container-produtos__titulo{
+  /* .container-produtos__titulo{
     font-size: 1.1rem;
     font-weight: bold;
     margin: 10px 0;
@@ -670,10 +639,10 @@ button:hover{
   .container-produtos__preco{
     font-size: 0.95rem;
     margin: 10px;
-  }
+  } */
 
   /* Rodapé */
-  .footer{
+  /* .footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -716,6 +685,6 @@ button:hover{
 
   .footer__logo img{
     max-height: 50px;
-  }
+  } */
 }
 
