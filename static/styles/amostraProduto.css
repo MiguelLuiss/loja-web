@@ -15,6 +15,13 @@
   
 }
 
+.fa-cart-shopping,
+.fa-arrow-right-to-bracket, .fa-user{
+  color: var(--cor-branco);
+  font-size: larger;
+  width: 30px;
+}
+
 /* Botões do carrossel */
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
