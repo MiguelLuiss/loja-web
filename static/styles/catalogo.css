@@ -55,7 +55,6 @@ body{
 
 /* ------ Estilização dos produtos ------ */
 .container-title{
-  width: 98vw;
   display: flex;
   justify-content: center;
   margin: 20px;
@@ -344,7 +343,7 @@ a > button:hover{
     /* background-color: var(--cor-branco); */
     /* border: 1px solid var(--cor-border); */
     /* border-radius: 10px; */
-    width: 150px;
+    width: 125px;
     /* text-align: center; */
     /* box-shadow: 0 2px 5px var(--cor-sombra); */
     /* display: flex; */
