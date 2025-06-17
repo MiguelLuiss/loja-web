@@ -26,7 +26,6 @@ class Carrinho:
                     INSERT INTO tb_carrinho (
                         codUsuario,
                         codProduto,
-                        codCategoria,
                         nome_produto,
                         descricao,
                         preco,
@@ -38,7 +37,6 @@ class Carrinho:
                 cursor.execute(sql_insert, (
                     cod_usuario,
                     produto['codProduto'],
-                    produto.get('codCategoria'),
                     produto['nome_produto'],
                     produto['descricao'],
                     produto['preco'],

@@ -146,7 +146,6 @@ def adicionar_ao_carrinho(codigo):
         
         produto_dict = {
             'codProduto': produto['codProduto'],
-            'codCategoria': produto.get('codCategoria'),
             'nome_produto': produto['nome_produto'],
             'descricao': produto['descricao'],
             'preco': produto['preco'],
