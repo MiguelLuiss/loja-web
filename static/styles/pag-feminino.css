@@ -51,6 +51,7 @@ header{
 
 body {
   background-color: var(--cor-fundo-pag) !important;
+  padding: 5px;
 }
 
 /* links */
