@@ -22,7 +22,8 @@
 
 Tecnologias utilizadas
 
-- Linguagens: ![image](https://github.com/user-attachments/assets/9a84ace3-132b-41df-b262-a82c4b009200)
+- Linguagens:
+   ![image](https://github.com/user-attachments/assets/9a84ace3-132b-41df-b262-a82c4b009200)
   
 - Banco de dados: mysql
   
